@@ -1,10 +1,24 @@
 :root {
-    --color-dark: #000000;
-    --color-darkgray: #363946;
-    --color-darklight: #696773;
-    --color-bg: #F8F8E8;
-    --color-bg-shade: #F2F2DC;
-    --color-fg: #00439B;
+    --color-dark:       #000000;
+    --color-darkgray:   #363946;
+    --color-darklight:  #696773;
+    --color-bg:         #F8F8E8;
+    --color-bg-shade:   #F2F2DC;
+    --color-fg:         #00439B;
+    
+    --color-scroll-bg:      var(--color-darkgray);
+    --color-scroll-thumb:   #828189;
+}
+
+
+/* Scrollbar styling for all browsers. */
+html {
+    scrollbar-color: var(--color-scroll-thumb) var(--color-scroll-bg);
+    scrollbar-width:auto;
+}
+::-webkit-scrollbar {
+    background-color: var(--color-scroll-bg);
+    color:var(--color-scroll-thumb);
 }
 
 body {
@@ -17,4 +31,7 @@ body {
     font-family:"Roboto",sans-serif;
     font-weight: bold;
     text-transform: lowercase;
+}
+.my-name:hover {
+    color:var(--color-fg);
 }
