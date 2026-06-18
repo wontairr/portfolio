@@ -4,12 +4,16 @@
     --color-darklight:  #696773;
     --color-bg:         #F8F8E8;
     --color-bg-shade:   #F2F2DC;
-    --color-fg:         #00439B;
+    --color-bg-darkshade:   #cbcbb6;
+    --color-fg:             #00439B;
+    --color-fg-dark:        #00306e;
+
+    --color-red:        #9b0024;
+    --color-red-dark:   #690019;
     
     --color-scroll-bg:      var(--color-darkgray);
     --color-scroll-thumb:   #828189;
 }
-
 
 /* Scrollbar styling for all browsers. */
 html {
@@ -34,4 +38,12 @@ body {
 }
 .my-name:hover {
     color:var(--color-fg);
+}
+
+.dont-scroll {
+    overflow:hidden;
+}
+
+.cross-icon {
+    width:1.25rem;
 }
