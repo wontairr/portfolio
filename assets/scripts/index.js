@@ -1,13 +1,6 @@
 const body = document.querySelector("body");
 
 const aboutSection = document.getElementById("about-section");
-
-
-const portfolioChoices  = document.querySelectorAll(".portfolio-choice");
-const portfolioPopups   = document.querySelectorAll(".portfolio-popup");
-const portfolioPopupCloseButtons = document.querySelectorAll(".portfolio-popup-close");
-
-
 // FIXME: Doesn't always work at low res.
 function resizeAboutSection()
 {
@@ -22,6 +15,12 @@ if (document.readyState === "loading") {
     resizeAboutSection();
 }
 
+
+const portfolioChoices  = document.querySelectorAll(".portfolio-choice");
+const portfolioPopups   = document.querySelectorAll(".portfolio-popup");
+const portfolioPopupCloseButtons = document.querySelectorAll(".portfolio-popup-close");
+
+// Keys are IDs like "3d-animation" and the values are references to the popup elements.
 const portfolioPopupList = {};
 
 function popupClose(e)
@@ -73,6 +72,7 @@ portfolioPopups.forEach( (popup) => {
 
 function popupOpen(e)
 {
+    
     // Turn off body scrolling.
     body.classList.toggle("dont-scroll");
 
@@ -81,7 +81,11 @@ function popupOpen(e)
     const choiceId = rootChoiceBtn.id;
     // Remove 'portfolio-choice-' from the id.
     const portfolioChoiceName = choiceId.slice(17);
-    
+    if (portfolioChoiceName === "3d-animation"){
+        loadGalleryItems();
+    }
+        
+
     const popup = portfolioPopupList[portfolioChoiceName];
     if (!popup) {
         console.error("POPUP FOR PORTFOLIO CHOICE NAME ",portfolioChoiceName," IS NULL!");
