@@ -1,0 +1,120 @@
+
+/*
+    PORTFOLIO SECTION
+*/
+#portfolio-choice-wrapper {
+    display:grid;
+
+    width:100%;
+    height:calc(100vh + 10rem);
+
+    margin-left:auto;
+    margin-right:auto;
+
+    gap: 1vw;
+
+    grid-template-areas:
+    "a b"
+    "c c";
+
+}
+
+.portfolio-choice {
+
+    position: relative;
+    border: 6px solid var(--color-dark);
+    transition:border 0.25s ease;
+
+
+    border-radius: 10px;
+}
+
+
+
+.portfolio-choice-bg {
+    width:100%;
+    height:100%;
+
+    background-size: 0.2rem;
+}
+
+.portfolio-choice-overlay {
+
+    background-color: #00439b4a;
+    backdrop-filter: blur(4px) brightness(30%) contrast(120%);
+    -webkit-backdrop-filter: blur(4px) brightness(30%) contrast(120%);
+    width:100.1%;
+    height:100%;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    position:absolute;
+    top:0;
+    left:0;
+
+    transition:
+        background-color 0.1s ease,
+        backdrop-filter 0.1s ease,
+        -webkit-backdrop-filter 0.1s ease;
+        
+}
+.portfolio-choice-overlay:hover {
+    background-color: #1857a96b;
+    backdrop-filter: blur(1px) brightness(100%) contrast(120%);
+    -webkit-backdrop-filter: blur(1px) brightness(100%) contrast(120%);
+    cursor:pointer;
+}
+.portfolio-choice-overlay:hover .portfolio-choice-text {
+    position: relative;
+    transform:scale(110%)
+}
+
+.portfolio-choice-text {
+
+    font-family:"Roboto",sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+
+    color:white;
+    text-shadow:
+        -2px -2px 2px #000,
+        2px -2px 2px #000,
+        -2px 2px 2px #000,
+        2px 2px 2px #000;
+
+    user-select: none;
+    -webkit-user-select: none;
+
+    transition:transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+/*
+    SPECIFIC PORTFOLIO CHOICES
+*/
+
+#portfolio-choice-3d-animation {
+    grid-area: a;
+}
+#portfolio-choice-3d-animation .portfolio-choice-bg {
+    background-image:url(/assets/images/portfolio_3danimation_bg.png);
+    background-size: cover;
+}
+
+
+#portfolio-choice-programming {
+    grid-area: b;
+}
+#portfolio-choice-programming .portfolio-choice-bg {
+    background-image:url(/assets/images/portfolio_programming_bg.png);
+    background-size: cover;
+}
+#portfolio-choice-programming .portfolio-choice-overlay {
+    backdrop-filter: blur(4px) brightness(70%) contrast(120%);
+    -webkit-backdrop-filter: blur(4px) brightness(70%) contrast(120%);
+}
+
+#portfolio-choice-other-projects {
+    grid-area: c;
+    height:6.5rem;
+}
