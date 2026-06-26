@@ -13,7 +13,7 @@ const galleryItems = [
     {
         title:          "Dual Tec9's",
         html:           `<iframe width="560" height="315" src="https://www.youtube.com/embed/ZMMc1QN44SI?si=JTGXpaNE2xDaHMpj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
-        thumbnail:      "https://img.youtube.com/vi/ZMMc1QN44SI/mqdefault.jpg"
+        thumbnail:      "https://img.youtube.com/vi/7WZTQIAVHfo/mqdefault.jpg"
     },
     {
         title:          "Peach",
@@ -96,3 +96,4 @@ function loadGalleryItems()
 videoDropDownButton.addEventListener("click",(e) => {
     videoDropDownWrapper.classList.toggle("gallery-dropdown");
 });
+console.log(window.innerHeight)

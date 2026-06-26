@@ -94,7 +94,7 @@ main {
     
     text-decoration: none;
 
-    transition:color 0.05s ease,background-color 0.05s ease;
+    transition:color 0.03s ease,background-color 0.03s ease;
 
     z-index:99;
 }
