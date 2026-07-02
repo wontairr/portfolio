@@ -1,0 +1,278 @@
+
+/*
+    3D Animation
+*/
+
+#portfolio-popup-3d-animation .portfolio-popup-contents {
+    display:flex;
+    flex-direction: column;
+    padding:0;
+
+    background-color: var(--color-dark);
+}
+
+
+/*
+    VIDEO DROPDOWN
+*/
+#portfolio-popup-3d-animation-video-dropdown {
+    background-color: var(--color-fg);
+    height:4rem;
+    
+    display:flex;
+    flex-direction: column;
+
+    transition:height 0.2s ease;
+}
+
+#portfolio-popup-3d-animation-video-dropdown.gallery-dropdown {
+    height:100vh;
+}
+
+
+#portfolio-popup-3d-animation-video-dropdown:not(.gallery-dropdown) #animation-video-dropdown {
+    display:none;
+}
+
+
+#portfolio-popup-3d-animation-video-dropdown.gallery-dropdown #animation-video-dropdown-arrow img {
+    transform: rotate(180deg);
+}
+
+/*
+    VIDEO PLAYER
+*/
+#animation-video-dropdown {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    width: 100%;
+    height: 100%;
+    
+    display:flex;
+    
+    flex-direction: column;
+    
+}
+
+
+#animation-video-dropdown-tab-buttons {
+    width:100%;
+    height:2rem;
+    display:flex;
+
+    border-bottom: 2px solid var(--color-dark);
+}
+#animation-video-dropdown-tab-buttons button {
+    width:100%;
+    height:100%;
+    border:none;
+    background-color: var(--color-fg);
+    color:var(--color-bg);
+    font-family: "Space mono",monospace;
+    font-size: 1rem;
+}
+#animation-video-dropdown-tab-buttons button:hover {
+    background-color: var(--color-fg-light);
+}
+#animation-video-dropdown-tab-buttons button.selected-tab {
+    background-color: var(--color-fg-tab-select);
+}
+
+
+#animation-video-dropdown-contents {
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    display:flex;
+    flex-direction:row;
+    
+    width: 100%;
+    height: 100%;
+}
+
+
+
+#animation-video-dropdown-about {
+    width:100%;
+    height:90%;
+    
+    background-color: var(--color-fg-graylight);
+    border-bottom:0.5rem solid var(--color-fg-graydark);
+}
+.animation-video-dropdown-about-txt {
+    padding:1rem;
+    color:var(--color-dark);
+    width:100%;
+    height:100%;
+}
+
+#animation-video-dropdown-video-info {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    width:50%;
+    height:100%;
+}
+#animation-video-dropdown-video-info-txt-wrapper {
+    position:absolute;
+    overflow-y:scroll;
+}
+.animation-video-dropdown-video-info-txt {
+    color:white;
+
+    margin:0;
+}
+
+
+#animation-video-wrapper {
+    width: 100%;
+    height: 100%;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transition: height 0.2s ease;
+}
+#animation-video-player-placeholder-txt {
+    font-family: "Space Grotesk","Roboto",sans-serif;
+    
+    color:var(--color-bg);
+}
+
+#animation-video-wrapper iframe {
+    width:100%;
+    height:100%;
+
+    background-image: url(/assets/images/loading_video.png);
+    background-size:cover;
+    background-position-y: center;
+}
+/*
+    VIDEO DROPDOWN ARROW
+*/
+#animation-video-dropdown-arrow {
+    align-self: flex-end;
+
+    overflow: hidden;
+
+    background-color: transparent;
+    border:none;
+
+
+    width:100%;
+    height:3rem;
+    flex-grow: 1;
+
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    margin-left:auto;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    cursor: pointer;
+}
+
+#animation-video-dropdown-arrow img {
+
+    width:2.5%;
+
+    
+    filter:invert(100%);
+    -webkit-filter: invert(100%);
+
+    transition:transform 0.1s ease;
+}
+#animation-video-dropdown-arrow:hover img {
+    transform:translateY(10px);
+}
+
+/*
+    ANIMATION GALLERY
+*/
+#portfolio-popup-3d-animation-gallery {
+    display:flex;
+    flex-wrap: wrap;
+    align-items: start;
+
+    padding: 1rem;
+
+    height:100%;
+
+    overflow:scroll;
+    overflow-x: hidden;
+
+    /* Will be spaced evenly but everything will stick to the left. (see below) */
+
+
+}
+
+.popup-3d-animation-gallery-item {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:20%;
+
+    /* Keep everything to the left. */
+    margin-right: auto;
+}
+
+
+.popup-3d-animation-gallery-item figcaption {
+    font-family:"Space Grotesk","Roboto",sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+
+    margin-top: 0.5rem;
+    
+    text-wrap: nowrap;
+    
+    color:white;
+
+    transition: color 0.05s ease;
+}
+
+.popup-3d-animation-gallery-item img {
+    border:0.25rem solid var(--color-fg);
+    border-radius: 0.25rem;
+
+    background-image: url(/assets/images/loading_image.png);
+    background-size:cover;
+
+    width:max(100%,8rem);
+    height:max(100%,4.5rem);
+    min-height:calc(0.1363191763 * 100vh);
+
+
+    display:inline-block;
+  
+    filter:none;
+    -webkit-filter: none;
+
+    transition: transform 0.1s ease;
+}
+.popup-3d-animation-gallery-item:hover {
+    z-index: 100;
+    cursor:pointer;
+}
+.popup-3d-animation-gallery-item:hover img {
+    filter:brightness(1.1);
+    -webkit-filter: brightness(1.1);
+    border-color: var(--color-fg-light);
+    transform:translateY(-5px);
+}
+
+.popup-3d-animation-gallery-item:hover figcaption {
+    color: var(--color-fg-light);
+}

@@ -18,7 +18,7 @@ if (document.readyState === "loading") {
 
 const portfolioChoices  = document.querySelectorAll(".portfolio-choice");
 const portfolioPopups   = document.querySelectorAll(".portfolio-popup");
-const portfolioPopupCloseButtons = document.querySelectorAll(".portfolio-popup-close");
+const portfolioPopupCloseButtons = document.querySelectorAll(".portfolio-popup-close-btn");
 
 // Keys are IDs like "3d-animation" and the values are references to the popup elements.
 const portfolioPopupList = {};

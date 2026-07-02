@@ -1,0 +1,130 @@
+
+/*
+    PORTFOLIO POPUPS
+*/
+
+.portfolio-popup-close-btn {
+    position:absolute;
+
+    width:1rem;
+    height:1rem;
+    padding:1.5rem;
+
+    /*
+        Margin leads us to the top right of popup-contents.
+        8rem is the popup padding
+    */
+    margin-left:calc(100vh + 20rem);
+    margin-top:calc(-70vh - 8rem);
+    
+    color:white;
+    font-weight: bold;
+
+    box-shadow: 0 0 1px 4px #00000040;
+
+    background-color: var(--color-darkgray);
+    border:3px solid var(--color-darklight);
+    
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor:pointer;
+
+    transform:scale(1.0);
+    transition: background-color 0.065s ease, border-color 0.065s ease,transform 0.065s ease;
+}
+.portfolio-popup-close-btn img {
+    pointer-events: none;
+}
+.portfolio-popup-close-btn:hover {
+    background-color: var(--color-red);
+    border-color: var(--color-red-dark);
+    transform:scale(1.05);
+}
+
+@keyframes portfolio-popup-open
+{
+    from {
+        opacity: 0.5;
+    }
+    to {    
+        opacity: 1.0;
+    }
+}
+
+.portfolio-popup.shown {
+    animation: portfolio-popup-open 0.1s ease;
+}
+
+.portfolio-popup {
+    position:fixed;
+    width:100%;
+    height:100%;
+   
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px) brightness(0.5);
+    -webkit-backdrop-filter: blur(10px) brightness(0.5);
+    
+    z-index: 99;
+    
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio-popup-content-container {
+    
+    display:flex;
+
+    flex-direction: column;
+    align-items: center;
+
+    box-shadow: 0 0 1px 10px #00000040;
+
+    width:calc(100vh + 20rem);
+    height:calc(70vh + 8rem);
+    
+    background-color: var(--color-darklight);
+    border: 0.5rem solid var(--color-fg-graydark);
+    border-radius: 0.25rem;
+    
+
+
+}
+.portfolio-popup-header {
+    text-align: center;
+
+    font-family:"Space Mono",monospace;
+
+    color:var(--color-dark);
+    background-color: var(--color-fg-graylight);
+
+    box-shadow: 0 5px 0 0px #00000040;
+
+    font-size: 2rem;
+    
+    width: 100%;
+    height:6rem;
+    
+    letter-spacing:normal;
+
+    user-select: none;
+    -webkit-user-select: none;
+}
+.portfolio-popup-header h1 {
+    display:inline-block;
+    
+    margin-top:4rem;
+    transform:translateY(-4rem);
+}
+
+.portfolio-popup-contents {
+    padding:4rem;
+
+    
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}

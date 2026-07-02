@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="assets/styles/base_style.css">
     <link rel="stylesheet" href="assets/styles/index.css">
     <link rel="stylesheet" href="assets/styles/index.section.portfolio.css">
-    <link rel="stylesheet" href="assets/styles/index.popups.css">
+    <link rel="stylesheet" href="assets/styles/index.portfolio.popups.css">
+    <link rel="stylesheet" href="assets/styles/index.portfolio.popups.animation.css">
     <title>wontairr's site</title>
 </head>
 <body>
-    <div id="layout-wrapper">
+    <div id="layout-container">
         <nav id="left-navbar">
             <div id="left-navbar-contents">
                 <h2 id="navbar-header"><span class="my-name">Wontairr</span>'s site</h2>
@@ -50,7 +51,7 @@
             <section id="portfolio-section">
                 <h1>Portfolio</h1>
                 
-                <div id="portfolio-choice-wrapper">
+                <div id="portfolio-choice-container">
                     <div class="portfolio-choice" id="portfolio-choice-3d-animation">
                         <div class="portfolio-choice-bg"></div>
                         <div class="portfolio-choice-overlay">
@@ -86,51 +87,49 @@
         </main>
         <div id="comfort-margin"></div>
 
+        <!-- 3D Animation Popup -->
         <div class="portfolio-popup" id="portfolio-popup-3d-animation">
-            <div class="portfolio-popup-close"><img class="cross-icon" src="assets/images/cross.svg"/></div>
+            <button class="portfolio-popup-close-btn"><img class="cross-icon" src="assets/images/cross.svg"/></button>
             
-            <div class="portfolio-popup-content-wrapper">
+            <div class="portfolio-popup-content-container">
                 <div class="portfolio-popup-header"><h1>3D Animation</h1></div>
                 <div class="portfolio-popup-contents">
                     <div id="portfolio-popup-3d-animation-video-dropdown">
-                        <div id="gallery-video-wrapper"></div>
-                        <button id="gallery-video-dropdown-arrow">
+                        <div id="animation-video-dropdown">
+                            <div id="animation-video-dropdown-tab-buttons">
+                                <button onclick="videoDropDownSelectTab(0)">About</button>
+                                <button onclick="videoDropDownSelectTab(1)">Video Player</button>
+                                <button onclick="videoDropDownSelectTab(2)">Video Info</button>
+                            </div>
+                            <div id="animation-video-dropdown-contents">
+                                
+                                <div id="animation-video-dropdown-about"        class="animation-video-dropdown-tab hidden">
+                                    <p class="animation-video-dropdown-about-txt">
+                                        Welcome to the 3D Animation Gallery! This is the best of my work. I use Blender 3D for all of my animations.
+                                    </p>
+                                </div>
+                                <br>
+                                
+                                <div id="animation-video-wrapper"               class="animation-video-dropdown-tab">
+                                    <h2 id="animation-video-player-placeholder-txt">Choose an Animation From the Gallery Below!</h2>
+                                </div>
+
+                                <div id="animation-video-dropdown-video-info"   class="animation-video-dropdown-tab hidden">
+                                    <div id="animation-video-dropdown-video-info-txt-wrapper">
+                                        <p class="animation-video-dropdown-video-info-txt">
+    
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <button id="animation-video-dropdown-arrow">
                             <img src="/assets/images/arrow_down.svg">
                         </button>
                     </div>
+                    <!-- Filled by index.animationgallery.js -->
                     <div id="portfolio-popup-3d-animation-gallery">
-                        <figure class="popup-3d-animation-gallery-item">
-                            <img src="assets/images/portfolio_3danimation_bg.png">
-                            <figcaption>COOL</figcaption>
-                        </figure>
-                        <figure class="popup-3d-animation-gallery-item">
-                            <img src="assets/images/portfolio_3danimation_bg.png">
-                            <figcaption>COOL</figcaption>
-                        </figure>
-                        <figure class="popup-3d-animation-gallery-item">
-                            <img src="assets/images/portfolio_3danimation_bg.png">
-                            <figcaption>COOL</figcaption>
-                        </figure>
-                        <figure class="popup-3d-animation-gallery-item">
-                            <img src="assets/images/portfolio_3danimation_bg.png">
-                            <figcaption>COOL</figcaption>
-                        </figure>
-                        <figure class="popup-3d-animation-gallery-item">
-                            <img src="assets/images/portfolio_3danimation_bg.png">
-                            <figcaption>COOL</figcaption>
-                        </figure>
-                        <figure class="popup-3d-animation-gallery-item">
-                            <img src="assets/images/portfolio_3danimation_bg.png">
-                            <figcaption>COOL</figcaption>
-                        </figure>
-                        <figure class="popup-3d-animation-gallery-item">
-                            <img src="assets/images/portfolio_3danimation_bg.png">
-                            <figcaption>COOL</figcaption>
-                        </figure>
-                        <figure class="popup-3d-animation-gallery-item">
-                            <img src="assets/images/portfolio_3danimation_bg.png">
-                            <figcaption>COOL</figcaption>
-                        </figure>
                     </div>
                 </div>
             </div>

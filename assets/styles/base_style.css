@@ -2,11 +2,15 @@
     --color-dark:       #000000;
     --color-darkgray:   #363946;
     --color-darklight:  #696773;
+    
     --color-bg:         #F8F8E8;
     --color-bg-shade:   #F2F2DC;
     --color-bg-darkshade:   #cbcbb6;
+    
     --color-fg:             #00439B;
     --color-fg-light:       #0A74FF;
+    --color-fg-tab-select:  #06387b;
+
     --color-fg-graylight:   #BFC3BA;
     --color-fg-graydark:    #A9ACA9;
 
@@ -48,4 +52,8 @@ body {
 
 .cross-icon {
     width:1.25rem;
+}
+
+.hidden {
+    display:none !important;
 }

@@ -2,11 +2,11 @@
 /*
     PORTFOLIO SECTION
 */
-#portfolio-choice-wrapper {
+#portfolio-choice-container {
     display:grid;
 
     width:100%;
-    height:calc(100vh + 10rem);
+    height:80rem;
 
     margin-left:auto;
     margin-right:auto;
@@ -24,9 +24,6 @@
     position: relative;
     border: 6px solid var(--color-dark);
     transition:border 0.25s ease;
-
-
-    border-radius: 10px;
 }
 
 
@@ -73,7 +70,7 @@
 
 .portfolio-choice-text {
 
-    font-family:"Roboto",sans-serif;
+    font-family:"Space Grotesk","Roboto",sans-serif;
     font-weight: bold;
     font-size: 3rem;
 
@@ -89,10 +86,10 @@
 
     transition:transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
 /*
     SPECIFIC PORTFOLIO CHOICES
 */
-
 #portfolio-choice-3d-animation {
     grid-area: a;
 }
