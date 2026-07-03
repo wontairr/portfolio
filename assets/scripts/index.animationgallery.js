@@ -4,7 +4,7 @@ const videoDropDownWrapper = document.getElementById("portfolio-popup-3d-animati
 const videoDropDownButton = document.getElementById("animation-video-dropdown-arrow");
 const videoPlayer = document.getElementById("animation-video-wrapper");
 
-const videoInfoTextWrapper = document.getElementById("animation-video-dropdown-video-info-txt-wrapper");
+const videoInfoTextContainer = document.getElementById("animation-video-dropdown-vid-info-txt-container");
 
 const galleryItems = [
     {
@@ -74,37 +74,35 @@ function createGalleryItemHTML(galleryItem)
 // Insert HTML into the video info box.
 function setVideoInfo(galleryItem)
 {
-
-
     let infoHTML = `
-<p class="animation-video-dropdown-video-info-txt">
-${galleryItem.date}
-</p>
-`;
-
+        <p class="animation-video-dropdown-vid-info-txt">
+        ${galleryItem.date}
+        </p>
+    `;
 
     const descriptionLines = galleryItem.description.split("\n");
     for (const line of descriptionLines) {
         if (line.trim() == "") { continue; }
 
-        
         infoHTML += `
-<br>
-<p class="animation-video-dropdown-video-info-txt">${line}</p>
-`;
-
-
+            <br>
+            <p class="animation-video-dropdown-vid-info-txt">${line}</p>
+        `;
     }
-    videoInfoTextWrapper.innerHTML = infoHTML;
 
-    // Set text wrapper's dimensions to it's parents. (keep text in box)
-    videoInfoTextWrapper.style.width = `${videoInfoTextWrapper.parentElement.clientWidth}px`;
-    videoInfoTextWrapper.style.height = `${videoInfoTextWrapper.parentElement.clientHeight}px`;
+    videoInfoTextContainer.innerHTML = infoHTML;
+
+    resizeVideoInfoTextContainer();
 }
-window.addEventListener("resize",(e)=>{
-    videoInfoTextWrapper.style.width = `${videoInfoTextWrapper.parentElement.clientWidth}px`;
-    videoInfoTextWrapper.style.height = `${videoInfoTextWrapper.parentElement.clientHeight}px`;
-})
+// Set text containers's dimensions to it's parents. (keep text in box)
+function resizeVideoInfoTextContainer()
+{
+    videoInfoTextContainer.style.width = `${videoInfoTextContainer.parentElement.clientWidth}px`;
+    videoInfoTextContainer.style.height = `${videoInfoTextContainer.parentElement.clientHeight}px`;
+}
+window.addEventListener("resize",resizeVideoInfoTextContainer);
+
+
 
 function onGalleryItemClick(e)
 {
@@ -176,9 +174,9 @@ function videoDropDownSelectTab(tab)
             break;
 
         case TAB_VIDEO_INFO:
-            
             tabElementVideoPlayer.classList.remove("hidden");
             tabElementVideoInfo.classList.remove("hidden")
+            resizeVideoInfoTextContainer();
             break;
     }
 
