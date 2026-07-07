@@ -1,11 +1,12 @@
 
 #layout-container {
+    width:100%;
+    height:100vh;
+
     position:absolute;
     left:0;
     top:0;
     display:grid;
-    width:100%;
-    height:100vh;
 
     grid-template-columns: 0fr 1fr 0fr;
 
@@ -23,6 +24,7 @@
 
 #comfort-margin {
     width:25rem;
+
     background-image: url("/assets/images/comfort_margin.png");
     background-size:contain;
     
@@ -31,11 +33,12 @@
     opacity: 0.05;
 }
 
-main {
-    margin-left: auto;
-    margin-right: auto;
+/* The area between the navbar and the comfort margin. */
+main { 
     width:95%;
 
+    margin-left: auto;
+    margin-right: auto;
 }
 /*
     NAVBAR
@@ -46,13 +49,14 @@ main {
     border-right: 4px solid var(--color-dark);
 }
 #left-navbar-dither-overlay {
+    width:23rem;
+    height:50rem;
+
     background-image: url("/assets/images/dither_effect.png");
     background-size:contain;
     background-repeat: repeat-x;
     
 
-    width:23rem;
-    height:50rem;
 
     position: fixed;
     /* keep at bottom */
@@ -62,8 +66,9 @@ main {
     opacity:0.15;
 }
 #left-navbar-contents {
-    position:fixed;
     width:20rem;
+
+    position:fixed;
 
     display:flex;
     flex-direction: column;
@@ -105,7 +110,7 @@ main {
 }
 
 .nav-anchor-text {
-    font-family:"Space Mono",monospace;
+    font-family: var(--font-space-mono);
     font-size: large;
     font-weight: 400;
     font-style: normal;
@@ -130,7 +135,7 @@ section h1 {
 }
 
 p,pre {
-    font-family:"Space Grotesk","Roboto",sans-serif;
+    font-family: var(--font-space-grotesk);
     font-weight: 400;
     font-size: 1.25rem;
 
@@ -145,14 +150,13 @@ p,pre {
 /*
     ABOUT SECTION
 */
-
 #first-paragraph {
     margin-top:0;
     transform: translateY(-2rem);
 }
 
 #about-section-scroll-indicator {
-    font-family:"Roboto",sans-serif;
+    font-family: var(--font-roboto);
     font-weight: 100;
     font-size: 4vw;
 

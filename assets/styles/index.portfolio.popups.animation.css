@@ -16,8 +16,9 @@
     VIDEO DROPDOWN
 */
 #portfolio-popup-3d-animation-video-dropdown {
-    background-color: var(--color-fg);
     height:4rem;
+
+    background-color: var(--color-fg);
     
     display:flex;
     flex-direction: column;
@@ -26,7 +27,7 @@
 }
 
 #portfolio-popup-3d-animation-video-dropdown.gallery-dropdown {
-    height:100vh;
+    height:125vh;
 }
 
 
@@ -39,49 +40,22 @@
     transform: rotate(180deg);
 }
 
-/*
-    VIDEO PLAYER
-*/
 #animation-video-dropdown {
+    width: 100%;
+    height: 100%;
+    
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
 
-    width: 100%;
-    height: 100%;
-    
     display:flex;
     
     flex-direction: column;
     
 }
-
-
-#animation-video-dropdown-tab-buttons {
-    width:100%;
-    height:2rem;
-    display:flex;
-
-    border-bottom: 2px solid var(--color-dark);
-}
-#animation-video-dropdown-tab-buttons button {
-    width:100%;
-    height:100%;
-    border:none;
-    background-color: var(--color-fg);
-    color:var(--color-bg);
-    font-family: "Space mono",monospace;
-    font-size: 1rem;
-}
-#animation-video-dropdown-tab-buttons button:hover {
-    background-color: var(--color-fg-light);
-}
-#animation-video-dropdown-tab-buttons button.selected-tab {
-    background-color: var(--color-fg-tab-select);
-}
-
-
 #animation-video-dropdown-contents {
+    width: 100%;
+    height: 100%;
 
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -90,83 +64,16 @@
     display:flex;
     flex-direction:row;
     
-    width: 100%;
-    height: 100%;
 }
 
 
-
-#animation-video-dropdown-about {
-    width:100%;
-    height:90%;
-    
-    background-color: var(--color-fg-graylight);
-    border-bottom:0.5rem solid var(--color-fg-graydark);
-}
-.animation-video-dropdown-about-txt {
-    padding:1rem;
-    color:var(--color-dark);
-    width:100%;
-    height:100%;
-}
-
-#animation-video-dropdown-vid-info {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-
-    
-    width:50%;
-    height:100%;
-}
-#animation-video-dropdown-vid-info-txt-container {
-    position:absolute;
-    overflow-y:scroll;
-    scrollbar-color: var(--color-fg-graylight) var(--color-fg) !important;
-    scrollbar-width:auto !important;
-}
-#animation-video-dropdown-vid-info-txt-container::-webkit-scrollbar {
-    background-color: var(--color-fg) !important;
-    color:var(--color-fg-graylight) !important;
-    
-}
-
-.animation-video-dropdown-vid-info-txt {
-    color:white;
-    
-    margin:0;
-
-    padding: 0 0.5rem 0 0.5rem;
-}
-
-
-#animation-video-wrapper {
-    width: 100%;
-    height: 100%;
-
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    transition: height 0.2s ease;
-}
-#animation-video-player-placeholder-txt {
-    font-family: "Space Grotesk","Roboto",sans-serif;
-    
-    color:var(--color-bg);
-}
-
-#animation-video-wrapper iframe {
-    width:100%;
-    height:100%;
-
-    background-image: url(/assets/images/loading_video.png);
-    background-size:cover;
-    background-position-y: center;
-}
 /*
     VIDEO DROPDOWN ARROW
 */
 #animation-video-dropdown-arrow {
+    width:100%;
+    height:3rem;
+
     align-self: flex-end;
 
     overflow: hidden;
@@ -175,8 +82,6 @@
     border:none;
 
 
-    width:100%;
-    height:3rem;
     flex-grow: 1;
 
 
@@ -193,11 +98,8 @@
     
     cursor: pointer;
 }
-
 #animation-video-dropdown-arrow img {
-
     width:2.5%;
-
     
     filter:invert(100%);
     -webkit-filter: invert(100%);
@@ -209,16 +111,159 @@
 }
 
 /*
+    VIDEO DROPDOWN TAB BUTTONS
+*/
+#animation-video-dropdown-tab-buttons {
+    width:100%;
+    height:2rem;
+
+    display:flex;
+
+    border-bottom: 2px solid var(--color-dark);
+}
+#animation-video-dropdown-tab-buttons button {
+    width:100%;
+    height:100%;
+    border:none;
+
+    background-color: var(--color-fg);
+    color:var(--color-bg);
+
+    font-family: var(--font-space-mono);
+    font-size: 1rem;
+}
+#animation-video-dropdown-tab-buttons button:hover {
+    background-color: var(--color-fg-light);
+}
+#animation-video-dropdown-tab-buttons button.selected-tab {
+    background-color: var(--color-fg-tab-select);
+}
+
+/*
+    VIDEO ABOUT
+*/
+#animation-video-dropdown-about {
+    width:100%;
+    height:90%;
+    
+    background-color: var(--color-fg-graylight);
+    border-bottom:0.5rem solid var(--color-fg-graydark);
+}
+.animation-video-dropdown-about-txt {
+    width:100%;
+    height:100%;
+    
+    padding:1rem;
+
+    color:var(--color-dark);
+}
+
+/*
+    VIDEO INFO
+*/
+#animation-video-dropdown-vid-info {
+    width:50%;
+    height:100%;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+#animation-video-dropdown-vid-info-txt-container {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+
+    position:absolute;
+    overflow-y:scroll;
+    scrollbar-color: var(--color-fg-graylight) var(--color-fg) !important;
+    scrollbar-width:thin !important;
+
+    border-left:2px solid black;
+    border-bottom:2px solid black;
+}
+#animation-video-dropdown-vid-info-txt-container::-webkit-scrollbar {
+    background-color: var(--color-fg) !important;
+    color:var(--color-fg-graylight) !important;
+}
+
+.animation-video-dropdown-vid-info-txt {
+    color:white;
+    
+    font-size: 1.2rem;
+    
+    margin: 0.65rem 0 0.65rem 0;
+    
+    padding: 0 0.5rem 0 0.5rem;
+}
+.animation-video-dropdown-vid-info-txt::selection {
+    background-color: #020d1c;
+    color:white;
+}
+.vid-info-txt-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+
+}
+.vid-info-txt-date {
+
+    border-bottom:2px solid black;
+}
+.vid-info-txt-special {
+    font-family: var(--font-space-mono);
+    font-weight: bold;
+    font-size: 1.5rem;
+    
+    background-color: var(--color-fg-dark);
+    border-radius: 25px;
+    padding:0.5rem;
+    
+    margin-right: 0.5rem;
+
+}
+
+/*
+    VIDEO PLAYER
+*/
+#animation-video-wrapper {
+    width: 100%;
+    height: 100%;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transition: height 0.2s ease;
+}
+#animation-video-player-placeholder-txt {
+    font-family: var(--font-space-grotesk);
+    
+    color:var(--color-bg);
+
+    user-select: none;
+}
+
+#animation-video-wrapper iframe {
+    width:100%;
+    height:100%;
+
+    background-image: url(/assets/images/loading_video.png);
+    background-size:cover;
+    background-position-y: center;
+}
+
+/*
     ANIMATION GALLERY
 */
 #portfolio-popup-3d-animation-gallery {
+    height:100%;
+
     display:flex;
     flex-wrap: wrap;
     align-items: start;
 
     padding: 1rem;
 
-    height:100%;
 
     overflow:scroll;
     overflow-x: hidden;
@@ -229,11 +274,12 @@
 }
 
 .popup-3d-animation-gallery-item {
+    width:20%;
+
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width:20%;
 
     /* Keep everything to the left. */
     margin-right: auto;
@@ -241,7 +287,7 @@
 
 
 .popup-3d-animation-gallery-item figcaption {
-    font-family:"Space Grotesk","Roboto",sans-serif;
+    font-family: var(--font-space-grotesk);
     font-size: 1.25rem;
     font-weight: 400;
 
@@ -255,16 +301,16 @@
 }
 
 .popup-3d-animation-gallery-item img {
+    width:max(100%,8rem);
+    height:max(100%,4.5rem);
+    /* magic number that solves all my problems :D */
+    min-height:calc(0.1363191763 * 100vh);
+
     border:0.25rem solid var(--color-fg);
     border-radius: 0.25rem;
 
     background-image: url(/assets/images/loading_image.png);
     background-size:cover;
-
-    width:max(100%,8rem);
-    height:max(100%,4.5rem);
-    min-height:calc(0.1363191763 * 100vh);
-
 
     display:inline-block;
   
@@ -280,10 +326,49 @@
 .popup-3d-animation-gallery-item:hover img {
     filter:brightness(1.1);
     -webkit-filter: brightness(1.1);
+
     border-color: var(--color-fg-light);
+
     transform:translateY(-5px);
 }
 
 .popup-3d-animation-gallery-item:hover figcaption {
     color: var(--color-fg-light);
+}
+
+
+/*
+    ANIMATION GALLERY BOTTOM BAR (search and stuff)
+*/
+#portfolio-popup-3d-animation-bottom-bar {
+    height:3rem;
+    min-height: 3rem;
+
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    background-color: var(--color-fg);
+}
+
+#animation-gallery-search-bar {
+    width:20rem;
+    height:2rem;
+
+    background-color: var(--color-fg-dark);
+    color:var(--color-bg);
+
+    border-radius: 10px;
+    border:none;
+
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+
+    font-family: var(--font-roboto);
+    font-size: 1.25rem;
+}
+
+#animation-gallery-search-bar:focus {
+    outline:2px solid white;
 }

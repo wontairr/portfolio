@@ -6,6 +6,15 @@ const videoPlayer = document.getElementById("animation-video-wrapper");
 
 const videoInfoTextContainer = document.getElementById("animation-video-dropdown-vid-info-txt-container");
 
+const [tabElementAbout, tabElementVideoPlayer, tabElementVideoInfo] = document.querySelectorAll(".animation-video-dropdown-tab");
+const tabButtons = document.querySelectorAll("#animation-video-dropdown-tab-buttons button");
+
+const TAB_ANIMATION_ABOUT = 0;
+const TAB_VIDEO_PLAYER = 1;
+const TAB_VIDEO_INFO = 2;
+
+const videoSearchBar = document.getElementById("animation-gallery-search-bar");
+
 const galleryItems = [
     {
         title:          "AK47 In The Backrooms",
@@ -56,6 +65,17 @@ An animation based of the Peach meme.
     },
 ];
 
+// Keys are the lowercase titles of the items, values are the elements.
+const loadedGalleryItemElements = {};
+
+
+/////
+///
+/// VIDEO GALLERY
+///
+/////
+
+
 
 // Generate HTML snippet for a gallery item.
 function createGalleryItemHTML(galleryItem)
@@ -71,29 +91,6 @@ function createGalleryItemHTML(galleryItem)
 }
 
 
-// Insert HTML into the video info box.
-function setVideoInfo(galleryItem)
-{
-    let infoHTML = `
-        <p class="animation-video-dropdown-vid-info-txt">
-        ${galleryItem.date}
-        </p>
-    `;
-
-    const descriptionLines = galleryItem.description.split("\n");
-    for (const line of descriptionLines) {
-        if (line.trim() == "") { continue; }
-
-        infoHTML += `
-            <br>
-            <p class="animation-video-dropdown-vid-info-txt">${line}</p>
-        `;
-    }
-
-    videoInfoTextContainer.innerHTML = infoHTML;
-
-    resizeVideoInfoTextContainer();
-}
 // Set text containers's dimensions to it's parents. (keep text in box)
 function resizeVideoInfoTextContainer()
 {
@@ -102,6 +99,40 @@ function resizeVideoInfoTextContainer()
 }
 window.addEventListener("resize",resizeVideoInfoTextContainer);
 
+
+// Insert HTML into the video info box.
+const videoDescriptionRegex = /(rig|assets|sounds|music)/ig;
+function setVideoInfo(galleryItem)
+{
+    let infoHTML = `
+        <h3 class="animation-video-dropdown-vid-info-txt vid-info-txt-title">
+        ${galleryItem.title}
+        </h3>
+        <p class="animation-video-dropdown-vid-info-txt vid-info-txt-date">
+        ${galleryItem.date}
+        </p>
+    `;
+
+    const descriptionLines = galleryItem.description.split("\n");
+    // Add each line of the description to the info box.
+    for (const line of descriptionLines) {
+        if (line.trim() == "") { continue; }
+        
+        let modifiedLine = line;
+        // Give certain terms different styling.
+        modifiedLine = line.replaceAll(videoDescriptionRegex,"<span class=\"vid-info-txt-special\">$1</span>")
+
+        infoHTML += `
+            <br>
+            <p class="animation-video-dropdown-vid-info-txt">${modifiedLine}</p>
+        `;
+    }
+
+    videoInfoTextContainer.innerHTML = infoHTML;
+
+    resizeVideoInfoTextContainer();
+    videoInfoTextContainer.scrollTop = 0;
+}
 
 
 function onGalleryItemClick(e)
@@ -131,9 +162,13 @@ function loadGalleryItems()
     }
 
     const galleryItemElements = document.querySelectorAll(".popup-3d-animation-gallery-item");
+
     // Setup click listeners for all the gallery item elements we just made.
     galleryItemElements.forEach( (item) => {
         item.addEventListener("click",onGalleryItemClick);
+        // Save the element for later use. (in search mainly)
+        const galleryItemTitle = item.querySelector("figcaption").textContent.toLowerCase();
+        loadedGalleryItemElements[galleryItemTitle] = item;
     } );
 }
 
@@ -142,14 +177,13 @@ videoDropDownButton.addEventListener("click",(e) => {
 });
 
 
-// VIDEO DROPDOWN TABS.
 
-const [tabElementAbout, tabElementVideoPlayer, tabElementVideoInfo] = document.querySelectorAll(".animation-video-dropdown-tab");
-const tabButtons = document.querySelectorAll("#animation-video-dropdown-tab-buttons button");
+/////
+///
+/// VIDEO DROPDOWN TABS
+///
+/////
 
-const TAB_ANIMATION_ABOUT = 0;
-const TAB_VIDEO_PLAYER = 1;
-const TAB_VIDEO_INFO = 2;
 
 
 function videoDropDownSelectTab(tab)
@@ -176,6 +210,8 @@ function videoDropDownSelectTab(tab)
         case TAB_VIDEO_INFO:
             tabElementVideoPlayer.classList.remove("hidden");
             tabElementVideoInfo.classList.remove("hidden")
+
+            videoInfoTextContainer.scrollTop = 0;
             resizeVideoInfoTextContainer();
             break;
     }
@@ -185,9 +221,9 @@ function videoDropDownSelectTab(tab)
         const button = tabButtons[i];
 
         // Is this the button we selected? if so, add the style class.
-        if (i == tab) {
+        if (i === tab) {
             button.classList.add("selected-tab");
-            if (tab == TAB_VIDEO_INFO) {
+            if (tab === TAB_VIDEO_INFO) {
                 tabButtons[TAB_VIDEO_PLAYER].classList.add("selected-tab");                
             }
             continue;
@@ -195,3 +231,34 @@ function videoDropDownSelectTab(tab)
         button.classList.remove("selected-tab");
     }
 }
+
+
+
+/////
+///
+/// VIDEO SEARCH BAR
+///
+/////
+
+
+// Hides/reveals items based on search query.
+function searchGallery(query)
+{
+    query = query.toLowerCase();
+    const isQueryEmpty = query.trim() == "";
+
+    for (const itemTitle in loadedGalleryItemElements) {
+        const itemEl = loadedGalleryItemElements[itemTitle];
+        // No query? Just reveal all the items again.
+        if (isQueryEmpty) {
+            itemEl.classList.remove("hidden");
+            continue;
+        }
+        if (!itemTitle.includes(query)){
+            itemEl.classList.add("hidden");
+        } else {
+            itemEl.classList.remove("hidden");
+        }
+    }
+}
+videoSearchBar.addEventListener("input",(e) => searchGallery(videoSearchBar.value));

@@ -5,7 +5,7 @@ const aboutSection = document.getElementById("about-section");
 function resizeAboutSection()
 {
     const newHeight = Math.max(aboutSection.clientHeight,window.innerHeight).toString() + "px";
-    aboutSection.style.height = newHeight;
+    aboutSection.style.minHeight = newHeight;
 }
 
 if (document.readyState === "loading") {

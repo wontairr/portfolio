@@ -96,7 +96,7 @@
 .portfolio-popup-header {
     text-align: center;
 
-    font-family:"Space Mono",monospace;
+    font-family: var(--font-space-mono);
 
     color:var(--color-dark);
     background-color: var(--color-fg-graylight);

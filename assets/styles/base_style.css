@@ -1,4 +1,8 @@
 :root {
+    --font-space-grotesk: "Space Grotesk","Roboto",sans-serif;
+    --font-space-mono: "Space Mono", monospace;
+    --font-roboto: "Roboto", sans-serif;
+
     --color-dark:       #000000;
     --color-darkgray:   #363946;
     --color-darklight:  #696773;
@@ -7,8 +11,10 @@
     --color-bg-shade:   #F2F2DC;
     --color-bg-darkshade:   #cbcbb6;
     
-    --color-fg:             #00439B;
     --color-fg-light:       #0A74FF;
+    --color-fg:             #00439B;
+    --color-fg-dark:        #072f64;
+    
     --color-fg-tab-select:  #06387b;
 
     --color-fg-graylight:   #BFC3BA;
@@ -33,12 +39,12 @@ html {
 
 body {
     background-color:var(--color-bg);
-    font-family: "Roboto", sans-serif;
+    font-family: var(--font-roboto);
     font-size: large;
 }
 
 .my-name {
-    font-family:"Roboto",sans-serif;
+    font-family: var(--font-roboto);
     font-weight: bold;
     text-transform: lowercase;
 }
