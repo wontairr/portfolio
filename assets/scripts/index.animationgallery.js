@@ -149,6 +149,7 @@ function onGalleryItemClick(e)
     if (!videoDropDownWrapper.classList.contains("gallery-dropdown")) {   
         videoDropDownWrapper.classList.toggle("gallery-dropdown");
     }
+    videoDropDownSelectTab(TAB_VIDEO_PLAYER,true);
 
     setVideoInfo(galleryItem);
 }
@@ -186,10 +187,11 @@ videoDropDownButton.addEventListener("click",(e) => {
 
 
 
-function videoDropDownSelectTab(tab)
+function videoDropDownSelectTab(tab,isReFocusingVideoPlayer = false)
 {
     // Hide everything.
     const wasVideoPlayerVisible = !tabElementVideoPlayer.classList.contains("hidden");
+    const wasVideoInfoVisible = !tabElementVideoInfo.classList.contains("hidden");
 
     tabElementAbout.classList.add("hidden");
     tabElementVideoPlayer.classList.add("hidden");
@@ -205,9 +207,15 @@ function videoDropDownSelectTab(tab)
         case TAB_VIDEO_PLAYER:
 
             tabElementVideoPlayer.classList.remove("hidden");
+            // If we want to refocus to the video player tab, -
+            // - make sure we don't close the already opened video info.
+            if (isReFocusingVideoPlayer && wasVideoInfoVisible) {
+                tabElementVideoInfo.classList.remove("hidden")
+            }
             break;
 
         case TAB_VIDEO_INFO:
+            // Show both video info and player.
             tabElementVideoPlayer.classList.remove("hidden");
             tabElementVideoInfo.classList.remove("hidden")
 
@@ -224,8 +232,15 @@ function videoDropDownSelectTab(tab)
         if (i === tab) {
             button.classList.add("selected-tab");
             if (tab === TAB_VIDEO_INFO) {
+                // Since we open the video player too, makes sense to keep it's button selected.
                 tabButtons[TAB_VIDEO_PLAYER].classList.add("selected-tab");                
             }
+            continue;
+        }
+        
+        // If we are refocusing to the video player tab, and video info was visible, -
+        // - don't "unselect" the video info tab.
+        if (i === TAB_VIDEO_INFO && isReFocusingVideoPlayer && wasVideoInfoVisible) {
             continue;
         }
         button.classList.remove("selected-tab");
