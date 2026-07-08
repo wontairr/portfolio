@@ -116,7 +116,7 @@ function setVideoInfo(galleryItem)
     const descriptionLines = galleryItem.description.split("\n");
     // Add each line of the description to the info box.
     for (const line of descriptionLines) {
-        if (line.trim() == "") { continue; }
+        if (line.trim() === "") { continue; }
         
         let modifiedLine = line;
         // Give certain terms different styling.
@@ -237,7 +237,7 @@ function videoDropDownSelectTab(tab,isReFocusingVideoPlayer = false)
             }
             continue;
         }
-        
+
         // If we are refocusing to the video player tab, and video info was visible, -
         // - don't "unselect" the video info tab.
         if (i === TAB_VIDEO_INFO && isReFocusingVideoPlayer && wasVideoInfoVisible) {
@@ -260,7 +260,7 @@ function videoDropDownSelectTab(tab,isReFocusingVideoPlayer = false)
 function searchGallery(query)
 {
     query = query.toLowerCase();
-    const isQueryEmpty = query.trim() == "";
+    const isQueryEmpty = query.trim() === "";
 
     for (const itemTitle in loadedGalleryItemElements) {
         const itemEl = loadedGalleryItemElements[itemTitle];
