@@ -23,6 +23,28 @@ const portfolioPopupCloseButtons = document.querySelectorAll(".portfolio-popup-c
 // Keys are IDs like "3d-animation" and the values are references to the popup elements.
 const portfolioPopupList = {};
 
+portfolioPopups.forEach( (popup) => {
+    const popupId = popup.id;
+    // Remove 'portfolio-popup-' from the id.
+    const portfolioChoiceName = popupId.slice(16);
+    // Store it for later when we need to open a popup.
+    portfolioPopupList[portfolioChoiceName] = popup;
+
+    popup.isPortfolioPopup = true;
+    popup.contentElement = popup.querySelector(".portfolio-popup-contents");
+
+    popup.addEventListener("click",popupClose);
+});
+
+portfolioPopupCloseButtons.forEach( (btn) => {
+    btn.addEventListener("click",popupClose);
+})
+
+portfolioChoices.forEach( (btn) => {
+    btn.addEventListener("click",popupOpen);
+});
+
+
 function popupClose(e)
 {
 
@@ -52,24 +74,6 @@ function popupClose(e)
     }
 }
 
-portfolioPopupCloseButtons.forEach( (btn) => {
-    btn.addEventListener("click",popupClose);
-})
-
-
-portfolioPopups.forEach( (popup) => {
-    const popupId = popup.id;
-    // Remove 'portfolio-popup-' from the id.
-    const portfolioChoiceName = popupId.slice(16);
-    // Store it for later when we need to open a popup.
-    portfolioPopupList[portfolioChoiceName] = popup;
-
-    popup.isPortfolioPopup = true;
-    popup.contentElement = popup.querySelector(".portfolio-popup-contents");
-
-    popup.addEventListener("click",popupClose);
-});
-
 function popupOpen(e)
 {
     
@@ -98,7 +102,3 @@ function popupOpen(e)
     // Scroll the content box to the top.
     popup.contentElement.scrollTop = 0;
 }
-
-portfolioChoices.forEach( (btn) => {
-    btn.addEventListener("click",popupOpen);
-});
