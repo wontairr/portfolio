@@ -94,7 +94,7 @@
             <div class="portfolio-popup-content-container">
                 <header class="portfolio-popup-header"><h1>3D Animation</h1></header>
                 <div class="portfolio-popup-contents">
-                    <div id="portfolio-popup-3d-animation-video-dropdown">
+                    <section id="portfolio-popup-3d-animation-video-dropdown">
                         <div id="animation-video-dropdown">
                             <div id="animation-video-dropdown-tab-buttons">
                                 <button onclick="videoDropDownSelectTab(0)">About</button>
@@ -103,31 +103,40 @@
                             </div>
                             <div id="animation-video-dropdown-contents">
                                 
-                                <div id="animation-video-dropdown-about"        class="animation-video-dropdown-tab hidden">
-                                    <p class="animation-video-dropdown-about-txt">
-                                        Welcome to the 3D Animation Gallery! This is the best of my work. I use Blender 3D for all of my animations.
-                                    </p>
-                                </div>
+                                <section id="animation-video-dropdown-about"        class="animation-video-dropdown-tab hidden">
+                                    <div id="animation-video-dropdown-about-txt-container">
+                                        <pre class="animation-video-dropdown-about-txt">
+Welcome to the 3D Animation Gallery! Here you can view my best work.
+
+I use the following programs:
+                                        </pre>
+                                        <ul class="animation-video-dropdown-about-txt">
+                                            <li><strong>Blender 3D</strong> - Animation & 3D Modelling</li>
+                                            <li><strong>Ableton Live</strong> - Sound Design</li>
+                                            <li><strong>Davinci Resolve</strong> <em>(Past work used other similar software)</em> - Editing the renders and sounds together</li>
+                                        </ul>
+                                    </div>
+                                </section>
                                 <br>
                                 
-                                <div id="animation-video-wrapper"               class="animation-video-dropdown-tab">
+                                <section id="animation-video-wrapper"               class="animation-video-dropdown-tab">
                                     <h2 id="animation-video-player-placeholder-txt">Choose an Animation From the Gallery Below!</h2>
-                                </div>
+                                </section>
 
-                                <div id="animation-video-dropdown-vid-info"   class="animation-video-dropdown-tab hidden">
+                                <section id="animation-video-dropdown-vid-info"   class="animation-video-dropdown-tab hidden">
                                     <div id="animation-video-dropdown-vid-info-txt-container">
                                         <p class="animation-video-dropdown-vid-info-txt">
                                             Video info will appear here when a video is selected from the gallery below.
                                         </p>
                                     </div>
-                                </div>
+                                </section>
 
                             </div>
                         </div>
                         <button id="animation-video-dropdown-arrow">
                             <img src="/assets/images/arrow_down.svg">
                         </button>
-                    </div>
+                    </section>
                     <!-- Filled by index.animationgallery.js -->
                     <!-- FIXME: The gallery items don't change size, they should shrink/grow with screen size. -->
                     <section id="portfolio-popup-3d-animation-gallery">
