@@ -274,25 +274,27 @@
 
     padding: 1rem;
 
-
     overflow:scroll;
     overflow-x: hidden;
-
-    /* Will be spaced evenly but everything will stick to the left. (see below) */
-
 
 }
 
 .popup-3d-animation-gallery-item {
     width:20%;
 
+
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
+
     /* Keep everything to the left. */
     margin-right: auto;
+    margin-left: auto;
+
+    padding: 0.1rem;
+
 }
 
 
