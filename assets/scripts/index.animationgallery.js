@@ -78,11 +78,12 @@ const loadedGalleryItemElements = {};
 
 
 // Generate HTML snippet for a gallery item.
+// FIXME: Wrap figure element in a button.
 function createGalleryItemHTML(galleryItem)
 {
     const indexInArray = galleryItems.indexOf(galleryItem);
     const itemHTML = `
-<figure class="popup-3d-animation-gallery-item" id="galleryItem-${indexInArray}">
+<figure role="button" tabindex="0" class="popup-3d-animation-gallery-item" id="galleryItem-${indexInArray}">
     <img src="${galleryItem.thumbnail}">
     <figcaption>${galleryItem.title}</figcaption>
 </figure>
