@@ -21,6 +21,7 @@ const galleryItems = [
         html:           `<iframe width="560" height="315" src="https://www.youtube.com/embed/H961LwU39EE?si=UT31EYc0cU7KjuYA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
         thumbnail:      "https://img.youtube.com/vi/H961LwU39EE/mqdefault.jpg",
         date:           new Date("May 15 2022"),
+        tags:           ["rifle"],
         description:    `
 Rig: hyper
 
@@ -36,6 +37,7 @@ Music: Cowbell Cult - Smoke
         html:           `<iframe width="560" height="315" src="https://www.youtube.com/embed/ZMMc1QN44SI?si=JTGXpaNE2xDaHMpj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
         thumbnail:      "https://img.youtube.com/vi/ZMMc1QN44SI/mqdefault.jpg",
         date:           new Date("March 18 2023"),
+        tags:           ["smg","dual"],
         description:    `
 Rig: h33eLmeted on GameBanana
 
@@ -51,6 +53,7 @@ Music: Shogun - Ulysees
         html:           `<iframe width="560" height="315" src="https://www.youtube.com/embed/CyEqnZdAsoI?si=lHPfH5NZ9qHGchYD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
         thumbnail:      "https://img.youtube.com/vi/CyEqnZdAsoI/mqdefault.jpg",
         date:           new Date("April 26 2023"),
+        tags:           ["throw"],
         description:    `
 Rig: hyper
 
@@ -83,7 +86,8 @@ const dateStringOptions = {
 };
 
 // Keys are the lowercase titles of the items, values are the elements.
-const loadedGalleryItemElements = {};
+// Has "tags" object where the keys are tags and the values are arrays with the related elements.
+let loadedGalleryItemElements = {};
 
 
 
@@ -155,12 +159,19 @@ function setVideoInfo(galleryItem)
 }
 
 
+function getGalleryItemFromItemElement(galleryItemElement)
+{
+    // Cut out the array index from the id string.
+    const galleryItemIndex = parseInt(galleryItemElement.id.slice(12));
+    const galleryItem = galleryItems[galleryItemIndex];
+    return galleryItem;
+}
+
+
 function onGalleryItemClick(e)
 {
     const item = e.currentTarget;
-    // Cut out the array index from the id string.
-    const galleryItemIndex = parseInt(item.id.slice(12));
-    const galleryItem = galleryItems[galleryItemIndex];
+    const galleryItem = getGalleryItemFromItemElement(item);
     
     // Set the video player's HTML to something like youtube or whatever.
     videoPlayer.innerHTML = galleryItem.html;
@@ -184,13 +195,31 @@ function loadGalleryItems()
 
     const galleryItemElements = [...document.querySelectorAll(".popup-3d-animation-gallery-item")];
 
+    // Clear the previous cache.
+    loadedGalleryItemElements = {};
+    // Setup tag map.
+    loadedGalleryItemElements.tags = new Map();
+
+    const tags = loadedGalleryItemElements.tags;
+
     // Setup click listeners for all the gallery item elements we just made.
-    galleryItemElements.forEach( (item) => {
-        item.addEventListener("click",onGalleryItemClick);
-        // Save the element for later use. (in search mainly)
-        const galleryItemTitle = item.querySelector("figcaption").textContent.toLowerCase();
-        loadedGalleryItemElements[galleryItemTitle] = item;
-    } );
+    for (const itemElement of galleryItemElements) {
+        itemElement.addEventListener("click",onGalleryItemClick);
+
+        // Cache the element reference for later use. (in search mainly)
+        const galleryItem = getGalleryItemFromItemElement(itemElement);
+        const galleryItemTitle = galleryItem.title.toLowerCase();
+        loadedGalleryItemElements[galleryItemTitle] = itemElement;
+
+        for (const tag of galleryItem.tags) {
+            // Create tag array.
+            if (!tags.has(tag)) {
+                tags.set(tag,[itemElement]);
+                continue;
+            }
+            tags.get(tag).push(itemElement);
+        }
+    }
 }
 
 videoDropDownButton.addEventListener("click",(e) => {
@@ -284,6 +313,10 @@ function searchGallery(query)
     const isQueryEmpty = query.trim() === "";
 
     for (const itemTitle in loadedGalleryItemElements) {
+        if (itemTitle === "tags") {
+            continue;
+        }
+
         const itemEl = loadedGalleryItemElements[itemTitle];
         // No query? Just reveal all the items again.
         if (isQueryEmpty) {
@@ -295,6 +328,17 @@ function searchGallery(query)
         } else {
             itemEl.classList.remove("hidden");
         }
+    }
+    if (isQueryEmpty) {
+        return;
+    }
+    // Reveal elements based on their tags.
+    const tags = loadedGalleryItemElements.tags;
+    if (!tags.has(query)) {
+        return;
+    }
+    for (const itemEl of tags.get(query)) {
+        itemEl.classList.remove("hidden");
     }
 }
 videoSearchBar.addEventListener("input",(e) => searchGallery(videoSearchBar.value));
