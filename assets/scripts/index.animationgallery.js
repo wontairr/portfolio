@@ -20,7 +20,7 @@ const galleryItems = [
         title:          "AK47 In The Backrooms",
         html:           `<iframe width="560" height="315" src="https://www.youtube.com/embed/H961LwU39EE?si=UT31EYc0cU7KjuYA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
         thumbnail:      "https://img.youtube.com/vi/H961LwU39EE/mqdefault.jpg",
-        date:           "May 15th, 2022",
+        date:           new Date("May 15 2022"),
         description:    `
 Rig: hyper
 
@@ -35,7 +35,7 @@ Music: Cowbell Cult - Smoke
         title:          "Dual Tec9's",
         html:           `<iframe width="560" height="315" src="https://www.youtube.com/embed/ZMMc1QN44SI?si=JTGXpaNE2xDaHMpj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
         thumbnail:      "https://img.youtube.com/vi/ZMMc1QN44SI/mqdefault.jpg",
-        date:           "March 18th, 2023",
+        date:           new Date("March 18 2023"),
         description:    `
 Rig: h33eLmeted on GameBanana
 
@@ -50,7 +50,7 @@ Music: Shogun - Ulysees
         title:          "Peach",
         html:           `<iframe width="560" height="315" src="https://www.youtube.com/embed/CyEqnZdAsoI?si=lHPfH5NZ9qHGchYD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
         thumbnail:      "https://img.youtube.com/vi/CyEqnZdAsoI/mqdefault.jpg",
-        date:           "April 26th, 2023",
+        date:           new Date("April 26 2023"),
         description:    `
 Rig: hyper
 
@@ -65,8 +65,26 @@ An animation based of the Peach meme.
     },
 ];
 
+// Sort by date.
+galleryItems.sort( (a,b) => {
+    if (a.date < b.date) {
+        return -1;
+    } else if (a.date > b.date) {
+        return 1;
+    }
+    return 0;
+});
+
+
+const dateStringOptions = {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
+
 // Keys are the lowercase titles of the items, values are the elements.
 const loadedGalleryItemElements = {};
+
 
 
 /////
@@ -105,12 +123,13 @@ window.addEventListener("resize",resizeVideoInfoTextContainer);
 const videoDescriptionRegex = /(rig|assets|sounds|music)/ig;
 function setVideoInfo(galleryItem)
 {
+
     let infoHTML = `
         <h3 class="animation-video-dropdown-vid-info-txt vid-info-txt-title">
         ${galleryItem.title}
         </h3>
         <p class="animation-video-dropdown-vid-info-txt vid-info-txt-date">
-        ${galleryItem.date}
+        ${galleryItem.date.toLocaleDateString(undefined,dateStringOptions)}
         </p>
     `;
 
@@ -163,7 +182,7 @@ function loadGalleryItems()
         animationGallery.innerHTML += createGalleryItemHTML(galleryItem);
     }
 
-    const galleryItemElements = document.querySelectorAll(".popup-3d-animation-gallery-item");
+    const galleryItemElements = [...document.querySelectorAll(".popup-3d-animation-gallery-item")];
 
     // Setup click listeners for all the gallery item elements we just made.
     galleryItemElements.forEach( (item) => {
@@ -255,6 +274,7 @@ function videoDropDownSelectTab(tab,isReFocusingVideoPlayer = false)
 /// VIDEO SEARCH BAR
 ///
 /////
+
 
 
 // Hides/reveals items based on search query.
