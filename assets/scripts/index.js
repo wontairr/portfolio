@@ -101,4 +101,5 @@ function popupOpen(e)
     popup.classList.toggle("shown");
     // Scroll the content box to the top.
     popup.contentElement.scrollTop = 0;
+
 }

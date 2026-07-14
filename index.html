@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/styles/index.section.portfolio.css">
     <link rel="stylesheet" href="assets/styles/index.portfolio.popups.css">
     <link rel="stylesheet" href="assets/styles/index.portfolio.popups.animation.css">
+    <link rel="stylesheet" href="assets/styles/index.portfolio.popups.programming.css">
     <title>wontairr's site</title>
 </head>
 <body>
@@ -29,25 +30,30 @@
         </nav>
         <main>
             <section id="about-section">
-                <h1>Hello !</h1>
-                <pre id="first-paragraph">
-	My name is Nathanael, but online I go by <span class="my-name">Wontairr</span>. My best work can be found in my Programming or 3D Animation projects, but I also have experience in other digital work such as 3D Modeling, Sound Design, Video Editing, and more!
-	
-    I have spent most of my life learning the solo game development pipeline through game engines like Unity, Godot, and Source. Overtime I've realized that while I'm quite capable by myself, <strong>my work is most enjoyable when I am part of a team.</strong> Being able to give and receive feedback on each others work is how projects get refined and become great.
-
-    Feel free to use the buttons on the left side to navigate the site! Right below this paragraph is my portfolio.
-	
-	
-                </pre>
+                <div id="about-section-top-container">
+                    <h1>Hello !</h1>
+                    <pre id="first-paragraph">
+        My name is Nathanael, but online I go by <span class="my-name">Wontairr</span>. My best work can be found in my Programming or 3D Animation projects, but I also have experience in other digital work such as 3D Modeling, Sound Design, Video Editing, and more!
+        
+    <!--    I have spent most of my life learning the solo game development pipeline through game engines like Unity, Godot, and Source. Overtime I've realized that while I'm quite capable by myself, <strong>my work is most enjoyable when I am part of a team.</strong> Being able to give and receive feedback on each others work is how projects get refined and become great.-->
+    <strong id="first-paragraph-end-statement">Feel free to use the buttons on the left side to navigate the site! 
+    Right below this is my portfolio.</strong>
+        
+        
+                    </pre>
+                </div>
                 <div id="about-section-scroll-indicator">
-                    <img src="assets/images/arrow_down.svg"/>
-                    <img src="assets/images/arrow_down.svg"/>
-                    <img src="assets/images/arrow_down.svg"/>
-                    <img src="assets/images/arrow_down.svg"/>
-                    <img src="assets/images/arrow_down.svg"/>
-                    <img src="assets/images/arrow_down.svg"/>
+                    <div id="about-section-scroll-indicator-bar">
+                        <img src="assets/images/arrow_down.svg"/>
+                        <img src="assets/images/arrow_down.svg"/>
+                        <img src="assets/images/arrow_down.svg"/>
+                        <img src="assets/images/arrow_down.svg"/>
+                        <img src="assets/images/arrow_down.svg"/>
+                        <img src="assets/images/arrow_down.svg"/>
+                    </div>
                 </div>
             </section>
+
             <section id="portfolio-section">
                 <h1>Portfolio</h1>
                 
@@ -69,26 +75,17 @@
                     <div class="portfolio-choice" id="portfolio-choice-other-projects">
                         <div class="portfolio-choice-bg"></div>
                         <div class="portfolio-choice-overlay">
-                            <span class="portfolio-choice-text">Other Projects</span>
+                            <span class="portfolio-choice-text">Other Work</span>
                         </div>
                     </div>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nam, quas libero aliquid expedita veniam tenetur eum veritatis soluta necessitatibus. Natus, placeat iusto eaque sit ipsam et pariatur dolor soluta!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nam, quas libero aliquid expedita veniam tenetur eum veritatis soluta necessitatibus. Natus, placeat iusto eaque sit ipsam et pariatur dolor soluta!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nam, quas libero aliquid expedita veniam tenetur eum veritatis soluta necessitatibus. Natus, placeat iusto eaque sit ipsam et pariatur dolor soluta!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nam, quas libero aliquid expedita veniam tenetur eum veritatis soluta necessitatibus. Natus, placeat iusto eaque sit ipsam et pariatur dolor soluta!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nam, quas libero aliquid expedita veniam tenetur eum veritatis soluta necessitatibus. Natus, placeat iusto eaque sit ipsam et pariatur dolor soluta!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nam, quas libero aliquid expedita veniam tenetur eum veritatis soluta necessitatibus. Natus, placeat iusto eaque sit ipsam et pariatur dolor soluta!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nam, quas libero aliquid expedita veniam tenetur eum veritatis soluta necessitatibus. Natus, placeat iusto eaque sit ipsam et pariatur dolor soluta!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nam, quas libero aliquid expedita veniam tenetur eum veritatis soluta necessitatibus. Natus, placeat iusto eaque sit ipsam et pariatur dolor soluta!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nam, quas libero aliquid expedita veniam tenetur eum veritatis soluta necessitatibus. Natus, placeat iusto eaque sit ipsam et pariatur dolor soluta!</p>
             </section>
 
         </main>
         <div id="comfort-margin"></div>
 
         <!-- 3D Animation Popup -->
-        <div class="portfolio-popup" id="portfolio-popup-3d-animation">
+        <div class="portfolio-popup hidden" id="portfolio-popup-3d-animation">
             <button class="portfolio-popup-close-btn"><img class="cross-icon" src="assets/images/cross.svg"/></button>
             
             <div class="portfolio-popup-content-container">
@@ -145,6 +142,19 @@ I use the following programs:
                         <label>
                             <input id="animation-gallery-search-bar" type="text" placeholder="Search" aria-placeholder="Search">
                         </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Programming Popup -->
+        <div class="portfolio-popup" id="portfolio-popup-programming">
+            <button class="portfolio-popup-close-btn"><img class="cross-icon" src="assets/images/cross.svg"/></button>
+            
+            <div class="portfolio-popup-content-container">
+                <header class="portfolio-popup-header"><h1>Programming</h1></header>
+                <div class="portfolio-popup-contents">
+                    <div class="programming-item">
+                        <h2 class="programming-item-header">This Site!</h2>
                     </div>
                 </div>
             </div>
