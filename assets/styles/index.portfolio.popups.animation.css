@@ -305,7 +305,7 @@
     
     text-wrap: nowrap;
     
-    color: var(--text-color-light);
+    color: var(--color-text-light);
 
     transition: color 0.05s ease;
 }
