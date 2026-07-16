@@ -39,7 +39,7 @@
 }
 
 .programming-item-caption {
-    color:var(--color-bg);
+    color: var(--color-text-light);
     font-family: var(--font-space-grotesk);
 
     box-sizing: border-box;
@@ -68,6 +68,10 @@
 
 .programming-item-caption a {
     display:inline-block;
-    color:white;
+    color: var(--color-text-light);
     margin-bottom: 1rem;
+
+    text-decoration: none;
+
+    background-color: var(--color-fg);
 }

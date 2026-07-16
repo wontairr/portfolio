@@ -3,11 +3,14 @@
     --font-space-mono: "Space Mono", monospace;
     --font-roboto: "Roboto", sans-serif;
 
+    --color-text-dark:  #000000;
+    --color-text-light: #F8F8E8;
+
     --color-dark:       #000000;
     --color-darkgray:   #363946;
     --color-darklight:  #696773;
     
-    --color-bg:         #F8F8E8;
+    --color-bg:         #f3f3e3;
     --color-bg-shade:   #F2F2DC;
     --color-bg-darkshade:   #cbcbb6;
     

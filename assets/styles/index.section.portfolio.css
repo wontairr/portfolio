@@ -75,7 +75,7 @@
     font-weight: bold;
     font-size: 3rem;
 
-    color:white;
+    color: var(--color-text-light);
     text-shadow:
         -2px -2px 2px #000,
         2px -2px 2px #000,

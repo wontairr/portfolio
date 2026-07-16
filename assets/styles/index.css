@@ -86,7 +86,7 @@ main {
 
 
 .nav-anchor {
-    color: var(--color-dark);
+    color: var(--color-text-dark);
     background-color:var(--color-bg-shade);
 
     border:3px solid var(--color-dark);
@@ -105,7 +105,7 @@ main {
 }
 .nav-anchor:hover {
     background-color: var(--color-fg);
-    color:var(--color-bg);
+    color: var(--color-text-light);
 
 }
 

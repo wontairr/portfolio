@@ -127,7 +127,7 @@
     border:none;
 
     background-color: var(--color-fg);
-    color:var(--color-bg);
+    color: var(--color-text-light);
 
     font-family: var(--font-space-mono);
     font-size: 1rem;
@@ -162,7 +162,7 @@
     
     font-family: var(--font-space-grotesk);
     
-    color:var(--color-dark);
+    color: var(--color-text-dark);
 }
 #animation-video-dropdown-about-txt-container li {
     margin-top:1rem;
@@ -199,7 +199,7 @@
 }
 
 .animation-video-dropdown-vid-info-txt {
-    color:white;
+    color: var(--color-text-light);
     
     font-size: 1.2rem;
     
@@ -248,7 +248,7 @@
 #animation-video-player-placeholder-txt {
     font-family: var(--font-space-grotesk);
     
-    color:var(--color-bg);
+    color: var(--color-text-light);
 }
 
 #animation-video-wrapper iframe {
@@ -305,7 +305,7 @@
     
     text-wrap: nowrap;
     
-    color:white;
+    color: var(--text-color-light);
 
     transition: color 0.05s ease;
 }
@@ -367,7 +367,7 @@
     height:2rem;
 
     background-color: var(--color-fg-dark);
-    color:var(--color-bg);
+    color: var(--color-text-light);
 
     border-radius: 10px;
     border:none;
