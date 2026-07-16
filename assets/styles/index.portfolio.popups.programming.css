@@ -50,7 +50,7 @@
     padding:0 0.75rem 0 0.75rem;
 }
 
-.programming-item-caption h2 {
+.programming-item-caption-header {
     font-size: 2rem;
     margin-bottom:0;
     margin-top:0.0rem;
@@ -58,7 +58,7 @@
     background-color: var(--color-fg-verydark);
     border-radius: 15px;
 }
-.programming-item-caption p {
+.programming-item-caption-info {
     margin-top: 1rem;
     text-align: left;
 
@@ -66,12 +66,22 @@
     font-size: 1.25rem;
 }
 
-.programming-item-caption a {
-    display:inline-block;
+.programming-item-caption-site-link {
     color: var(--color-text-light);
     margin-bottom: 1rem;
+
+    padding: 0.5rem;
+    border-radius: 25px;
 
     text-decoration: none;
 
     background-color: var(--color-fg);
+
+    float:right;
+
+
+    &:hover {
+        background-color: var(--color-fg-light);
+    }
 }
+

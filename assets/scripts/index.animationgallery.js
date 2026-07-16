@@ -106,8 +106,8 @@ function createGalleryItemHTML(galleryItem)
     const indexInArray = galleryItems.indexOf(galleryItem);
     const itemHTML = `
 <figure role="button" tabindex="0" class="popup-3d-animation-gallery-item" id="galleryItem-${indexInArray}">
-    <img src="${galleryItem.thumbnail}" alt="Click To Watch ${galleryItem.title}">
-    <figcaption>${galleryItem.title}</figcaption>
+    <img class="gallery-item-thumb" src="${galleryItem.thumbnail}" alt="Click To Watch ${galleryItem.title}">
+    <figcaption class="gallery-item-caption">${galleryItem.title}</figcaption>
 </figure>
 `;
     return itemHTML;

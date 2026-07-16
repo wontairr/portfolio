@@ -296,7 +296,7 @@
 }
 
 
-.popup-3d-animation-gallery-item figcaption {
+.gallery-item-caption {
     font-family: var(--font-space-grotesk);
     font-size: 1.25rem;
     font-weight: 400;
@@ -310,7 +310,7 @@
     transition: color 0.05s ease;
 }
 
-.popup-3d-animation-gallery-item img {
+.gallery-item-thumb {
     width:max(100%,8rem);
     height:max(100%,4.5rem);
     /* magic number that solves all my problems :D */
@@ -333,7 +333,7 @@
     z-index: 100;
     cursor:pointer;
 }
-.popup-3d-animation-gallery-item:hover img {
+.popup-3d-animation-gallery-item:hover > .gallery-item-thumb {
     filter:brightness(1.1);
     -webkit-filter: brightness(1.1);
 
@@ -342,7 +342,7 @@
     transform:translateY(-5px);
 }
 
-.popup-3d-animation-gallery-item:hover figcaption {
+.popup-3d-animation-gallery-item:hover > .gallery-item-caption {
     color: var(--color-fg-light);
 }
 
