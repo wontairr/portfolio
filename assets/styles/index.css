@@ -137,9 +137,11 @@ p,pre {
 
     text-wrap-mode:wrap;
     line-height:2.60rem;
+    
+}
 
+main p,pre {
     word-spacing: 0.1em;
-
 }
 
 
