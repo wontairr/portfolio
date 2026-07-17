@@ -67,3 +67,14 @@ body {
 .hidden {
     display:none !important;
 }
+
+.github-style {
+    border:1px solid #3D444D !important;
+    background-color: #2A313C !important;
+    color: #D1D7E0 !important;
+    border-radius: 10px !important;
+
+    &:hover {
+        background-color: #2F3742 !important;
+    }
+}
