@@ -57,6 +57,7 @@
             <section id="portfolio-section">
                 <h1>Portfolio</h1>
                 
+                <!-- FIXME: STOP using background images for these, just use img... -->
                 <div id="portfolio-choice-container">
                     <div class="portfolio-choice" id="portfolio-choice-3d-animation">
                         <div class="portfolio-choice-bg"></div>
@@ -159,10 +160,7 @@ I use the following programs:
                             <h2 class="programming-item-caption-header">This Site</h2>
                             <p class="programming-item-caption-info">A site where you can view all of my work. Written in HTML, JS, and CSS.</p>
                             <div class="programming-item-caption-footer">
-                                <section class="programming-item-caption-used-tools">
-                                    <img alt="HTML5 Logo" src="assets/images/portfolio/programming/tools/HTML5_Logo_64.png">
-                                    <img alt="CSS3 Logo" src="assets/images/portfolio/programming/tools/CSS3_logo_and_wordmark.svg">
-                                    <img alt="JavaScript Logo" src="assets/images/portfolio/programming/tools/JavaScript-logo.png">
+                                <section class="programming-item-caption-used-tools" id="html,css,js">
                                 </section>
                                 <a class="programming-item-caption-site-link" href="site">Visit Site</a>
                                 <a class="programming-item-caption-site-link github-style" href="site">Visit Github</a>
@@ -176,10 +174,7 @@ I use the following programs:
                             <h2 class="programming-item-caption-header">Gmod Zen Loader</h2>
                             <p class="programming-item-caption-info">A relaxing loading screen for Garry's Mod. View it online! Written in HTML, JS, and CSS.</p>
                             <div class="programming-item-caption-footer">
-                                <section class="programming-item-caption-used-tools">
-                                    <img alt="HTML5 Logo" src="assets/images/portfolio/programming/tools/HTML5_Logo_64.png">
-                                    <img alt="CSS3 Logo" src="assets/images/portfolio/programming/tools/CSS3_logo_and_wordmark.svg">
-                                    <img alt="JavaScript Logo" src="assets/images/portfolio/programming/tools/JavaScript-logo.png">
+                                <section class="programming-item-caption-used-tools" id="html,css,js">
                                 </section>
                                 <a class="programming-item-caption-site-link" href="https://wontairr.github.io/gmod-zen-loader/">Visit Site</a>
                                 <a class="programming-item-caption-site-link github-style" href="https://github.com/wontairr/gmod-zen-loader">Visit Github</a>
@@ -193,8 +188,7 @@ I use the following programs:
                             <h2 class="programming-item-caption-header">Garry's Mod Anti-Screamer</h2>
                             <p class="programming-item-caption-info">A tool that prevents attacks from malicious Garry's Mod addons. Written in Lua.</p>
                             <div class="programming-item-caption-footer">
-                                <section class="programming-item-caption-used-tools">
-                                    <img alt="Lua Programming Language Logo" src="assets/images/portfolio/programming/tools/Lua-Logo_64x64.png">
+                                <section class="programming-item-caption-used-tools" id="lua">
                                 </section>
                                 <a class="programming-item-caption-site-link" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3404179264">Visit Site</a>
                                 <a class="programming-item-caption-site-link github-style" href="https://github.com/wontairr/GarrysMod-AntiScreamer">Visit Github</a>
@@ -208,8 +202,7 @@ I use the following programs:
                             <h2 class="programming-item-caption-header">Authentic Counter-Strike: Source Weapons</h2>
                             <p class="programming-item-caption-info">An authenticity focused attempt to port Counter-Strike: Source's weapons to Garry's Mod's Lua API. Written in Lua.</p>
                             <div class="programming-item-caption-footer">
-                                <section class="programming-item-caption-used-tools">
-                                    <img alt="Lua Programming Language Logo" src="assets/images/portfolio/programming/tools/Lua-Logo_64x64.png">
+                                <section class="programming-item-caption-used-tools" id="lua">
                                 </section>
                                 <a class="programming-item-caption-site-link" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3533371752">Visit Site</a>
                                 <a class="programming-item-caption-site-link github-style" href="https://github.com/wontairr/cs-source-swep-base">Visit Github</a>
@@ -221,6 +214,7 @@ I use the following programs:
         </div>
     </div>
     <script src="assets/scripts/index.animationgallery.js"></script>
+    <script src="assets/scripts/index.programming.js"></script>
     <script src="assets/scripts/index.js"></script>
 </body>
 </html>
