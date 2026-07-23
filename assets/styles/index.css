@@ -1,7 +1,12 @@
 
 #layout-container {
     width:100%;
-    height:100vh;
+    height:100%;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
 
     position:absolute;
     left:0;
@@ -123,7 +128,7 @@ section h1 {
     font-size:255px;
     font-weight: bold;
     
-    letter-spacing: -1.4rem;
+    letter-spacing: -1.2rem;
     margin-top:0;
     margin-bottom:0;
 
@@ -142,6 +147,7 @@ p,pre {
 
 main p,pre {
     word-spacing: 0.1em;
+    font-size: 1.5rem;
 }
 
 
