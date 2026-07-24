@@ -238,7 +238,7 @@ videoDropDownButton.addEventListener("click",(e) => {
 
 function videoDropDownSelectTab(tab,isReFocusingVideoPlayer = false)
 {
-    // Hide everything.
+    // Hide everything...
     const wasVideoPlayerVisible = !tabElementVideoPlayer.classList.contains("hidden");
     const wasVideoInfoVisible = !tabElementVideoInfo.classList.contains("hidden");
 
@@ -329,6 +329,7 @@ function searchGallery(query)
             itemEl.classList.remove("hidden");
         }
     }
+    
     if (isQueryEmpty) {
         return;
     }

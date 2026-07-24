@@ -32,7 +32,7 @@
         <main>
             <section id="about-section">
                 <div id="about-section-top-container">
-                    <h1>Hello !</h1>
+                    <h1 id="about-section-header">Hello !</h1>
                     <pre id="first-paragraph">
         My name is Nathanael, but online I go by <span class="my-name">Wontairr</span>. My best work can be found in my Programming or 3D Animation projects, but I also have experience in other digital work such as 3D Modeling, Sound Design, Video Editing, and more!
         
@@ -85,6 +85,11 @@ Right below this is my portfolio.</strong>
 
             <section id="social-section">
                 <h1>Social</h1>
+
+                <nav>
+                    <a>Github</a>
+                    <a>Youtube</a>
+                </nav>
             </section>
 
             <section id="contact-section">
@@ -156,7 +161,7 @@ I use the following programs:
             </div>
         </div>
         <!-- Programming Popup -->
-        <div class="portfolio-popup" id="portfolio-popup-programming">
+        <div class="portfolio-popup hidden" id="portfolio-popup-programming">
             <button class="portfolio-popup-close-btn"><img class="cross-icon" src="assets/images/cross.svg"/></button>
             
             <div class="portfolio-popup-content-container">
@@ -221,8 +226,9 @@ I use the following programs:
             </div>
         </div>
     </div>
+    <script src="assets/scripts/index.js"></script>
+    <script src="assets/scripts/index.section.portfolio.js"></script>
     <script src="assets/scripts/index.animationgallery.js"></script>
     <script src="assets/scripts/index.programming.js"></script>
-    <script src="assets/scripts/index.js"></script>
 </body>
 </html>

@@ -2,9 +2,13 @@
 /*
     PORTFOLIO SECTION
 */
+#portfolio-section {
+    height:fit-content;
+}
+
 #portfolio-choice-container {
     width: min(80rem,100%);
-    height:80rem;
+    height:fit-content;
 
     display:grid;
 
@@ -21,6 +25,8 @@
 }
 
 .portfolio-choice {
+
+    height: 40rem;
 
     position: relative;
     border: 6px solid var(--color-dark);
