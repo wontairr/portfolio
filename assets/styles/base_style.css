@@ -29,6 +29,11 @@
     
     --color-scroll-bg:      var(--color-darkgray);
     --color-scroll-thumb:   #828189;
+
+
+    --github-color-bg: #2A313C;
+    --github-color-border: #3D444D;
+    --github-color-fg: #478BE6; 
 }
 
 /* Scrollbar styling for all browsers. */

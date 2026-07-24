@@ -1,0 +1,31 @@
+#social-section-nav {
+    display:flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    gap:1rem;
+}
+
+.social-section-nav-anchor {
+    display:block;
+
+    font-family: var(--font-space-mono);
+    font-size: 2rem;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    max-width:15rem;
+    padding-left: 1rem;
+}
+
+#social-section-github:hover {
+    color: var(--github-color-fg);
+    background-color: var(--github-color-bg);
+    border-color: var(--github-color-border);
+
+
+}
+
+#social-section-youtube:hover {
+    background-color: #CD201F;
+}

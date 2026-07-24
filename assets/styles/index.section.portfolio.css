@@ -26,7 +26,8 @@
 
 .portfolio-choice {
 
-    height: 40rem;
+    height: 50vh;
+    max-height: 40rem;
 
     position: relative;
     border: 6px solid var(--color-dark);
