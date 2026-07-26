@@ -34,7 +34,7 @@
             <div id="left-navbar-dither-overlay"></div>
         </nav>
         <main>
-            <section id="about-section">
+            <section class="main-section" id="about-section">
                 <div id="about-section-top-container">
                     <h1 id="about-section-header">Hello !</h1>
                     <pre id="first-paragraph">
@@ -48,6 +48,7 @@ Right below this is my portfolio.</strong>
                     </pre>
                 </div>
                 <div id="about-section-scroll-indicator">
+                    <!-- FIXME: THIS IS BAD PRACTICE -->
                     <div id="about-section-scroll-indicator-bar">
                         <img src="assets/images/arrow_down.svg"/>
                         <img src="assets/images/arrow_down.svg"/>
@@ -59,7 +60,7 @@ Right below this is my portfolio.</strong>
                 </div>
             </section>
 
-            <section id="portfolio-section">
+            <section class="main-section" id="portfolio-section">
                 <h1>Portfolio</h1>
                 
                 <!-- FIXME: STOP using background images for these, just use img... -->
@@ -87,21 +88,41 @@ Right below this is my portfolio.</strong>
                 </div>
             </section>
 
-            <section id="social-section">
+            <section class="main-section" id="social-section">
                 <h1>Social</h1>
 
                 <nav id="social-section-nav">
                     <a href="https://github.com/wontairr" id="social-section-github" class="nav-anchor social-section-nav-anchor">
-                        <span class="fa-brands fa-github"></span> Github
+                        <div class="social-section-anchor-contents">
+                            <span class="fa-brands fa-github"></span>
+                            <span>Github</span>
+                            <span class="social-section-redirect-icon fa-solid fa-arrow-up-right-from-square"></span>
+                        </div>
                     </a>
                     <a href="https://www.youtube.com/@SandwichINCereal" id="social-section-youtube" class="nav-anchor social-section-nav-anchor">
-                        <span class="fa-brands fa-youtube"></span> Youtube
+                        <div class="social-section-anchor-contents">
+                            <span class="fa-brands fa-youtube"></span>
+                            <span>Youtube</span>
+                            <span class="social-section-redirect-icon fa-solid fa-arrow-up-right-from-square"></span>
+                        </div>
+                    </a>
+                    <a href="https://steamcommunity.com/id/Wontairr/" id="social-section-steam" class="nav-anchor social-section-nav-anchor">
+                        <div class="social-section-anchor-contents">
+                            <span class="fa-brands fa-steam"></span>
+                            <span>Steam</span>
+                            <span class="social-section-redirect-icon fa-solid fa-arrow-up-right-from-square"></span>
+                        </div>
                     </a>
                 </nav>
             </section>
 
-            <section id="contact-section">
+            <section class="main-section" id="contact-section">
                 <h1>Contact</h1>
+
+                <ul id="contact-section-options">
+                    <li><span class="contact-section-icon fa-brands fa-discord"></span>wontairr</li>
+                    <li><span class="contact-section-icon fa-solid fa-envelope"></span><a href="mailto:wontairr@proton.me">wontairr@proton.me</a></li>
+                </ul>
             </section>
         </main>
         <div id="comfort-margin"></div>

@@ -122,8 +122,11 @@ main {
     margin-left:2rem;
 }
 
+.main-section:not(:first-of-type) {
+    margin-bottom: 5rem;
+}
 
-section h1 {
+.main-section h1 {
     font-family: "Cormorant Garamond", serif;
     font-size:255px;
     font-weight: bold;
@@ -131,10 +134,6 @@ section h1 {
     letter-spacing: -1.2rem;
     margin-top:0;
     margin-bottom:0;
-}
-
-#about-section-header {
-    transform: translateY(-40px);
 }
 
 p,pre {
@@ -154,8 +153,13 @@ main p,pre {
 
 
 /*
-    ABOUT SECTION
+ABOUT SECTION
 */
+
+#about-section-header {
+    transform: translateY(-40px);
+}
+
 #about-section {
     display:flex;
     flex-direction: column;
@@ -200,4 +204,35 @@ main p,pre {
 
 #about-section-scroll-indicator img {
     width:3vw;
+}
+
+
+/*
+    PORTFOLIO SECTION (Handled in index.section.portfolio.css)
+*/
+
+/*
+    SOCIAL SECTION (Handled in index.section.social.css)
+*/
+
+/*
+    CONTACT SECTION
+*/
+
+#contact-section-options {
+    font-family: var(--font-space-grotesk);
+
+    font-size: 1.5rem;
+
+    line-height: 3rem;
+    
+    color: var(--color-text-dark);
+
+    & a {
+        color: var(--color-text-dark);
+    }
+}
+
+.contact-section-icon {
+    margin-right: 0.5rem;
 }

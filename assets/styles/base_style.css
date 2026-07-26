@@ -74,8 +74,8 @@ body {
 }
 
 .github-style {
-    border:1px solid #3D444D !important;
-    background-color: #2A313C !important;
+    border:1px solid var(--github-color-border) !important;
+    background-color: var(--github-color-bg) !important;
     color: #D1D7E0 !important;
     border-radius: 10px !important;
 

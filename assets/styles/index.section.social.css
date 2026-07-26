@@ -1,3 +1,7 @@
+/*
+    
+*/
+
 #social-section-nav {
     display:flex;
     flex-direction: column;
@@ -14,8 +18,18 @@
 
     text-decoration: none;
 
-    max-width:15rem;
+    max-width:19rem;
     padding-left: 1rem;
+    padding-right: 1rem;
+}
+.social-section-anchor-contents {
+    display:flex;
+    align-items: center;
+    gap:0.5rem;
+}
+.social-section-redirect-icon {
+    margin-left: auto;
+    font-size: 1.75rem;
 }
 
 #social-section-github:hover {
@@ -28,4 +42,9 @@
 
 #social-section-youtube:hover {
     background-color: #CD201F;
+}
+
+#social-section-steam:hover {
+    background-color: #1b2838;
+    color: #c7d5e0;
 }
