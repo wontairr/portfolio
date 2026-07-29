@@ -153,18 +153,20 @@
     overflow-x:hidden;
 }
 #animation-video-dropdown-about-txt-container {
-    padding:1rem;
+    padding:1rem 1.25rem 1rem 1.25rem;
 }
 .animation-video-dropdown-about-txt {
     line-height: 1.85rem;
     width:100%;
     height:100%;
     
-    font-family: var(--font-space-grotesk);
+    word-spacing: normal;
+    font-family: var(--font-roboto);
     
     color: var(--color-text-dark);
 }
 #animation-video-dropdown-about-txt-container li {
+    font-family: var(--font-space-grotesk);
     margin-top:1rem;
 }
 
