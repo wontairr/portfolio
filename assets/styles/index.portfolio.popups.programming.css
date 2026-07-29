@@ -18,6 +18,18 @@
     background-color: var(--color-fg-verydark);
 }
 
+.programming-item-group-header {
+    color: var(--color-text-light);
+    font-family: var(--font-space-grotesk);
+    font-size: 3rem;
+
+    text-shadow: 5px 5px var(--color-fg);
+
+    &:first-of-type {        
+        margin-top: -2rem;
+        margin-bottom: 0.5rem;
+    }
+}
 
 .programming-item {
     background-color: var(--color-fg-dark);
@@ -35,7 +47,7 @@
     box-shadow: 10px 10px 1px black;
 
 }
-.programming-item img {
+.programming-item img,video {
    max-width: 40rem;
 }
 

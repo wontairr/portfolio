@@ -124,7 +124,7 @@ Right below this is my portfolio.</strong>
                     <li><span class="contact-section-icon fa-solid fa-envelope"></span><a href="mailto:wontairr@proton.me">wontairr@proton.me</a></li>
                 </ul>
             </section>
-
+            <div style="margin-bottom: 15rem;"></div>
         </main>
         <div id="comfort-margin"></div>
 
@@ -144,7 +144,7 @@ Right below this is my portfolio.</strong>
                             </div>
                             <div id="animation-video-dropdown-contents">
                                 
-                                <section id="animation-video-dropdown-about"        class="animation-video-dropdown-tab">
+                                <section id="animation-video-dropdown-about"        class="animation-video-dropdown-tab hidden">
                                     <div id="animation-video-dropdown-about-txt-container">
                                         <pre class="animation-video-dropdown-about-txt">
 Welcome to the 3D Animation Gallery! Here you can view my best work.
@@ -160,7 +160,7 @@ I use the following programs:
                                 </section>
                                 <br>
                                 
-                                <section id="animation-video-wrapper"               class="animation-video-dropdown-tab hidden">
+                                <section id="animation-video-wrapper"               class="animation-video-dropdown-tab">
                                     <h2 id="animation-video-player-placeholder-txt">Choose an Animation From the Gallery Below!</h2>
                                 </section>
 
@@ -191,16 +191,18 @@ I use the following programs:
             </div>
         </div>
         <!-- Programming Popup -->
-        <div class="portfolio-popup hidden" id="portfolio-popup-programming">
+        <div class="portfolio-popup" id="portfolio-popup-programming">
             <button class="portfolio-popup-close-btn"><img class="cross-icon" src="assets/images/cross.svg"/></button>
+            
             
             <div class="portfolio-popup-content-container">
                 <header class="portfolio-popup-header"><h1>Programming</h1></header>
                 <div class="portfolio-popup-contents">
+                    <h2 class="programming-item-group-header">Projects</h2>
                     <figure class="programming-item">
                         <img src="assets/images/portfolio/programming/placeholder_portfolio_site.png">
                         <figcaption class="programming-item-caption">
-                            <h2 class="programming-item-caption-header">This Site</h2>
+                            <h3 class="programming-item-caption-header">This Site!</h3>
                             <p class="programming-item-caption-info">A site where you can view all of my work. Written in HTML, JS, and CSS.</p>
                             <div class="programming-item-caption-footer">
                                 <section class="programming-item-caption-used-tools" id="html,css,js">
@@ -214,7 +216,7 @@ I use the following programs:
                     <figure class="programming-item">
                         <img loading="lazy" src="assets/images/portfolio/programming/site_img_gmod_zen_loader.jpg">
                         <figcaption class="programming-item-caption">
-                            <h2 class="programming-item-caption-header">Gmod Zen Loader</h2>
+                            <h3 class="programming-item-caption-header">Gmod Zen Loader</h3>
                             <p class="programming-item-caption-info">A relaxing loading screen for Garry's Mod. View it online! Written in HTML, JS, and CSS.</p>
                             <div class="programming-item-caption-footer">
                                 <section class="programming-item-caption-used-tools" id="html,css,js">
@@ -228,7 +230,7 @@ I use the following programs:
                     <figure class="programming-item">
                         <img loading="lazy" src="assets/images/portfolio/programming/site_img_steam_antiscreamer.jpg">
                         <figcaption class="programming-item-caption">
-                            <h2 class="programming-item-caption-header">Garry's Mod Anti-Screamer</h2>
+                            <h3 class="programming-item-caption-header">Garry's Mod Anti-Screamer</h3>
                             <p class="programming-item-caption-info">A tool that prevents attacks from malicious Garry's Mod addons. Written in Lua.</p>
                             <div class="programming-item-caption-footer">
                                 <section class="programming-item-caption-used-tools" id="lua">
@@ -240,15 +242,29 @@ I use the following programs:
                     </figure>
 
                     <figure class="programming-item">
-                        <img loading="lazy" src="assets/images/portfolio/programming/site_img_steam_css_sweps.jpg">
+                        <img loading="lazy" src="assets/images/portfolio/programming/site_img_steam_soulextractor.jpg">
                         <figcaption class="programming-item-caption">
-                            <h2 class="programming-item-caption-header">Authentic Counter-Strike: Source Weapons</h2>
-                            <p class="programming-item-caption-info">An authenticity focused attempt to port Counter-Strike: Source's weapons to Garry's Mod's Lua API. Written in Lua.</p>
+                            <h3 class="programming-item-caption-header">Entity Soul Extractor</h3>
+                            <p class="programming-item-caption-info">A Garry's Mod Addon that plays unique sounds based on the properties of an entity. Written in Lua.</p>
                             <div class="programming-item-caption-footer">
                                 <section class="programming-item-caption-used-tools" id="lua">
                                 </section>
-                                <a class="programming-item-caption-site-link" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3533371752">Visit Site</a>
-                                <a class="programming-item-caption-site-link github-style" href="https://github.com/wontairr/cs-source-swep-base">Visit Github</a>
+                                <a class="programming-item-caption-site-link" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3735875887">Visit Site</a>
+                                <a class="programming-item-caption-site-link github-style" href="https://github.com/wontairr/entity_soul_extractor">Visit Github</a>
+                            </div>
+                        </figcaption>
+                    </figure>
+                    
+                    <h2 class="programming-item-group-header">Miscellaneous Work</h2>
+                    <figure class="programming-item">
+                        <video autoplay="" controls controlslist="nodownload" loop="" muted="muted"\ playsinline="playsinline" poster="https://cdn.artstation.com/p/thumbnails/003/293/488/thumb.jpg" tabindex="-1" preload="auto"><source media="(min-width: 0px)" src="https://cdn.artstation.com/p/video_sources/003/401/442/2026-07-29-10-32-20-am-1.mp4" type="video/mp4"></video>
+                        <figcaption class="programming-item-caption">
+                            <h3 class="programming-item-caption-header">Triple Stage Kick</h3>
+                            <p class="programming-item-caption-info">An ingame mechanic that lets you charge up a strong kick. Written in C++ using the Source SDK.</p>
+                            <div class="programming-item-caption-footer">
+                                <section class="programming-item-caption-used-tools" id="cpp,source">
+                                </section>
+                                <a class="programming-item-caption-site-link" href="https://www.artstation.com/artwork/Z0GdR0">Visit Artstation</a>
                             </div>
                         </figcaption>
                     </figure>

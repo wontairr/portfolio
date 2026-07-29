@@ -2,7 +2,9 @@ const toolLogoHTMLs = {
     "html": `<img atts alt="HTML5 Logo" src="assets/images/portfolio/programming/tools/HTML5_Logo_64.png">`,
     "css": `<img atts alt="CSS3 Logo" src="assets/images/portfolio/programming/tools/CSS3_logo_and_wordmark.svg">`,
     "js": `<img atts alt="JavaScript Logo" src="assets/images/portfolio/programming/tools/JavaScript-logo.png">`,
-    "lua": `<img atts alt="Lua Programming Language Logo" src="assets/images/portfolio/programming/tools/Lua-Logo_64x64.png">`
+    "lua": `<img atts alt="Lua Programming Language Logo" src="assets/images/portfolio/programming/tools/Lua-Logo_64x64.png">`,
+    "cpp": `<img atts alt="C++ Logo" src="assets/images/portfolio/programming/tools/cpp_logo.svg">`,
+    "source": `<img atts alt="Source SDK Logo" src="assets/images/portfolio/programming/tools/source_logo.png">`
 };
 
 const usedToolSections = document.querySelectorAll(".programming-item-caption-used-tools");
