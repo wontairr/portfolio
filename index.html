@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="assets/styles/index.portfolio.popups.css">
     <link rel="stylesheet" href="assets/styles/index.portfolio.popups.animation.css">
     <link rel="stylesheet" href="assets/styles/index.portfolio.popups.programming.css">
+    <link rel="stylesheet" href="assets/styles/index.portfolio.popups.otherwork.css">
     <link rel="stylesheet" href="assets/styles/index.section.social.css">
 
     <title>wontairr's site</title>
@@ -130,7 +131,7 @@ Right below this is my portfolio.</strong>
 
         <!-- 3D Animation Popup -->
         <div class="portfolio-popup hidden" id="portfolio-popup-3d-animation">
-            <button class="portfolio-popup-close-btn"><img class="cross-icon" src="assets/images/cross.svg"/></button>
+            <button class="portfolio-popup-close-btn"><img alt="Close Button" class="cross-icon" src="assets/images/cross.svg"/></button>
             
             <div class="portfolio-popup-content-container">
                 <header class="portfolio-popup-header"><h1>3D Animation</h1></header>
@@ -191,8 +192,8 @@ I use the following programs:
             </div>
         </div>
         <!-- Programming Popup -->
-        <div class="portfolio-popup" id="portfolio-popup-programming">
-            <button class="portfolio-popup-close-btn"><img class="cross-icon" src="assets/images/cross.svg"/></button>
+        <div class="portfolio-popup hidden" id="portfolio-popup-programming">
+            <button class="portfolio-popup-close-btn"><img alt="Close Button" class="cross-icon" src="assets/images/cross.svg"/></button>
             
             
             <div class="portfolio-popup-content-container">
@@ -257,7 +258,7 @@ I use the following programs:
                     
                     <h2 class="programming-item-group-header">Miscellaneous Work</h2>
                     <figure class="programming-item">
-                        <video autoplay="" controls controlslist="nodownload" loop="" muted="muted"\ playsinline="playsinline" poster="https://cdn.artstation.com/p/thumbnails/003/293/488/thumb.jpg" tabindex="-1" preload="auto"><source media="(min-width: 0px)" src="https://cdn.artstation.com/p/video_sources/003/401/442/2026-07-29-10-32-20-am-1.mp4" type="video/mp4"></video>
+                        <video autoplay="" controls controlslist="nodownload" loop="" muted="muted" playsinline="playsinline" poster="https://cdn.artstation.com/p/thumbnails/003/293/488/thumb.jpg" tabindex="-1" preload="auto"><source media="(min-width: 0px)" src="https://cdn.artstation.com/p/video_sources/003/401/442/2026-07-29-10-32-20-am-1.mp4" type="video/mp4"></video>
                         <figcaption class="programming-item-caption">
                             <h3 class="programming-item-caption-header">Triple Stage Kick</h3>
                             <p class="programming-item-caption-info">An ingame mechanic that lets you charge up a strong kick. Written in C++ using the Source SDK.</p>
@@ -266,6 +267,33 @@ I use the following programs:
                                 </section>
                                 <a class="programming-item-caption-site-link" href="https://www.artstation.com/artwork/Z0GdR0">Visit Artstation</a>
                             </div>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <!-- Other Work Popup -->
+        <div class="portfolio-popup" id="portfolio-popup-other-projects">
+            <button class="portfolio-popup-close-btn"><img alt="Close Button" class="cross-icon" src="assets/images/cross.svg"/></button>
+            
+            
+            <div class="portfolio-popup-content-container">
+                <header class="portfolio-popup-header"><h1>Other Work</h1></header>
+                <div class="portfolio-popup-contents">
+                    <figure class="otherwork-item">
+                        <div class="otherwork-item-img-wrapper">
+                            <img class="otherwork-item-img" src="assets/images/portfolio/programming/placeholder_portfolio_site.png">
+                        </div>
+                        <figcaption class="programming-item-caption">
+                            <h3 class="otherwork-item-caption-header">This Site!</h3>
+                            <p class="otherwork-item-caption-info">A site where you can view all of my work. Written in HTML, JS, and CSS.</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="otherwork-item">
+                        <img src="assets/images/portfolio/programming/placeholder_portfolio_site.png">
+                        <figcaption class="programming-item-caption">
+                            <h3 class="otherwork-item-caption-header">This Site!</h3>
+                            <p class="otherwork-item-caption-info">A site where you can view all of my work. Written in HTML, JS, and CSS.</p>
                         </figcaption>
                     </figure>
                 </div>
@@ -284,5 +312,6 @@ I use the following programs:
     <script src="assets/scripts/index.section.portfolio.js"></script>
     <script src="assets/scripts/index.animationgallery.js"></script>
     <script src="assets/scripts/index.programming.js"></script>
+    <script src="assets/scripts/index.otherwork.js"></script>
 </body>
 </html>
