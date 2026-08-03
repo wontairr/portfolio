@@ -131,7 +131,7 @@ Right below this is my portfolio.</strong>
 
         <!-- 3D Animation Popup -->
         <div class="portfolio-popup hidden" id="portfolio-popup-3d-animation">
-            <button class="portfolio-popup-close-btn"><img alt="Close Button" class="cross-icon" src="assets/images/cross.svg"/></button>
+            <button class="portfolio-popup-close-btn" title="Close Button"><img alt="Close Button" class="cross-icon" src="assets/images/cross.svg"/></button>
             
             <div class="portfolio-popup-content-container">
                 <header class="portfolio-popup-header"><h1>3D Animation</h1></header>
@@ -193,7 +193,7 @@ I use the following programs:
         </div>
         <!-- Programming Popup -->
         <div class="portfolio-popup hidden" id="portfolio-popup-programming">
-            <button class="portfolio-popup-close-btn"><img alt="Close Button" class="cross-icon" src="assets/images/cross.svg"/></button>
+            <button class="portfolio-popup-close-btn" title="Close Button"><img alt="Close Button" class="cross-icon" src="assets/images/cross.svg"/></button>
             
             
             <div class="portfolio-popup-content-container">
@@ -274,28 +274,48 @@ I use the following programs:
         </div>
         <!-- Other Work Popup -->
         <div class="portfolio-popup" id="portfolio-popup-other-projects">
-            <button class="portfolio-popup-close-btn"><img alt="Close Button" class="cross-icon" src="assets/images/cross.svg"/></button>
+            <button class="portfolio-popup-close-btn" title="Close Button"><img alt="Close Button" class="cross-icon" src="assets/images/cross.svg"/></button>
             
             
             <div class="portfolio-popup-content-container">
                 <header class="portfolio-popup-header"><h1>Other Work</h1></header>
                 <div class="portfolio-popup-contents">
                     <figure class="otherwork-item">
-                        <div class="otherwork-item-img-wrapper">
-                            <img class="otherwork-item-img" src="assets/images/portfolio/programming/placeholder_portfolio_site.png">
-                        </div>
+                        <img loading="lazy" class="otherwork-item-img"
+                            src="https://cdna.artstation.com/p/assets/images/images/101/232/968/large/wontairr-flowercdcover.jpg?1785513511"
+                            data-sources = "
+                                https://cdna.artstation.com/p/assets/images/images/101/232/968/large/wontairr-flowercdcover.jpg?1785513511,
+                                assets\images\portfolio\programming\site_img_gmod_zen_loader.jpg,
+                                assets\images\portfolio\programming\site_img_steam_antiscreamer.jpg
+                            "
+                        />
                         <figcaption class="programming-item-caption">
                             <h3 class="otherwork-item-caption-header">This Site!</h3>
                             <p class="otherwork-item-caption-info">A site where you can view all of my work. Written in HTML, JS, and CSS.</p>
                         </figcaption>
                     </figure>
                     <figure class="otherwork-item">
-                        <img src="assets/images/portfolio/programming/placeholder_portfolio_site.png">
+                        <div class="otherwork-item-img-wrapper">
+                            <img loading="lazy" class="otherwork-item-img" src="https://cdna.artstation.com/p/assets/images/images/101/234/108/large/wontairr-lambdagerneration1440p.jpg?1785513529">
+                        </div>
                         <figcaption class="programming-item-caption">
                             <h3 class="otherwork-item-caption-header">This Site!</h3>
                             <p class="otherwork-item-caption-info">A site where you can view all of my work. Written in HTML, JS, and CSS.</p>
                         </figcaption>
                     </figure>
+                    
+                    <div id="otherwork-item-viewer" class="otherwork-viewer-hidden">
+                        <button class="otherwork-item-viewer-button" title="Previous Image" id="otherwork-item-viewer-button-left">
+                            <
+                        </button>
+                        <div id="otherwork-item-viewer-image-container" title="Click To Close">
+                            <img class="otherwork-item-viewer-img" loading="lazy" src="https://cdna.artstation.com/p/assets/images/images/101/232/968/large/wontairr-flowercdcover.jpg?1785513511"/>
+                            <img class="otherwork-item-viewer-img hidden" loading="lazy" src="https://cdna.artstation.com/p/assets/images/images/101/234/108/large/wontairr-lambdagerneration1440p.jpg?1785513529"/>
+                        </div>
+                        <button class="otherwork-item-viewer-button" title="Next Image" id="otherwork-item-viewer-button-right">
+                            >
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

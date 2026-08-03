@@ -101,7 +101,7 @@ let loadedGalleryItemElements = {};
 
 // Generate HTML snippet for a gallery item.
 // FIXME: Wrap figure element in a button.
-function createGalleryItemHTML(galleryItem)
+function getGalleryItemHTML(galleryItem)
 {
     const indexInArray = galleryItems.indexOf(galleryItem);
     const itemHTML = `
@@ -190,7 +190,7 @@ function loadGalleryItems()
 {
     animationGallery.innerHTML = "";
     for (const galleryItem of galleryItems) {
-        animationGallery.innerHTML += createGalleryItemHTML(galleryItem);
+        animationGallery.innerHTML += getGalleryItemHTML(galleryItem);
     }
 
     const galleryItemElements = [...document.querySelectorAll(".popup-3d-animation-gallery-item")];
