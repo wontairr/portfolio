@@ -117,6 +117,7 @@ function getGalleryItemHTML(galleryItem)
 // Set text containers's dimensions to it's parents. (keep text in box)
 function resizeVideoInfoTextContainer()
 {
+    // FIXME: Doesn't work when the video dropdown is not dropped down.
     videoInfoTextContainer.style.width = `${videoInfoTextContainer.parentElement.clientWidth}px`;
     videoInfoTextContainer.style.height = `${videoInfoTextContainer.parentElement.clientHeight}px`;
 }
