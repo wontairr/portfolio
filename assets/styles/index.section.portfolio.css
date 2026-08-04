@@ -44,7 +44,7 @@
 }
 
 .portfolio-choice-overlay {
-    width:100.1%;
+    width:100%;
     height:100%;
 
     background-color: #00439b4a;
@@ -117,6 +117,11 @@
 #portfolio-choice-programming .portfolio-choice-overlay {
     backdrop-filter: blur(4px) brightness(70%) contrast(120%);
     -webkit-backdrop-filter: blur(4px) brightness(70%) contrast(120%);
+}
+
+#portfolio-choice-other-projects .portfolio-choice-bg {
+    background-image:url(/assets/images/portfolio/thumbnails/otherwork_thumbnail.jpg);
+    background-size: cover;
 }
 
 #portfolio-choice-other-projects {
