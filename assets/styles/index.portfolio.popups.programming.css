@@ -16,6 +16,10 @@
     overflow-y: scroll;
 
     background-color: var(--color-fg-verydark);
+
+    background-image: url("/assets/images/portfolio/otherwork/grid.svg");
+	background-repeat: repeat;
+	background-size: 1rem;
 }
 
 .programming-item-group-header {
