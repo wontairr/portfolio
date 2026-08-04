@@ -66,26 +66,26 @@ Right below this is my portfolio.</strong>
                 
                 <!-- FIXME: STOP using background images for these, just use img... -->
                 <div id="portfolio-choice-container">
-                    <div class="portfolio-choice" id="portfolio-choice-3d-animation">
+                    <button class="portfolio-choice" id="portfolio-choice-3d-animation">
                         <div class="portfolio-choice-bg"></div>
                         <div class="portfolio-choice-overlay">
                             <span class="portfolio-choice-text">3D Animation</span>
                         </div>
-                    </div>
+                    </button>
                     
-                    <div class="portfolio-choice" id="portfolio-choice-programming">
+                    <button class="portfolio-choice" id="portfolio-choice-programming">
                         <div class="portfolio-choice-bg"></div>
                         <div class="portfolio-choice-overlay">
                             <span class="portfolio-choice-text">Programming</span>
                         </div>
-                    </div>
+                    </button>
                     
-                    <div class="portfolio-choice" id="portfolio-choice-other-projects">
+                    <button class="portfolio-choice" id="portfolio-choice-other-projects">
                         <div class="portfolio-choice-bg"></div>
                         <div class="portfolio-choice-overlay">
                             <span class="portfolio-choice-text">Other Work</span>
                         </div>
-                    </div>
+                    </button>
                 </div>
             </section>
 
@@ -273,47 +273,101 @@ I use the following programs:
             </div>
         </div>
         <!-- Other Work Popup -->
-        <div class="portfolio-popup" id="portfolio-popup-other-projects">
+        <div class="portfolio-popup hidden" id="portfolio-popup-other-projects">
             <button class="portfolio-popup-close-btn" title="Close Button"><img alt="Close Button" class="cross-icon" src="assets/images/cross.svg"/></button>
             
             
             <div class="portfolio-popup-content-container">
                 <header class="portfolio-popup-header"><h1>Other Work</h1></header>
                 <div class="portfolio-popup-contents">
-                    <figure class="otherwork-item">
-                        <img loading="lazy" class="otherwork-item-img"
-                            src="https://cdna.artstation.com/p/assets/images/images/101/232/968/large/wontairr-flowercdcover.jpg?1785513511"
-                            data-sources = "
-                                https://cdna.artstation.com/p/assets/images/images/101/232/968/large/wontairr-flowercdcover.jpg?1785513511,
-                                assets\images\portfolio\programming\site_img_gmod_zen_loader.jpg,
-                                assets\images\portfolio\programming\site_img_steam_antiscreamer.jpg
-                            "
-                        />
-                        <figcaption class="programming-item-caption">
-                            <h3 class="otherwork-item-caption-header">This Site!</h3>
-                            <p class="otherwork-item-caption-info">A site where you can view all of my work. Written in HTML, JS, and CSS.</p>
-                        </figcaption>
-                    </figure>
-                    <figure class="otherwork-item">
-                        <div class="otherwork-item-img-wrapper">
-                            <img loading="lazy" class="otherwork-item-img" src="https://cdna.artstation.com/p/assets/images/images/101/234/108/large/wontairr-lambdagerneration1440p.jpg?1785513529">
-                        </div>
-                        <figcaption class="programming-item-caption">
-                            <h3 class="otherwork-item-caption-header">This Site!</h3>
-                            <p class="otherwork-item-caption-info">A site where you can view all of my work. Written in HTML, JS, and CSS.</p>
-                        </figcaption>
-                    </figure>
+                    <section id="otherwork-first-item">
+                        <figure class="otherwork-item">
+                            <button class="otherwork-item-img-btn">
+                                <img
+                                    loading="lazy"
+                                    class="otherwork-item-img"
+                                    src="https://cdna.artstation.com/p/assets/images/images/101/232/968/large/wontairr-flowercdcover.jpg?1785513511"
+                                    data-sources="
+                                        https://cdna.artstation.com/p/assets/images/images/101/232/968/large/wontairr-flowercdcover.jpg?1785513511
+                                    "
+                                />
+                            </button>
+                            <figcaption class="programming-item-caption">
+                                <h3 class="otherwork-item-caption-header">90s Esque Sample CD Cover</h3>
+                                <p class="otherwork-item-caption-info">Humble attempt to create something akin to an old sample CD case cover. Made in 2026.</p>
+                            </figcaption>
+                        </figure>
+                        <p id="otherwork-first-item-tip">
+                            <strong>Click on the thumbnails to take a closer look!</strong>
+                        </p>
+                    </section>
                     
-                    <div id="otherwork-item-viewer" class="otherwork-viewer-hidden">
+                    <figure class="otherwork-item">
+                        <button class="otherwork-item-img-btn">
+                            <img
+                                loading="lazy"
+                                class="otherwork-item-img"
+                                src="https://cdna.artstation.com/p/assets/images/images/101/234/108/large/wontairr-lambdagerneration1440p.jpg?1785513529"
+                                data-sources="
+                                    https://cdna.artstation.com/p/assets/images/images/101/234/108/large/wontairr-lambdagerneration1440p.jpg?1785513529,
+                                    https://cdna.artstation.com/p/assets/images/images/101/234/224/large/wontairr-1686111409923budqc8bcbskebnbg.jpg?1785513824
+                                "
+                            />
+                        </button>
+                        <figcaption class="programming-item-caption">
+                            <h3 class="otherwork-item-caption-header">Garry's Mod Poster</h3>
+                            <p class="otherwork-item-caption-info">An artwork created in Garry's Mod. Was edited in post, but the entire scene is an optical illusion (click the image). Made in 2023.</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="otherwork-item">
+                        <button class="otherwork-item-img-btn">
+                            <img
+                                loading="lazy"
+                                class="otherwork-item-img"
+                                src="https://cdna.artstation.com/p/assets/images/images/101/233/938/large/wontairr-persepolis2.jpg?1785513082"
+                                data-sources="
+                                    https://cdna.artstation.com/p/assets/images/images/101/233/938/large/wontairr-persepolis2.jpg?1785513082,
+                                    https://cdna.artstation.com/p/assets/images/images/101/233/844/large/wontairr-persepolis.jpg?1785512868
+                                "
+                            />
+                        </button>
+                        <figcaption class="programming-item-caption">
+                            <h3 class="otherwork-item-caption-header">Small Persepolis Site</h3>
+                            <p class="otherwork-item-caption-info">A recreation of a specific place in Persepolis using the Source SDK. Made in 2025.</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="otherwork-item">
+                        <button class="otherwork-item-img-btn">
+                            <img
+                                loading="lazy"
+                                class="otherwork-item-img"
+                                src="https://cdna.artstation.com/p/assets/images/images/101/233/774/large/wontairr-beta3.jpg?1785512663"
+                                data-sources="
+                                    https://cdna.artstation.com/p/assets/images/images/101/233/774/large/wontairr-beta3.jpg?1785512663,
+                                    https://cdnb.artstation.com/p/assets/images/images/101/233/767/large/wontairr-beta1.jpg?1785512656,
+                                    https://cdna.artstation.com/p/assets/images/images/101/233/770/large/wontairr-beta2.jpg?1785512660
+                                "
+                            />
+                        </button>
+                        <figcaption class="programming-item-caption">
+                            <h3 class="otherwork-item-caption-header">Beta Half-Life 2 City</h3>
+                            <p class="otherwork-item-caption-info">A recreation of the Half-Life 2 Beta City using the Source SDK. Made in 2025.</p>
+                        </figcaption>
+                    </figure>
+
+                    <!--Item Viewer-->
+                    <div id="otherwork-item-viewer" class="otherwork-viewer-hidden" hidden>
                         <button class="otherwork-item-viewer-button" title="Previous Image" id="otherwork-item-viewer-button-left">
-                            <
+                            <i class="fa-solid fa-arrow-right fa-flip-horizontal"></i>
                         </button>
                         <div id="otherwork-item-viewer-image-container" title="Click To Close">
                             <img class="otherwork-item-viewer-img" loading="lazy" src="https://cdna.artstation.com/p/assets/images/images/101/232/968/large/wontairr-flowercdcover.jpg?1785513511"/>
                             <img class="otherwork-item-viewer-img hidden" loading="lazy" src="https://cdna.artstation.com/p/assets/images/images/101/234/108/large/wontairr-lambdagerneration1440p.jpg?1785513529"/>
                         </div>
                         <button class="otherwork-item-viewer-button" title="Next Image" id="otherwork-item-viewer-button-right">
-                            >
+                            <span class="fa-solid fa-arrow-right"></span>
                         </button>
                     </div>
                 </div>
