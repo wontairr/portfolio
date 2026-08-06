@@ -35,7 +35,7 @@ function popupClose(e)
     if (e.target != btn) { e.stopPropagation(); return; }
     
     // Re-enable body scrolling.
-    body.classList.toggle("dont-scroll");
+    document.body.classList.toggle("dont-scroll");
 
 
     // Get the popup (It can be the close button or the popup element that called this function).
@@ -60,7 +60,7 @@ function popupOpen(e)
 {
     
     // Turn off body scrolling.
-    body.classList.toggle("dont-scroll");
+    document.body.classList.toggle("dont-scroll");
 
     const rootChoiceBtn = e.currentTarget;
     

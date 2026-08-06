@@ -1,5 +1,3 @@
-const body = document.querySelector("body");
-
 const aboutSection = document.getElementById("about-section");
 // FIXME: Doesn't always work at low res.
 function resizeAboutSection()
