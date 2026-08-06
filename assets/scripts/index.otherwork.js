@@ -10,14 +10,20 @@ let viewerIndex = 0;
 
 let revealedViewer = false;
 
+let viewerOpen = false
+
+
 function viewerToggle()
 {
 	viewer.classList.toggle("otherwork-viewer-hidden");
-	if (!revealedViewer && !viewer.classList.contains("otherwork-viewer-hidden")) {
+	viewer.classList.toggle("otherwork-viewer-shown");
+	if (!revealedViewer) {
 		revealedViewer = true;
 		viewer.removeAttribute("hidden");
 	}
+	viewerOpen = viewer.classList.contains("otherwork-viewer-shown");
 }
+
 
 function getImageHTML(source,hidden)
 {
@@ -25,6 +31,24 @@ function getImageHTML(source,hidden)
 	<img class="otherwork-item-viewer-img ${hidden ? "hidden" : ""}" src="${source}"/>`;
 	return html;
 }
+
+
+function setButtonVisibility(visible)
+{
+	if (visible) {
+		viewerButtonLeft.removeAttribute("hidden");
+		viewerButtonRight.removeAttribute("hidden");
+		viewerButtonLeft.classList.remove("otherwork-item-img-btn-hidden");
+		viewerButtonRight.classList.remove("otherwork-item-img-btn-hidden");
+	}
+	else {
+		viewerButtonLeft.setAttribute("hidden","");
+		viewerButtonRight.setAttribute("hidden","");
+		viewerButtonLeft.classList.add("otherwork-item-img-btn-hidden");
+		viewerButtonRight.classList.add("otherwork-item-img-btn-hidden");
+	}
+}
+
 
 function viewerLoadImages(sourcesString)
 {
@@ -37,18 +61,9 @@ function viewerLoadImages(sourcesString)
 	}
 
 	// Hide buttons if we just have one image.
-	if (sources.length < 2) {
-		viewerButtonLeft.setAttribute("hidden","");
-		viewerButtonRight.setAttribute("hidden","");
-		viewerButtonLeft.classList.add("otherwork-item-img-btn-hidden");
-		viewerButtonRight.classList.add("otherwork-item-img-btn-hidden");
-	} else {
-		viewerButtonLeft.removeAttribute("hidden");
-		viewerButtonRight.removeAttribute("hidden");
-		viewerButtonLeft.classList.remove("otherwork-item-img-btn-hidden");
-		viewerButtonRight.classList.remove("otherwork-item-img-btn-hidden");
-	}
+	setButtonVisibility(sources.length > 1);
 }
+
 
 function viewerFlip(direction)
 {
@@ -76,8 +91,41 @@ viewer.addEventListener("click",(e) => {
 	if (e.target != viewerButtonLeft && e.target != viewerButtonRight) {
 		viewerToggle();
 	}
-})
+});
 
+viewer.addEventListener("animationend",(e)=> {
+	// Whenever the close animation finishes, hide all the viewer stuff so it doesn't -
+	// - show up for a split second upon opening the popup.
+	if (!viewerOpen) {
+		// Put the images inside a hidden div to avoid reloading the images just incase.
+		viewerImageContainer.innerHTML = `
+<div hidden class="hidden" style="transform:translateX(-999999px);">${viewerImageContainer.innerHTML}</div>
+		`;
+		// Hide buttons.
+		setButtonVisibility(false);
+	}
+});
+
+// Flip through the images with arrow keys.
+let canFlipWithArrowKeys = true;
+document.body.addEventListener("keydown",(e)=>{
+	if (!viewerOpen || !canFlipWithArrowKeys) { return; }
+	if (e.key === "ArrowRight") {
+		viewerFlip(1);
+		canFlipWithArrowKeys = false;
+	}
+	else if (e.key === "ArrowLeft") {
+		viewerFlip(-1);
+		canFlipWithArrowKeys = false;
+	}
+});
+document.body.addEventListener("keyup",(e)=> {
+	if (!viewerOpen) { return; }
+	if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+		canFlipWithArrowKeys = true;
+	}
+});
+// Flip through the images with the arrow buttons.
 viewerButtonRight.addEventListener("click",(e)=>viewerFlip(1));
 viewerButtonLeft.addEventListener("click",(e)=>viewerFlip(-1));
 

@@ -117,6 +117,7 @@
 		transform:scale(1);
     }
 	100% {
+		opacity: 0.0;
 		transform:scale(0);
 	}
 }
@@ -139,7 +140,7 @@
 
 	opacity: 0;
 }
-#otherwork-item-viewer:not(.otherwork-viewer-hidden) {
+#otherwork-item-viewer.otherwork-viewer-shown {
 	animation: otherwork-viewer-show 0.25s ease forwards;
 }
 .otherwork-viewer-hidden {
