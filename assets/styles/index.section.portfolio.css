@@ -30,7 +30,7 @@
     max-height: 40rem;
 
     position: relative;
-    border: 6px solid var(--color-dark);
+    border: 6px solid var(--color-border-dark);
     transition:border 0.25s ease;
 }
 
@@ -92,7 +92,7 @@
     font-weight: bold;
     font-size: 3rem;
 
-    color: var(--color-text-light);
+    color: #FFF;
     text-shadow:
         -2px -2px 2px #000,
         2px -2px 2px #000,

@@ -23,7 +23,7 @@
 }
 
 .programming-item-group-header {
-    color: var(--color-text-light);
+    color: #FFF;
     font-family: var(--font-space-grotesk);
     font-size: 3rem;
 
@@ -57,7 +57,7 @@
 
 
 .programming-item-caption {
-    color: var(--color-text-light);
+    color: #FFF;
     font-family: var(--font-space-grotesk);
 
     box-sizing: border-box;
@@ -117,15 +117,15 @@
     max-height: 2.2rem;
 
     filter:
-        drop-shadow(0 0 0 var(--color-text-light))
-        drop-shadow(0 -1px 0px var(--color-text-light))
-        drop-shadow(0 1px 0px var(--color-text-light))
-        drop-shadow(1px 0 0px var(--color-text-light))
-        drop-shadow(-1px 0 0px var(--color-text-light));
+        drop-shadow(0 0 0 #FFF)
+        drop-shadow(0 -1px 0px #FFF)
+        drop-shadow(0 1px 0px #FFF)
+        drop-shadow(1px 0 0px #FFF)
+        drop-shadow(-1px 0 0px #FFF);
 }
 
 .programming-item-caption-site-link {
-    color: var(--color-text-light);
+    color: #FFF;
 
 
     padding: 0.55rem;

@@ -34,7 +34,7 @@ body {
     
     animation: comfort-margin-scroll 70s linear infinite;
 
-    opacity: 0.05;
+    opacity: var(--color-comfort-margin-opacity);
 }
 
 /* The area between the navbar and the comfort margin. */
@@ -86,6 +86,8 @@ main {
 #navbar-header {
     margin-top:1.5rem;
     margin-bottom: 1rem;
+
+    color: var(--color-text-dark);
 }
 
 
@@ -120,6 +122,45 @@ main {
     margin-left:2rem;
 }
 
+#light-mode-btn {
+    margin-top: 10rem;
+    height:4rem;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding:0;
+}
+.light-mode-btn-icon {
+    font-size: 2rem;
+    width:100%;
+    height:100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.light-mode-btn-icon-selected {
+    background-color: rgb(225, 237, 255);
+    color:black;
+}
+#light-mode-btn-divider {
+    width: 3px;
+    height:4rem;
+    background-color: var(--color-dark);
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
 .main-section:not(:first-of-type) {
     margin-bottom: 5rem;
 }
@@ -128,6 +169,8 @@ main {
     font-family: "Cormorant Garamond", serif;
     font-size:255px;
     font-weight: bold;
+    
+    color: var(--color-text-dark);
     
     letter-spacing: -1.2rem;
     margin-top:0;
@@ -139,6 +182,8 @@ p,pre {
     font-weight: 400;
     font-size: 1.25rem;
 
+    color: var(--color-text-dark);
+    
     text-wrap-mode:wrap;
     line-height:2.60rem;
     

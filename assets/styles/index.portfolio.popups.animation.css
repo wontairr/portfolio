@@ -127,7 +127,7 @@
     border:none;
 
     background-color: var(--color-fg);
-    color: var(--color-text-light);
+    color: #FFF;
 
     font-family: var(--font-space-mono);
     font-size: 1rem;
@@ -189,7 +189,7 @@
 
     position:absolute;
     overflow-y:scroll;
-    scrollbar-color: var(--color-fg-graylight) var(--color-fg) !important;
+    scrollbar-color: #FFF var(--color-fg) !important;
     scrollbar-width:thin !important;
 
     border-left:2px solid black;
@@ -197,11 +197,11 @@
 }
 #animation-video-dropdown-vid-info-txt-container::-webkit-scrollbar {
     background-color: var(--color-fg) !important;
-    color:var(--color-fg-graylight) !important;
+    color:#FFF !important;
 }
 
 .animation-video-dropdown-vid-info-txt {
-    color: var(--color-text-light);
+    color: #FFF;
     
     font-size: 1.2rem;
     
@@ -234,6 +234,10 @@
     margin-right: 0.5rem;
 
 }
+.vid-info-txt-special::selection {
+    background-color: #020d1c;
+    color:white;
+}
 
 /*
     VIDEO PLAYER
@@ -250,7 +254,7 @@
 #animation-video-player-placeholder-txt {
     font-family: var(--font-space-grotesk);
     
-    color: var(--color-text-light);
+    color: #FFF;
 }
 
 #animation-video-wrapper iframe {
@@ -277,11 +281,14 @@
     overflow:scroll;
     overflow-x: hidden;
 
+    background-image: url("/assets/images/portfolio/otherwork/grid.svg");
+	background-repeat: repeat;
+	background-size: 2rem;
+
 }
 
 .popup-3d-animation-gallery-item {
     width:20%;
-
 
     display:flex;
     flex-direction: column;
@@ -295,6 +302,8 @@
 
     padding: 0.1rem;
 
+    backdrop-filter: blur(6px);
+    --webkit-backdrop-filter: blur(6px);
 }
 
 
@@ -307,9 +316,10 @@
     
     text-wrap: nowrap;
     
-    color: var(--color-text-light);
+    color: #FFF;
 
     transition: color 0.05s ease;
+
 }
 
 .gallery-item-thumb {
@@ -369,7 +379,7 @@
     height:2rem;
 
     background-color: var(--color-fg-dark);
-    color: var(--color-text-light);
+    color: #FFF;
 
     border-radius: 10px;
     border:none;
