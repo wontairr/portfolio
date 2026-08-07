@@ -47,7 +47,7 @@
     --darkmode-color-bg:         #062042;
     --darkmode-color-bg-shade:   #072f64;
     --darkmode-color-bg-darkshade:   #02152e;
-    
+
     --darkmode-color-fg-light:       #0A74FF;
     --darkmode-color-fg:             #00439B;
     --darkmode-color-fg-dark:        #072f64;
@@ -81,6 +81,10 @@
     --color-bg:         #f3f3e3;
     --color-bg-shade:   #F2F2DC;
     --color-bg-darkshade:   #cbcbb6;
+
+
+    --lightmode-color-lightmode-btn-select:   #a4a493;
+    --darkmode-color-lightmode-btn-select:   #0753b5;
     
     --color-fg-light:       #0A74FF;
     --color-fg:             #00439B;

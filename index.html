@@ -28,22 +28,28 @@
     <div id="layout-container">
         <nav id="left-navbar">
             <div id="left-navbar-contents">
-                <h2 id="navbar-header"><span class="my-name">Wontairr</span>'s site</h2>
+                <h2 id="navbar-header">
+                    <span class="my-name">Wontairr</span>'s site
+                    <button id="light-mode-btn" class="nav-anchor" title="Click to Switch to Dark Mode">
+                        <div id="light-mode-btn-selected-shade"></div>
+                        <div id="light-mode-btn-interior">
+                            <div class="light-mode-btn-icon">
+                                <span class="fa-solid fa-sun light-mode-btn-selected"></span>
+                            </div>
+                            <div id="light-mode-btn-divider"></div>
+                            <div class="light-mode-btn-icon">
+                                <span class="fa-solid fa-moon"></span>
+                            </div>
+                        </div>
+                    </button>
+                </h2>
                 
                 <a class="nav-anchor" href="#about-section"><span class="nav-anchor-text">About</span></a>
                 <a class="nav-anchor" href="#portfolio-section"><span class="nav-anchor-text">Portfolio</span></a>
                 <a class="nav-anchor" href="#social-section"><span class="nav-anchor-text">Social</span></a>
                 <a class="nav-anchor" href="#contact-section"><span class="nav-anchor-text">Contact</span></a>
 
-                <button id="light-mode-btn " class="nav-anchor">
-                    <div class="light-mode-btn-icon light-mode-btn-icon-selected">
-                        <span class="fa-solid fa-sun"></span>
-                    </div>
-                    <div id="light-mode-btn-divider"></div>
-                    <div class="light-mode-btn-icon">
-                        <span class="fa-solid fa-moon"></span>
-                    </div>
-                </button>
+
             </div>
             <div id="left-navbar-dither-overlay"></div>
         </nav>
@@ -64,12 +70,12 @@ Right below this is my portfolio.</strong>
                 <div id="about-section-scroll-indicator">
                     <!-- FIXME: THIS IS BAD PRACTICE -->
                     <div id="about-section-scroll-indicator-bar">
-                        <img src="assets/images/arrow_down.svg"/>
-                        <img src="assets/images/arrow_down.svg"/>
-                        <img src="assets/images/arrow_down.svg"/>
-                        <img src="assets/images/arrow_down.svg"/>
-                        <img src="assets/images/arrow_down.svg"/>
-                        <img src="assets/images/arrow_down.svg"/>
+                        <span class="fa-solid fa-chevron-down"></span>
+                        <span class="fa-solid fa-chevron-down"></span>
+                        <span class="fa-solid fa-chevron-down"></span>
+                        <span class="fa-solid fa-chevron-down"></span>
+                        <span class="fa-solid fa-chevron-down"></span>
+                        <span class="fa-solid fa-chevron-down"></span>
                     </div>
                 </div>
             </section>

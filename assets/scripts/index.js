@@ -1,5 +1,6 @@
 const aboutSection = document.getElementById("about-section");
 const lightModeBtn = document.getElementById("light-mode-btn");
+const lightModeBtnShade = document.getElementById("light-mode-btn-selected-shade");
 
 const colorVariableNames = [
     "--color-text-light",
@@ -12,6 +13,8 @@ const colorVariableNames = [
     "--color-bg",
     "--color-bg-shade",
     "--color-bg-darkshade",
+
+    "--color-lightmode-btn-select",
     
     "--color-fg-light",
     "--color-fg",
@@ -35,31 +38,31 @@ const colorVariableNames = [
 ];
 
 let lightMode = "light";
+
 function toggleLightingMode(mode)
 {  
     const root = document.querySelector(":root");
     const rootStyle = getComputedStyle(root);
 
-    for (const varName of colorVariableNames) {
-        if (mode === "dark") {
+    lightModeBtnShade.classList.toggle("light-mode-btn-dark-select");
+    if (mode === "dark") {
+        for (const varName of colorVariableNames) {
             const darkVarName = varName.replace("--color","--darkmode-color");
             const darkVarValue = rootStyle.getPropertyValue(darkVarName);
-            console.log(darkVarName + " " + darkVarValue);
-            console.log(varName + " " + rootStyle.getPropertyValue(varName));
             root.style.setProperty(varName,darkVarValue);
-        } else if (mode === "light") {
+        }
+        lightModeBtn.title = "Click to Switch to Light Mode";
+    } else if (mode === "light") {
+        for (const varName of colorVariableNames) {
             const lightVarName = varName.replace("--color","--lightmode-color");
             const lightVarValue = rootStyle.getPropertyValue(lightVarName);
             root.style.setProperty(varName,lightVarValue);
-            console.log("light")
         }
+        lightModeBtn.title = "Click to Switch to Dark Mode";
     }
     lightMode = mode;
 }
-lightModeBtn.addEventListener("click",(e)=>{
-    console.log("click");
-    toggleLightingMode(lightMode == "dark" ? "light" : "dark");
-});
+
 // FIXME: Doesn't always work at low res.
 function resizeAboutSection()
 {
@@ -74,3 +77,6 @@ if (document.readyState === "loading") {
     resizeAboutSection();
 }
 
+lightModeBtn.addEventListener("click",(e)=>{
+    toggleLightingMode(lightMode == "dark" ? "light" : "dark");
+});
