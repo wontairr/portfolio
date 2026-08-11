@@ -68,18 +68,18 @@
 .otherwork-item-caption {
     color: var(--color-text-light);
     font-family: var(--font-space-grotesk);
-
+	
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-
-
+	
+	
     padding:0 0.75rem 0 0.75rem;
 }
 
 .otherwork-item-caption-header {
-    font-size: 2rem;
-
+	font-size: 2rem;
+	
     margin-bottom:0;
     margin-top:0.25rem;
     
@@ -87,6 +87,7 @@
 }
 
 .otherwork-item-caption-info {
+	color: #FFF;
     margin-top: 1rem;
     text-align: left;
 
