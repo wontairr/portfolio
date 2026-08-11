@@ -13,6 +13,7 @@ portfolioPopups.forEach( (popup) => {
     portfolioPopupList[portfolioChoiceName] = popup;
 
     popup.isPortfolioPopup = true;
+    popup.portfolioPopupName = portfolioChoiceName;
     popup.contentElement = popup.querySelector(".portfolio-popup-contents");
 
     popup.addEventListener("click",popupClose);
@@ -44,6 +45,10 @@ function popupClose(e)
         console.error("POPUP FOR PORTFOLIO CHOICE ",btn," IS NULL!");
         return;
     }
+    if (popup.isPortfolioPopup && popup.portfolioPopupName === "3d-animation") {
+        onClose3DAnimationPopup();
+    }
+
     // Toggle off the shown class.
     popup.classList.toggle("shown");
     // Toggle on the hidden class.
