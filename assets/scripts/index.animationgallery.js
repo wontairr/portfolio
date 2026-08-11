@@ -223,6 +223,11 @@ function loadGalleryItems()
     }
 }
 
+function onClose3DAnimationPopup()
+{
+    videoPlayer.innerHTML = "";
+}
+
 videoDropDownButton.addEventListener("click",(e) => {
     videoDropDownWrapper.classList.toggle("gallery-dropdown");
 });
