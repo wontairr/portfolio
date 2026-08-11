@@ -67,7 +67,9 @@ Right below this is my portfolio.</strong>
         
                     </pre>
                 </div>
-                <div id="about-section-scroll-indicator">
+
+                <!-- Hidden from screen readers -->
+                <div aria-hidden="true" id="about-section-scroll-indicator">
                     <!-- FIXME: THIS IS BAD PRACTICE -->
                     <div id="about-section-scroll-indicator-bar">
                         <span class="fa-solid fa-chevron-down"></span>
@@ -83,26 +85,35 @@ Right below this is my portfolio.</strong>
             <section class="main-section" id="portfolio-section">
                 <h1>Portfolio</h1>
                 
-                <!-- FIXME: STOP using background images for these, just use img... -->
+                <!-- Buttons labelled by the spans -->
                 <div id="portfolio-choice-container">
-                    <button class="portfolio-choice" id="portfolio-choice-3d-animation">
-                        <div class="portfolio-choice-bg"></div>
+                    <button aria-labelledby="popup-label-3d-animation" class="portfolio-choice" id="portfolio-choice-3d-animation">
+
+                         <!-- Hidden from screen readers -->
+                        <div aria-hidden="true" class="portfolio-choice-bg"></div>
+
                         <div class="portfolio-choice-overlay">
-                            <span class="portfolio-choice-text">3D Animation</span>
+                            <span class="portfolio-choice-text" id="popup-label-3d-animation">3D Animation</span>
                         </div>
                     </button>
                     
-                    <button class="portfolio-choice" id="portfolio-choice-programming">
-                        <div class="portfolio-choice-bg"></div>
+                    <button aria-labelledby="popup-label-programming" class="portfolio-choice" id="portfolio-choice-programming">
+                        
+                        <!-- Hidden from screen readers -->
+                        <div aria-hidden="true" class="portfolio-choice-bg"></div>
+                       
                         <div class="portfolio-choice-overlay">
-                            <span class="portfolio-choice-text">Programming</span>
+                            <span class="portfolio-choice-text" id="popup-label-programming">Programming</span>
                         </div>
                     </button>
                     
-                    <button class="portfolio-choice" id="portfolio-choice-other-projects">
-                        <div class="portfolio-choice-bg"></div>
+                    <button aria-labelledby="popup-label-other-work" class="portfolio-choice" id="portfolio-choice-other-projects">
+
+                         <!-- Hidden from screen readers -->
+                        <div aria-hidden="true" class="portfolio-choice-bg"></div>
+                        
                         <div class="portfolio-choice-overlay">
-                            <span class="portfolio-choice-text">Other Work</span>
+                            <span class="portfolio-choice-text" id="popup-label-other-work">Other Work</span>
                         </div>
                     </button>
                 </div>
@@ -112,24 +123,25 @@ Right below this is my portfolio.</strong>
                 <h1>Social</h1>
 
                 <nav id="social-section-nav">
-                    <a href="https://github.com/wontairr" id="social-section-github" class="nav-anchor social-section-nav-anchor">
+                    <!-- Anchors labelled by the middle spans. -->
+                    <a aria-labelledby="social-section-anchor-label-github" href="https://github.com/wontairr" id="social-section-github" class="nav-anchor social-section-nav-anchor">
                         <div class="social-section-anchor-contents">
                             <span class="fa-brands fa-github"></span>
-                            <span>Github</span>
+                            <span id="social-section-anchor-label-github">Github</span>
                             <span class="social-section-redirect-icon fa-solid fa-arrow-up-right-from-square"></span>
                         </div>
                     </a>
-                    <a href="https://www.youtube.com/@SandwichINCereal" id="social-section-youtube" class="nav-anchor social-section-nav-anchor">
+                    <a aria-labelledby="social-section-anchor-label-youtube" href="https://www.youtube.com/@SandwichINCereal" id="social-section-youtube" class="nav-anchor social-section-nav-anchor">
                         <div class="social-section-anchor-contents">
                             <span class="fa-brands fa-youtube"></span>
-                            <span>Youtube</span>
+                            <span id="social-section-anchor-label-youtube">Youtube</span>
                             <span class="social-section-redirect-icon fa-solid fa-arrow-up-right-from-square"></span>
                         </div>
                     </a>
-                    <a href="https://steamcommunity.com/id/Wontairr/" id="social-section-steam" class="nav-anchor social-section-nav-anchor">
+                    <a aria-labelledby="social-section-anchor-label-steam" href="https://steamcommunity.com/id/Wontairr/" id="social-section-steam" class="nav-anchor social-section-nav-anchor">
                         <div class="social-section-anchor-contents">
                             <span class="fa-brands fa-steam"></span>
-                            <span>Steam</span>
+                            <span id="social-section-anchor-label-steam">Steam</span>
                             <span class="social-section-redirect-icon fa-solid fa-arrow-up-right-from-square"></span>
                         </div>
                     </a>
@@ -137,9 +149,9 @@ Right below this is my portfolio.</strong>
             </section>
 
             <section class="main-section" id="contact-section">
-                <h1>Contact</h1>
+                <h1 id="contact-section-header">Contact</h1>
 
-                <ul id="contact-section-options">
+                <ul aria-labelledby="contact-section-header" id="contact-section-options">
                     <li><span class="contact-section-icon fa-brands fa-discord"></span><span class="my-name">wontairr</span></li>
                     <li><span class="contact-section-icon fa-solid fa-envelope"></span><a href="mailto:wontairr@proton.me">wontairr@proton.me</a></li>
                 </ul>
@@ -179,7 +191,7 @@ I use the following programs:
                                     </div>
                                 </section>
                                 <br>
-                                
+                                <!--FIXME: Plays even when you close the popup-->
                                 <section id="animation-video-wrapper"               class="animation-video-dropdown-tab">
                                     <h2 id="animation-video-player-placeholder-txt">Choose an Animation From the Gallery Below!</h2>
                                 </section>
