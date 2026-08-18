@@ -30,17 +30,20 @@
             <div id="left-navbar-contents">
                 <h2 id="navbar-header">
                     <span class="my-name">Wontairr</span>'s site
-                    <button id="light-mode-btn" class="nav-anchor" title="Click to Switch to Dark Mode">
-                        <div id="light-mode-btn-selected-shade"></div>
-                        <div id="light-mode-btn-interior">
+                    <!-- Toggle Lightmode/Darkmode -->
+                    <button role="checkbox" aria-checked="false" id="light-mode-btn" class="nav-anchor" title="Click to Switch to Dark Mode">
+                        <div aria-hidden="true" id="light-mode-btn-selected-shade"></div>
+
+                        <div aria-hidden="true" id="light-mode-btn-interior">
                             <div class="light-mode-btn-icon">
-                                <span class="fa-solid fa-sun light-mode-btn-selected"></span>
+                                <span id="light-mode-btn-icon-sun" class="fa-solid fa-sun light-mode-btn-selected"></span>
                             </div>
                             <div id="light-mode-btn-divider"></div>
                             <div class="light-mode-btn-icon">
-                                <span class="fa-solid fa-moon"></span>
+                                <span id="light-mode-btn-icon-moon" class="fa-solid fa-moon"></span>
                             </div>
                         </div>
+
                     </button>
                 </h2>
                 
@@ -124,25 +127,26 @@ Right below this is my portfolio.</strong>
 
                 <nav id="social-section-nav">
                     <!-- Anchors labelled by the middle spans. -->
+                    <!-- Anchors Icons hidden from screen readers. -->
                     <a aria-labelledby="social-section-anchor-label-github" href="https://github.com/wontairr" id="social-section-github" class="nav-anchor social-section-nav-anchor">
                         <div class="social-section-anchor-contents">
-                            <span class="fa-brands fa-github"></span>
+                            <span aria-hidden="true" class="fa-brands fa-github"></span>
                             <span id="social-section-anchor-label-github">Github</span>
-                            <span class="social-section-redirect-icon fa-solid fa-arrow-up-right-from-square"></span>
+                            <span aria-hidden="true" class="social-section-redirect-icon fa-solid fa-arrow-up-right-from-square"></span>
                         </div>
                     </a>
                     <a aria-labelledby="social-section-anchor-label-youtube" href="https://www.youtube.com/@SandwichINCereal" id="social-section-youtube" class="nav-anchor social-section-nav-anchor">
                         <div class="social-section-anchor-contents">
-                            <span class="fa-brands fa-youtube"></span>
+                            <span aria-hidden="true" class="fa-brands fa-youtube"></span>
                             <span id="social-section-anchor-label-youtube">Youtube</span>
-                            <span class="social-section-redirect-icon fa-solid fa-arrow-up-right-from-square"></span>
+                            <span aria-hidden="true" class="social-section-redirect-icon fa-solid fa-arrow-up-right-from-square"></span>
                         </div>
                     </a>
                     <a aria-labelledby="social-section-anchor-label-steam" href="https://steamcommunity.com/id/Wontairr/" id="social-section-steam" class="nav-anchor social-section-nav-anchor">
                         <div class="social-section-anchor-contents">
-                            <span class="fa-brands fa-steam"></span>
+                            <span aria-hidden="true" class="fa-brands fa-steam"></span>
                             <span id="social-section-anchor-label-steam">Steam</span>
-                            <span class="social-section-redirect-icon fa-solid fa-arrow-up-right-from-square"></span>
+                            <span aria-hidden="true" class="social-section-redirect-icon fa-solid fa-arrow-up-right-from-square"></span>
                         </div>
                     </a>
                 </nav>
@@ -389,12 +393,12 @@ I use the following programs:
 
                     <!--Item Viewer-->
                     <div id="otherwork-item-viewer" class="otherwork-viewer-hidden" hidden>
-                        <button class="otherwork-item-viewer-button" title="Previous Image" id="otherwork-item-viewer-button-left">
+                        <button class="otherwork-item-viewer-btn" title="Previous Image" id="otherwork-item-viewer-btn-left">
                             <span class="fa-solid fa-arrow-right fa-flip-horizontal"></span>
                         </button>
                         <div id="otherwork-item-viewer-image-container" title="Click To Close">
                         </div>
-                        <button class="otherwork-item-viewer-button" title="Next Image" id="otherwork-item-viewer-button-right">
+                        <button class="otherwork-item-viewer-btn" title="Next Image" id="otherwork-item-viewer-btn-right">
                             <span class="fa-solid fa-arrow-right"></span>
                         </button>
                     </div>

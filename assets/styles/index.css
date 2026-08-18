@@ -143,40 +143,42 @@ main {
     
     margin-left: auto;
 }
-.fa-sun.light-mode-btn-selected {
+#light-mode-btn[aria-checked="true"] #light-mode-btn-icon-moon {
+    color:white;
 }
+#light-mode-btn[aria-checked="false"] #light-mode-btn-icon-sun {
+    color:white;
+}
+
 #light-mode-btn-interior {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    
     padding:0;
-
+    
     width: 100%;
-
+    
     height: 100%;
-
+    
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    
+    pointer-events: none;
 }
 .light-mode-btn-icon {
     font-size: 1.5rem;
     width:100%;
     height:100%;
-
+    
     color:black;
 
     z-index: 1;
-    pointer-events: none;
 
     display: flex;
     align-items: center;
     justify-content: center;
-
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
 }
 #light-mode-btn-selected-shade {
     position: absolute;
@@ -189,14 +191,15 @@ main {
     background-color: var(--lightmode-color-lightmode-btn-select);
     
     transition: left 0.1s ease, background-color 0.25s ease;
-}
-#light-mode-btn-selected-shade.light-mode-btn-dark-select {
-    left:50%;
-    background-color: var(--darkmode-color-lightmode-btn-select);
+
+    &.light-mode-btn-dark-select {
+        left:50%;
+        background-color: var(--darkmode-color-lightmode-btn-select);
+    }
 }
 
 #light-mode-btn-divider {
-    width: 3px;
+    width: 5px;
     height:2rem;
     background-color: var(--color-dark);
 
@@ -254,6 +257,7 @@ ABOUT SECTION
     display:flex;
     flex-direction: column;
 }
+
 #first-paragraph {
     margin-top:0;
     transform: translateY(-2rem);

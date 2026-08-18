@@ -45,21 +45,28 @@ function toggleLightingMode(mode)
     const rootStyle = getComputedStyle(root);
 
     lightModeBtnShade.classList.toggle("light-mode-btn-dark-select");
+
     if (mode === "dark") {
+
         for (const varName of colorVariableNames) {
             const darkVarName = varName.replace("--color","--darkmode-color");
             const darkVarValue = rootStyle.getPropertyValue(darkVarName);
             root.style.setProperty(varName,darkVarValue);
         }
         lightModeBtn.title = "Click to Switch to Light Mode";
+
     } else if (mode === "light") {
+
         for (const varName of colorVariableNames) {
             const lightVarName = varName.replace("--color","--lightmode-color");
             const lightVarValue = rootStyle.getPropertyValue(lightVarName);
             root.style.setProperty(varName,lightVarValue);
         }
+
         lightModeBtn.title = "Click to Switch to Dark Mode";
     }
+
+    lightModeBtn.setAttribute("aria-checked",mode === "dark" ? "true" : "false");
     lightMode = mode;
 }
 

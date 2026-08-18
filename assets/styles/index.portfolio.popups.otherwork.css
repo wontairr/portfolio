@@ -179,7 +179,7 @@
 	width:4rem;
 	height:4rem;
 }
-.otherwork-item-viewer-button {
+.otherwork-item-viewer-btn {
 	font-size: 2rem;
 	width:5rem;
 	height:5rem;
@@ -204,16 +204,16 @@
 		pointer-events: none;
 	}
 }
-.otherwork-item-viewer-button:hover {
+.otherwork-item-viewer-btn:hover {
     background-color: var(--color-fg);
     border-color: var(--color-fg-dark);
 }
 
-#otherwork-item-viewer-button-right {
+#otherwork-item-viewer-btn-right {
 	transform: translateX(-2rem);
 	margin-left:auto;
 }
-#otherwork-item-viewer-button-left {
+#otherwork-item-viewer-btn-left {
 	margin-right:auto;
 	transform: translateX(2rem);
 }

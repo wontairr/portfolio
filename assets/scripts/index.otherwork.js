@@ -3,8 +3,8 @@ const otherWorkImageButtons = document.querySelectorAll(".otherwork-item-img-btn
 const viewer = document.querySelector("#otherwork-item-viewer");
 const viewerImageContainer = document.querySelector("#otherwork-item-viewer-image-container");
 
-const viewerButtonLeft = document.querySelector("#otherwork-item-viewer-button-left");
-const viewerButtonRight = document.querySelector("#otherwork-item-viewer-button-right");
+const viewerButtonLeft = document.querySelector("#otherwork-item-viewer-btn-left");
+const viewerButtonRight = document.querySelector("#otherwork-item-viewer-btn-right");
 
 let viewerIndex = 0;
 
