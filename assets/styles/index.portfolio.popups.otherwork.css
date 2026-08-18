@@ -54,7 +54,7 @@
 	margin-left: auto;
 }
 
-.otherwork-item img,video {
+.otherwork-item :is(img,video) {
 	max-width: 30rem;
 	box-shadow: 5px 5px var(--color-darkgray), -5px -5px var(--color-fg);
 }
