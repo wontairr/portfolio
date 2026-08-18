@@ -230,6 +230,7 @@ function onClose3DAnimationPopup()
 
 videoDropDownButton.addEventListener("click",(e) => {
     videoDropDownWrapper.classList.toggle("gallery-dropdown");
+    videoDropDownWrapper.setAttribute("aria-expanded",videoDropDownWrapper.classList.contains("gallery-dropdown") ? "true" : "false");
 });
 
 
@@ -286,6 +287,7 @@ function videoDropDownSelectTab(tab,isReFocusingVideoPlayer = false)
         // Is this the button we selected? if so, add the style class.
         if (i === tab) {
             button.classList.add("selected-tab");
+            button.setAttribute("aria-selected","true");
             if (tab === TAB_VIDEO_INFO) {
                 // Since we open the video player too, makes sense to keep it's button selected.
                 tabButtons[TAB_VIDEO_PLAYER].classList.add("selected-tab");                
@@ -299,6 +301,7 @@ function videoDropDownSelectTab(tab,isReFocusingVideoPlayer = false)
             continue;
         }
         button.classList.remove("selected-tab");
+        button.setAttribute("aria-selected","false");
     }
 }
 
