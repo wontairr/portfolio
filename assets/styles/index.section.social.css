@@ -36,8 +36,12 @@
     color: var(--github-color-fg);
     background-color: var(--github-color-bg);
     border-color: var(--github-color-border);
+}
 
-
+#social-section-artstation:hover {
+    color:#13AFF0;
+    background-color:#121E22;
+    border-color: #13AFF0;
 }
 
 #social-section-youtube:hover {
