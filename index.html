@@ -31,7 +31,7 @@
                 <h2 id="navbar-header">
                     <span class="my-name">Wontairr</span>'s site
                     <!-- Toggle Lightmode/Darkmode -->
-                    <button role="checkbox" aria-checked="false" id="light-mode-btn" class="nav-anchor" title="Click to Switch to Dark Mode">
+                    <button role="checkbox" aria-checked="false" id="light-mode-btn" class="nav-anchor" aria-label="Click to Switch to Dark Mode" title="Click to Switch to Dark Mode">
                         <div aria-hidden="true" id="light-mode-btn-selected-shade"></div>
 
                         <div aria-hidden="true" id="light-mode-btn-interior">
@@ -189,8 +189,8 @@ Right below this is my portfolio.</strong>
         <div id="comfort-margin"></div>
 
         <!-- 3D Animation Popup -->
-        <div role="menu" class="portfolio-popup hidden" id="portfolio-popup-3d-animation">
-            <button class="portfolio-popup-close-btn" title="Close Button"><img alt="Close Button" class="cross-icon" src="assets/images/cross.svg"/></button>
+        <div role="menu" hidden class="portfolio-popup hidden" id="portfolio-popup-3d-animation">
+            <button class="portfolio-popup-close-btn" aria-label="Close Popup" title="Close Popup"><img aria-hidden="true" class="cross-icon" src="assets/images/cross.svg"/></button>
             
             <div class="portfolio-popup-content-container">
                 <header class="portfolio-popup-header"><h1>3D Animation</h1></header>
@@ -206,7 +206,7 @@ Right below this is my portfolio.</strong>
 
                             <div id="animation-video-dropdown-contents">
                                 
-                                <section aria-labelledby="animation-tab-btn-about" role="tabpanel" id="animation-video-dropdown-about"        class="animation-video-dropdown-tab hidden">
+                                <section aria-labelledby="animation-tab-btn-about" role="tabpanel" id="animation-video-dropdown-about" class="animation-video-dropdown-tab hidden">
                                     <div id="animation-video-dropdown-about-txt-container">
                                         <pre class="animation-video-dropdown-about-txt">
 Welcome to the 3D Animation Gallery! Here you can view my best work.
@@ -221,13 +221,12 @@ I use the following programs:
                                     </div>
                                 </section>
                                
-                                <!--FIXME: Plays even when you close the popup-->
-                                <section aria-labelledby="animation-tab-btn-video" role="tabpanel" id="animation-video-wrapper"               class="animation-video-dropdown-tab">
+                                <section aria-live="polite" aria-labelledby="animation-tab-btn-video" role="tabpanel" id="animation-video-wrapper" class="animation-video-dropdown-tab">
                                     <h2 id="animation-video-player-placeholder-txt">Choose an Animation From the Gallery Below!</h2>
                                 </section>
 
-                                <section aria-labelledby="animation-tab-btn-vidinfo" role="tabpanel" id="animation-video-dropdown-vid-info"   class="animation-video-dropdown-tab hidden">
-                                    <div id="animation-video-dropdown-vid-info-txt-container">
+                                <section aria-labelledby="animation-tab-btn-vidinfo" role="tabpanel" id="animation-video-dropdown-vid-info" class="animation-video-dropdown-tab hidden">
+                                    <div aria-live="polite" id="animation-video-dropdown-vid-info-txt-container">
                                         <p class="animation-video-dropdown-vid-info-txt">
                                             Video info will appear here when a video is selected from the gallery below.
                                         </p>
@@ -236,8 +235,8 @@ I use the following programs:
 
                             </div>
                         </div>
-                        <button type="button" id="animation-video-dropdown-arrow">
-                            <img src="/assets/images/arrow_down.svg">
+                        <button aria-controls="animation-video-dropdown" aria-label="Open Video Player Dropdown" type="button" id="animation-video-dropdown-arrow">
+                            <img aria-hidden="true" src="/assets/images/arrow_down.svg">
                         </button>
                     </section>
                     <!-- Filled by index.animationgallery.js -->
@@ -253,8 +252,8 @@ I use the following programs:
             </div>
         </div>
         <!-- Programming Popup -->
-        <div role="menu" class="portfolio-popup hidden" id="portfolio-popup-programming">
-            <button class="portfolio-popup-close-btn" title="Close Button"><img alt="Close Button" class="cross-icon" src="assets/images/cross.svg"/></button>
+        <div role="menu" hidden class="portfolio-popup hidden" id="portfolio-popup-programming">
+            <button class="portfolio-popup-close-btn" aria-label="Close Popup" title="Close Popup"><img aria-hidden="true" class="cross-icon" src="assets/images/cross.svg"/></button>
             
             
             <div class="portfolio-popup-content-container">
@@ -338,8 +337,8 @@ I use the following programs:
             </div>
         </div>
         <!-- Other Work Popup -->
-        <div role="menu" class="portfolio-popup hidden" id="portfolio-popup-other-projects">
-            <button class="portfolio-popup-close-btn" title="Close Button"><img alt="Close Button" class="cross-icon" src="assets/images/cross.svg"/></button>
+        <div role="menu" hidden class="portfolio-popup hidden" id="portfolio-popup-other-projects">
+            <button class="portfolio-popup-close-btn" aria-label="Close Popup" title="Close Popup"><img aria-hidden="true" class="cross-icon" src="assets/images/cross.svg"/></button>
             
             
             <div class="portfolio-popup-content-container">
@@ -438,13 +437,14 @@ I use the following programs:
                     </figure>
 
                     <!--Item Viewer-->
+                    <!--NOTE: MAKE THIS ACCESSIBLE-->
                     <div id="otherwork-item-viewer" class="otherwork-viewer-hidden" hidden>
-                        <button class="otherwork-item-viewer-btn" title="Previous Image" id="otherwork-item-viewer-btn-left">
+                        <button class="otherwork-item-viewer-btn" aria-label="Previous Image" title="Previous Image" id="otherwork-item-viewer-btn-left">
                             <span class="fa-solid fa-arrow-right fa-flip-horizontal"></span>
                         </button>
-                        <div id="otherwork-item-viewer-image-container" title="Click To Close">
+                        <div id="otherwork-item-viewer-image-container" aria-label="Magnified Image Viewer. Click to Close Popup." title="Click to Close Popup">
                         </div>
-                        <button class="otherwork-item-viewer-btn" title="Next Image" id="otherwork-item-viewer-btn-right">
+                        <button class="otherwork-item-viewer-btn" aria-label="Next Image" title="Next Image" id="otherwork-item-viewer-btn-right">
                             <span class="fa-solid fa-arrow-right"></span>
                         </button>
                     </div>

@@ -89,7 +89,10 @@ const dateStringOptions = {
 // Has "tags" object where the keys are tags and the values are arrays with the related elements.
 let loadedGalleryItemElements = {};
 
+// True if we clicked the dropdown for the video player.
+let isDroppedDown = false;
 
+let hasClickedAtleastOneVideo = false;
 
 /////
 ///
@@ -171,6 +174,8 @@ function getGalleryItemFromItemElement(galleryItemElement)
 
 function onGalleryItemClick(e)
 {
+    hasClickedAtleastOneVideo = true;
+
     const item = e.currentTarget;
     const galleryItem = getGalleryItemFromItemElement(item);
     
@@ -225,12 +230,25 @@ function loadGalleryItems()
 
 function onClose3DAnimationPopup()
 {
-    videoPlayer.innerHTML = "";
+    if (hasClickedAtleastOneVideo) {
+        videoPlayer.innerHTML = `
+<h2 id="animation-video-player-placeholder-txt">Choose an Animation From the Gallery Below!</h2>
+`;
+    }
+    // Close dropdown.
+    if (isDroppedDown) {
+        isDroppedDown = false;
+        videoDropDownWrapper.classList.toggle("gallery-dropdown");
+        videoDropDownWrapper.setAttribute("aria-expanded","false");
+        videoDropDownButton.setAttribute("aria-label","Open Video Player Dropdown");
+    }
 }
 
 videoDropDownButton.addEventListener("click",(e) => {
+    isDroppedDown = !isDroppedDown;
     videoDropDownWrapper.classList.toggle("gallery-dropdown");
-    videoDropDownWrapper.setAttribute("aria-expanded",videoDropDownWrapper.classList.contains("gallery-dropdown") ? "true" : "false");
+    videoDropDownWrapper.setAttribute("aria-expanded",isDroppedDown ? "true" : "false");
+    videoDropDownButton.setAttribute("aria-label",isDroppedDown ? "Open Video Player Dropdown" : "Close Video Player Dropdown");
 });
 
 

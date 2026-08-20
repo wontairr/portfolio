@@ -53,6 +53,7 @@ function popupClose(e)
     popup.classList.toggle("shown");
     // Toggle on the hidden class.
     popup.classList.toggle("hidden");
+    popup.setAttribute("hidden","");
 
     // Prevent this click event from going up to the popup element (If we are a close button).
     if (!btn.isPortfolioPopup) {
@@ -84,6 +85,7 @@ function popupOpen(e)
     }
     // Toggle off the hidden class.
     popup.classList.toggle("hidden");
+    popup.removeAttribute("hidden");
     // Toggle on the shown class.
     popup.classList.toggle("shown");
     // Scroll the content box to the top.

@@ -4,6 +4,8 @@
     --font-roboto: "Roboto", sans-serif;
 
     /* LIGHT MODE VARIABLES */
+    --lightmode-color-my-name: #00439B;
+
     --lightmode-color-text-dark:  #000000;
     --lightmode-color-text-light: #F8F8E8;
 
@@ -37,6 +39,8 @@
     --lightmode-color-comfort-margin-opacity: 0.05;
 
     /* DARK MODE VARIABLES */
+    --darkmode-color-my-name: #15de72;
+
     --darkmode-color-text-light:  #000000;
     --darkmode-color-text-dark: #eaeadd;
 
@@ -70,6 +74,8 @@
     --darkmode-color-comfort-margin-opacity: 0.3;
 
     /* VARIABLES IN USE BY THE SITE */
+
+    --color-my-name: #00439B;
 
     --color-text-dark:  #000000;
     --color-text-light: #F8F8E8;
@@ -133,7 +139,7 @@ body {
     text-transform: lowercase;
 }
 .my-name:hover {
-    color:var(--color-fg);
+    color:var(--color-my-name);
 }
 
 .dont-scroll {

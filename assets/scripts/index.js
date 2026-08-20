@@ -3,6 +3,8 @@ const lightModeBtn = document.getElementById("light-mode-btn");
 const lightModeBtnShade = document.getElementById("light-mode-btn-selected-shade");
 
 const colorVariableNames = [
+    "--color-my-name",
+
     "--color-text-light",
     "--color-text-dark",
     
@@ -54,6 +56,7 @@ function toggleLightingMode(mode)
             root.style.setProperty(varName,darkVarValue);
         }
         lightModeBtn.title = "Click to Switch to Light Mode";
+        lightModeBtn.setAttribute("aria-label", "Click to Switch to Light Mode");
 
     } else if (mode === "light") {
 
@@ -64,6 +67,7 @@ function toggleLightingMode(mode)
         }
 
         lightModeBtn.title = "Click to Switch to Dark Mode";
+        lightModeBtn.setAttribute("aria-label", "Click to Switch to Dark Mode")
     }
 
     lightModeBtn.setAttribute("aria-checked",mode === "dark" ? "true" : "false");
