@@ -68,6 +68,11 @@ function toggleLightingMode(mode)
 
     lightModeBtn.setAttribute("aria-checked",mode === "dark" ? "true" : "false");
     lightMode = mode;
+
+    localStorage.setItem("lightmode",mode);
+}
+if (localStorage.getItem("lightmode") === "dark") {
+    toggleLightingMode("dark");
 }
 
 // FIXME: Doesn't always work at low res.
