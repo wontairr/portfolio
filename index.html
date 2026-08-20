@@ -59,7 +59,7 @@
         <main>
             <section class="main-section" id="about-section">
                 <div id="about-section-top-container">
-                    <h1 id="about-section-header">Hello !</h1>
+                    <h1 id="about-section-header"><span>Hello<span aria-hidden="true"> </span>!</span></h1>
                     <pre id="first-paragraph">
         My name is Nathanael, but online I go by <span class="my-name">Wontairr</span>. My best work can be found in my 3D Animation and Programming projects, but I also have experience in other digital work such as 3D Modeling, Sound Design, Video Editing, and more!
         
@@ -73,7 +73,6 @@ Right below this is my portfolio.</strong>
 
                 <!-- Hidden from screen readers -->
                 <div aria-hidden="true" id="about-section-scroll-indicator">
-                    <!-- FIXME: THIS IS BAD PRACTICE -->
                     <div id="about-section-scroll-indicator-bar">
                         <span class="fa-solid fa-chevron-down"></span>
                         <span class="fa-solid fa-chevron-down"></span>
@@ -90,7 +89,13 @@ Right below this is my portfolio.</strong>
                 
                 <!-- Buttons labelled by the spans -->
                 <div id="portfolio-choice-container">
-                    <button aria-labelledby="popup-label-3d-animation" class="portfolio-choice" id="portfolio-choice-3d-animation">
+                    <button
+                        tabindex="0"
+                        aria-haspopup="menu"
+                        aria-controls="portfolio-popup-3d-animation"
+                        aria-labelledby="popup-label-3d-animation"
+                        class="portfolio-choice"
+                        id="portfolio-choice-3d-animation">
 
                          <!-- Hidden from screen readers -->
                         <div aria-hidden="true" class="portfolio-choice-bg"></div>
@@ -100,7 +105,13 @@ Right below this is my portfolio.</strong>
                         </div>
                     </button>
                     
-                    <button aria-labelledby="popup-label-programming" class="portfolio-choice" id="portfolio-choice-programming">
+                    <button
+                        tabindex="0"
+                        aria-haspopup="menu"
+                        aria-controls="portfolio-popup-programming"
+                        aria-labelledby="popup-label-programming"
+                        class="portfolio-choice"
+                        id="portfolio-choice-programming">
                         
                         <!-- Hidden from screen readers -->
                         <div aria-hidden="true" class="portfolio-choice-bg"></div>
@@ -110,7 +121,13 @@ Right below this is my portfolio.</strong>
                         </div>
                     </button>
                     
-                    <button aria-labelledby="popup-label-other-work" class="portfolio-choice" id="portfolio-choice-other-projects">
+                    <button
+                        tabindex="0"
+                        aria-haspopup="menu"
+                        aria-controls="portfolio-popup-other-projects"
+                        aria-labelledby="popup-label-other-work"
+                        class="portfolio-choice"
+                        id="portfolio-choice-other-projects">
 
                          <!-- Hidden from screen readers -->
                         <div aria-hidden="true" class="portfolio-choice-bg"></div>
@@ -172,7 +189,7 @@ Right below this is my portfolio.</strong>
         <div id="comfort-margin"></div>
 
         <!-- 3D Animation Popup -->
-        <div class="portfolio-popup hidden" id="portfolio-popup-3d-animation">
+        <div role="menu" class="portfolio-popup hidden" id="portfolio-popup-3d-animation">
             <button class="portfolio-popup-close-btn" title="Close Button"><img alt="Close Button" class="cross-icon" src="assets/images/cross.svg"/></button>
             
             <div class="portfolio-popup-content-container">
@@ -236,88 +253,92 @@ I use the following programs:
             </div>
         </div>
         <!-- Programming Popup -->
-        <div class="portfolio-popup hidden" id="portfolio-popup-programming">
+        <div role="menu" class="portfolio-popup hidden" id="portfolio-popup-programming">
             <button class="portfolio-popup-close-btn" title="Close Button"><img alt="Close Button" class="cross-icon" src="assets/images/cross.svg"/></button>
             
             
             <div class="portfolio-popup-content-container">
                 <header class="portfolio-popup-header"><h1>Programming</h1></header>
                 <div class="portfolio-popup-contents">
-                    <h2 class="programming-item-group-header">Projects</h2>
-                    <figure class="programming-item">
-                        <img src="assets/images/portfolio/programming/placeholder_portfolio_site.png">
-                        <figcaption class="programming-item-caption">
-                            <h3 class="programming-item-caption-header">This Site!</h3>
-                            <p class="programming-item-caption-info">A site where you can view all of my work. Written in HTML, JS, and CSS.</p>
-                            <div class="programming-item-caption-footer">
-                                <section class="programming-item-caption-used-tools" id="html,css,js">
-                                </section>
-                                <a class="programming-item-caption-site-link" href="site">Visit Site</a>
-                                <a class="programming-item-caption-site-link github-style" href="site">Visit Github</a>
-                            </div>
-                        </figcaption>
-                    </figure>
+                    <section class="programming-item-group-section">
+                        <h2 class="programming-item-group-header" id="programming-item-group-header-projects">Projects</h2>
+                        <figure class="programming-item">
+                            <img src="assets/images/portfolio/programming/placeholder_portfolio_site.png">
+                            <figcaption class="programming-item-caption">
+                                <h3 class="programming-item-caption-header">This Site!</h3>
+                                <p class="programming-item-caption-info">A site where you can view all of my work. Written in HTML, JS, and CSS.</p>
+                                <div class="programming-item-caption-footer">
+                                    <section class="programming-item-caption-used-tools" id="html,css,js">
+                                    </section>
+                                    <a class="programming-item-caption-site-link" href="site">Visit Site</a>
+                                    <a class="programming-item-caption-site-link github-style" href="site">Visit Github</a>
+                                </div>
+                            </figcaption>
+                        </figure>
 
-                    <figure class="programming-item">
-                        <img loading="lazy" src="assets/images/portfolio/programming/site_img_gmod_zen_loader.jpg">
-                        <figcaption class="programming-item-caption">
-                            <h3 class="programming-item-caption-header">Gmod Zen Loader</h3>
-                            <p class="programming-item-caption-info">A relaxing loading screen for Garry's Mod. View it online! Written in HTML, JS, and CSS.</p>
-                            <div class="programming-item-caption-footer">
-                                <section class="programming-item-caption-used-tools" id="html,css,js">
-                                </section>
-                                <a class="programming-item-caption-site-link" href="https://wontairr.github.io/gmod-zen-loader/">Visit Site</a>
-                                <a class="programming-item-caption-site-link github-style" href="https://github.com/wontairr/gmod-zen-loader">Visit Github</a>
-                            </div>
-                        </figcaption>
-                    </figure>
+                        <figure class="programming-item">
+                            <img loading="lazy" src="assets/images/portfolio/programming/site_img_gmod_zen_loader.jpg">
+                            <figcaption class="programming-item-caption">
+                                <h3 class="programming-item-caption-header">Gmod Zen Loader</h3>
+                                <p class="programming-item-caption-info">A relaxing loading screen for Garry's Mod. View it online! Written in HTML, JS, and CSS.</p>
+                                <div class="programming-item-caption-footer">
+                                    <section class="programming-item-caption-used-tools" id="html,css,js">
+                                    </section>
+                                    <a class="programming-item-caption-site-link" href="https://wontairr.github.io/gmod-zen-loader/">Visit Site</a>
+                                    <a class="programming-item-caption-site-link github-style" href="https://github.com/wontairr/gmod-zen-loader">Visit Github</a>
+                                </div>
+                            </figcaption>
+                        </figure>
 
-                    <figure class="programming-item">
-                        <img loading="lazy" src="assets/images/portfolio/programming/site_img_steam_antiscreamer.jpg">
-                        <figcaption class="programming-item-caption">
-                            <h3 class="programming-item-caption-header">Garry's Mod Anti-Screamer</h3>
-                            <p class="programming-item-caption-info">A tool that prevents attacks from malicious Garry's Mod addons. Written in Lua.</p>
-                            <div class="programming-item-caption-footer">
-                                <section class="programming-item-caption-used-tools" id="lua">
-                                </section>
-                                <a class="programming-item-caption-site-link" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3404179264">Visit Site</a>
-                                <a class="programming-item-caption-site-link github-style" href="https://github.com/wontairr/GarrysMod-AntiScreamer">Visit Github</a>
-                            </div>
-                        </figcaption>
-                    </figure>
+                        <figure class="programming-item">
+                            <img loading="lazy" src="assets/images/portfolio/programming/site_img_steam_antiscreamer.jpg">
+                            <figcaption class="programming-item-caption">
+                                <h3 class="programming-item-caption-header">Garry's Mod Anti-Screamer</h3>
+                                <p class="programming-item-caption-info">A tool that prevents attacks from malicious Garry's Mod addons. Written in Lua.</p>
+                                <div class="programming-item-caption-footer">
+                                    <section class="programming-item-caption-used-tools" id="lua">
+                                    </section>
+                                    <a class="programming-item-caption-site-link" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3404179264">Visit Site</a>
+                                    <a class="programming-item-caption-site-link github-style" href="https://github.com/wontairr/GarrysMod-AntiScreamer">Visit Github</a>
+                                </div>
+                            </figcaption>
+                        </figure>
 
-                    <figure class="programming-item">
-                        <img loading="lazy" src="assets/images/portfolio/programming/site_img_steam_soulextractor.jpg">
-                        <figcaption class="programming-item-caption">
-                            <h3 class="programming-item-caption-header">Entity Soul Extractor</h3>
-                            <p class="programming-item-caption-info">A Garry's Mod Addon that plays unique sounds based on the properties of an entity. Written in Lua.</p>
-                            <div class="programming-item-caption-footer">
-                                <section class="programming-item-caption-used-tools" id="lua">
-                                </section>
-                                <a class="programming-item-caption-site-link" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3735875887">Visit Site</a>
-                                <a class="programming-item-caption-site-link github-style" href="https://github.com/wontairr/entity_soul_extractor">Visit Github</a>
-                            </div>
-                        </figcaption>
-                    </figure>
-                    
-                    <h2 class="programming-item-group-header">Miscellaneous Work</h2>
-                    <figure class="programming-item">
-                        <video autoplay="" controls controlslist="nodownload" loop="" muted="muted" playsinline="playsinline" poster="https://cdn.artstation.com/p/thumbnails/003/293/488/thumb.jpg" tabindex="-1" preload="auto"><source media="(min-width: 0px)" src="https://cdn.artstation.com/p/video_sources/003/401/442/2026-07-29-10-32-20-am-1.mp4" type="video/mp4"></video>
-                        <figcaption class="programming-item-caption">
-                            <h3 class="programming-item-caption-header">Triple Stage Kick</h3>
-                            <p class="programming-item-caption-info">An ingame mechanic that lets you charge up a strong kick. Written in C++ using the Source SDK.</p>
-                            <div class="programming-item-caption-footer">
-                                <section class="programming-item-caption-used-tools" id="cpp,source">
-                                </section>
-                                <a class="programming-item-caption-site-link" href="https://www.artstation.com/artwork/Z0GdR0">Visit Artstation</a>
-                            </div>
-                        </figcaption>
-                    </figure>
+                        <figure class="programming-item">
+                            <img loading="lazy" src="assets/images/portfolio/programming/site_img_steam_soulextractor.jpg">
+                            <figcaption class="programming-item-caption">
+                                <h3 class="programming-item-caption-header">Entity Soul Extractor</h3>
+                                <p class="programming-item-caption-info">A Garry's Mod Addon that plays unique sounds based on the properties of an entity. Written in Lua.</p>
+                                <div class="programming-item-caption-footer">
+                                    <section class="programming-item-caption-used-tools" id="lua">
+                                    </section>
+                                    <a class="programming-item-caption-site-link" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3735875887">Visit Site</a>
+                                    <a class="programming-item-caption-site-link github-style" href="https://github.com/wontairr/entity_soul_extractor">Visit Github</a>
+                                </div>
+                            </figcaption>
+                        </figure>              
+                    </section>
+
+                    <section class="programming-item-group-section" aria-labelledby="programming-item-group-header-misc">
+                        <h2 class="programming-item-group-header" id="programming-item-group-header-misc">Miscellaneous Work</h2>
+                        <figure class="programming-item">
+                            <video autoplay="" controls controlslist="nodownload" loop="" muted="muted" playsinline="playsinline" poster="https://cdn.artstation.com/p/thumbnails/003/293/488/thumb.jpg" tabindex="-1" preload="auto"><source media="(min-width: 0px)" src="https://cdn.artstation.com/p/video_sources/003/401/442/2026-07-29-10-32-20-am-1.mp4" type="video/mp4"></video>
+                            <figcaption class="programming-item-caption">
+                                <h3 class="programming-item-caption-header">Triple Stage Kick</h3>
+                                <p class="programming-item-caption-info">An ingame mechanic that lets you charge up a strong kick. Written in C++ using the Source SDK.</p>
+                                <div class="programming-item-caption-footer">
+                                    <section class="programming-item-caption-used-tools" id="cpp,source">
+                                    </section>
+                                    <a class="programming-item-caption-site-link" href="https://www.artstation.com/artwork/Z0GdR0">Visit Artstation</a>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </section>
                 </div>
             </div>
         </div>
         <!-- Other Work Popup -->
-        <div class="portfolio-popup hidden" id="portfolio-popup-other-projects">
+        <div role="menu" class="portfolio-popup hidden" id="portfolio-popup-other-projects">
             <button class="portfolio-popup-close-btn" title="Close Button"><img alt="Close Button" class="cross-icon" src="assets/images/cross.svg"/></button>
             
             

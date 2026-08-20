@@ -5,7 +5,6 @@
 #portfolio-popup-programming .portfolio-popup-contents {
     display:flex;
 
-
     align-items: center;
     flex-direction: column;
 
@@ -21,6 +20,16 @@
 	background-repeat: repeat;
 	background-size: 1rem;
 }
+.programming-item-group-section {
+    display:flex;
+
+    align-items: center;
+    flex-direction: column;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
 
 .programming-item-group-header {
     color: #FFF;
@@ -29,10 +38,10 @@
 
     text-shadow: 5px 5px var(--color-fg);
 
-    &:first-of-type {        
-        margin-top: -2rem;
-        margin-bottom: 0.5rem;
-    }
+}
+#programming-item-group-header-projects {        
+    margin-top: -2rem;
+    margin-bottom: 0.5rem;
 }
 
 .programming-item {
