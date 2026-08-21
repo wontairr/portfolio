@@ -111,8 +111,10 @@
     
     letter-spacing:normal;
 }
-.portfolio-popup-header h1 {
+.portfolio-popup-header h2 {
     display:inline-block;
+
+    font-size: 4rem;
     
     margin-top:4rem;
     transform:translateY(-4rem);
