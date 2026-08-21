@@ -12,7 +12,7 @@ const usedToolSections = document.querySelectorAll(".programming-item-caption-us
 const extraImgAttributes = `loading="lazy"`;
 
 usedToolSections.forEach( (section) => {
-    const toolsUsed = section.id.split(",");
+    const toolsUsed = section.dataset.usedtools.split(",");
     
     let HTMLInsert = ``;
 
