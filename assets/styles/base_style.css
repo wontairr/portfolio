@@ -3,76 +3,6 @@
     --font-space-mono: "Space Mono", monospace;
     --font-roboto: "Roboto", sans-serif;
 
-    /* LIGHT MODE VARIABLES */
-    --lightmode-color-my-name: #00439B;
-
-    --lightmode-color-text-dark:  #000000;
-    --lightmode-color-text-light: #F8F8E8;
-
-    --lightmode-color-dark:       #000000;
-    --lightmode-color-darkgray:   #363946;
-    --lightmode-color-darklight:  #696773;
-    
-    --lightmode-color-bg:         #f3f3e3;
-    --lightmode-color-bg-shade:   #F2F2DC;
-    --lightmode-color-bg-darkshade:   #cbcbb6;
-    
-    --lightmode-color-fg-light:       #0A74FF;
-    --lightmode-color-fg:             #00439B;
-    --lightmode-color-fg-dark:        #072f64;
-    --lightmode-color-fg-verydark:    #02152e;
-    
-    --lightmode-color-fg-tab-select:  #06387b;
-
-    --lightmode-color-fg-graylight:   #BFC3BA;
-    --lightmode-color-fg-graydark:    #A9ACA9;
-
-    --lightmode-color-red:        #9b0024;
-    --lightmode-color-red-dark:   #690019;
-
-    --lightmode-color-border-dark: #000000;
-
-
-    --lightmode-color-scroll-bg:      var(--color-darkgray);
-    --lightmode-color-scroll-thumb:   #828189;
-
-    --lightmode-color-comfort-margin-opacity: 0.05;
-
-    /* DARK MODE VARIABLES */
-    --darkmode-color-my-name: #15de72;
-
-    --darkmode-color-text-light:  #000000;
-    --darkmode-color-text-dark: #eaeadd;
-
-    --darkmode-color-dark:       #000000;
-    --darkmode-color-darkgray:   #363946;
-    --darkmode-color-darklight:  #696773;
-    
-    --darkmode-color-bg:         #062042;
-    --darkmode-color-bg-shade:   #072f64;
-    --darkmode-color-bg-darkshade:   #02152e;
-
-    --darkmode-color-fg-light:       #0A74FF;
-    --darkmode-color-fg:             #00439B;
-    --darkmode-color-fg-dark:        #072f64;
-    --darkmode-color-fg-verydark:    #02152e;
-    
-    --darkmode-color-fg-tab-select:  #06387b;
-
-    --darkmode-color-fg-graylight:   #00439B;
-    --darkmode-color-fg-graydark:    #072f64;
-
-    --darkmode-color-red:        #9b0024;
-    --darkmode-color-red-dark:   #690019;
-
-    --darkmode-color-border-dark: #001329;
-
-    
-    --darkmode-color-scroll-bg:      var(--color-darkgray);
-    --darkmode-color-scroll-thumb:   #828189;
-
-    --darkmode-color-comfort-margin-opacity: 0.3;
-
     /* VARIABLES IN USE BY THE SITE */
 
     --color-my-name: #00439B;
@@ -116,6 +46,43 @@
     --github-color-border: #3D444D;
     --github-color-fg: #478BE6; 
 }
+:root.dark {
+    /* DARK MODE VARIABLES */
+    --color-my-name: #15de72;
+
+    --color-text-light:  #000000;
+    --color-text-dark: #eaeadd;
+
+    --color-dark:       #000000;
+    --color-darkgray:   #363946;
+    --color-darklight:  #696773;
+    
+    --color-bg:         #062042;
+    --color-bg-shade:   #072f64;
+    --color-bg-darkshade:   #02152e;
+
+    --color-fg-light:       #0A74FF;
+    --color-fg:             #00439B;
+    --color-fg-dark:        #072f64;
+    --color-fg-verydark:    #02152e;
+    
+    --color-fg-tab-select:  #06387b;
+
+    --color-fg-graylight:   #00439B;
+    --color-fg-graydark:    #072f64;
+
+    --color-red:        #9b0024;
+    --color-red-dark:   #690019;
+
+    --color-border-dark: #001329;
+
+    
+    --color-scroll-bg:      var(--color-darkgray);
+    --color-scroll-thumb:   #828189;
+
+    --color-comfort-margin-opacity: 0.3;
+}
+
 
 /* Scrollbar styling for all browsers. */
 html {
@@ -163,4 +130,8 @@ body {
     &:hover {
         background-color: #2F3742 !important;
     }
+}
+
+.transition-colors {
+    transition: background-color 0.2s ease, color 0.2s ease, text-shadow 0.2s ease;
 }

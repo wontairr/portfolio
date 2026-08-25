@@ -2,8 +2,6 @@
 body {
     margin:0;
     overflow-x: hidden;
-    
-    transition: background-color 0.2s ease;
 }
 #layout-container {
     width:100%;
@@ -53,7 +51,6 @@ main {
     width:23rem;
     background-color: var(--color-bg-shade);
     
-    transition: background-color 0.2s ease;
     border-right: 4px solid var(--color-dark);
 }
 #left-navbar-dither-overlay {
@@ -226,8 +223,6 @@ main {
     margin-bottom:0;
     
     text-shadow: -5px 5px var(--color-bg-darkshade);
-
-    transition: color 0.2s ease, text-shadow 0.2s ease;
 }
 
 p,pre {
