@@ -27,7 +27,7 @@ body {
 }
 
 #comfort-margin {
-    width:25rem;
+    width:min(25vw,25rem);
 
     background-image: url("/assets/images/comfort_margin.png");
     background-size:contain;
@@ -35,6 +35,12 @@ body {
     animation: comfort-margin-scroll 70s linear infinite;
 
     opacity: var(--color-comfort-margin-opacity);
+}
+/* Disable animation on margin if we prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+    #comfort-margin {
+        animation: none;
+    }
 }
 
 /* The area between the navbar and the comfort margin. */
@@ -48,13 +54,16 @@ main {
     NAVBAR
 */
 #left-navbar {
-    width:23rem;
+    --left-navbar-width:clamp(18.5rem,23vw,23rem);
+
+
+    width:var(--left-navbar-width);
     background-color: var(--color-bg-shade);
     
     border-right: 4px solid var(--color-dark);
 }
 #left-navbar-dither-overlay {
-    width:23rem;
+    width:var(--left-navbar-width);
     height:50rem;
 
     background-image: url("/assets/images/dither_effect.png");
@@ -72,7 +81,7 @@ main {
     pointer-events: none;
 }
 #left-navbar-contents {
-    width:20rem;
+    width:clamp(16rem,20vw,20rem);
 
     position:fixed;
 
@@ -212,19 +221,25 @@ main {
 /* Headers for each section. */
 .main-section h1 {
     font-family: "Cormorant Garamond", serif;
-    font-size:255px;
+    font-size:min(15vw,16rem);
     font-weight: bold;
     
     color: var(--color-text-dark);
     
     
-    letter-spacing: -1.2rem;
+    letter-spacing: clamp(-1.2rem,-1.2vw,0rem);
     margin-top:0;
     margin-bottom:0;
     
     text-shadow: -5px 5px var(--color-bg-darkshade);
 }
 
+@media (max-width:1000px) {
+
+}
+
+
+/* NOTE: Try to get text-wrap:balance working. */
 p,pre {
     font-family: var(--font-space-grotesk);
     font-weight: 400;
@@ -249,7 +264,14 @@ ABOUT SECTION
 */
 
 #about-section-header {
-    transform: translateY(-40px);
+    margin-top:-3vh;
+    margin-bottom: 3rem;
+}
+
+@media (max-width:900px) {
+    #about-section-header {
+        margin-top:-2vh;
+    }
 }
 
 #about-section {
@@ -299,7 +321,17 @@ ABOUT SECTION
     width:3rem;
     color:var(--color-text-dark)
 }
-
+/* Hide extra arrows on lower widths. */
+@media (max-width:1200px) {
+    #about-section-scroll-indicator svg:nth-child(6) {
+        display:none;
+    }
+}
+@media (max-width:1100px) {
+    #about-section-scroll-indicator svg:nth-child(5) {
+        display:none;
+    }
+}
 
 /*
 PORTFOLIO SECTION (Handled in index.section.portfolio.css)
@@ -316,7 +348,8 @@ CONTACT SECTION
 #contact-section-options {
     font-family: var(--font-space-grotesk);
     
-    font-size: 1.5rem;
+    font-size: clamp(1.25rem,1.5vw,1.5rem);
+    text-wrap-mode: nowrap;
     
     line-height: 3rem;
     
