@@ -1,11 +1,26 @@
 const aboutSection = document.getElementById("about-section");
 const lightModeBtn = document.getElementById("light-mode-btn");
 const lightModeBtnShade = document.getElementById("light-mode-btn-selected-shade");
+
+const phoneNavbarDropdown = document.getElementById("phone-navbar-dropdown");
+const phoneNavbarBtn = document.getElementById("phone-navbar-dropdown-btn");
 const root = document.documentElement;
 
-
-
 let lightMode = "light";
+
+// FIXME: Doesn't always work at low res.
+function resizeAboutSection()
+{
+    const newHeight = Math.max(aboutSection.clientHeight,window.innerHeight).toString() + "px";
+    aboutSection.style.minHeight = newHeight;
+}
+
+function phoneNavbarDropdownToggle() {
+    phoneNavbarBtn.classList.toggle("dropdown-active");
+    phoneNavbarDropdown.classList.toggle("hidden");
+    phoneNavbarDropdown.toggleAttribute("aria-expanded");
+    phoneNavbarDropdown.toggleAttribute("hidden");
+}
 
 function toggleLightingMode(mode)
 {
@@ -41,13 +56,6 @@ if (localStorage.getItem("setLightModeAccordingToPreference") !== "true") {
 }
 
 
-// FIXME: Doesn't always work at low res.
-function resizeAboutSection()
-{
-    const newHeight = Math.max(aboutSection.clientHeight,window.innerHeight).toString() + "px";
-    aboutSection.style.minHeight = newHeight;
-}
-
 if (document.readyState === "loading") {
     // Make the about section take up the whole screen height so that the portfolio isn't peeking in visually.
     document.addEventListener("DOMContentLoaded",resizeAboutSection);
@@ -55,9 +63,13 @@ if (document.readyState === "loading") {
     resizeAboutSection();
 }
 
-lightModeBtn.addEventListener("click",(e)=>{
+lightModeBtn.addEventListener("click",() => {
     toggleLightingMode(lightMode == "dark" ? "light" : "dark");
 });
+
+phoneNavbarBtn.addEventListener("click",() => {
+    phoneNavbarDropdownToggle();
+})
 
 // Turn on color transitioning after we load.
 setTimeout(()=>{

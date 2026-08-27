@@ -162,15 +162,57 @@
 
 #phone-navbar-dropdown-btn {
 	anchor-name: --phone-navbar-dropdown-btn;
+
+    font-family: var(--font-space-mono);
+    font-size: large;
+    font-weight: 400;
+    font-style: normal;
+
+	color: var(--color-text-dark);
+	background-color:var(--color-bg-shade);
+
+	border:3px solid var(--color-dark);
+	
+	display:flex;
+	flex-direction: row;
+	align-items: center;
+
+	width:10rem;
+	height:3rem;
+
+	margin-top: 0.25rem;
+	margin-bottom: 0.25rem;
+	
+	padding-top:0.50rem;
+	padding-bottom:0.50rem;
+		
+	text-decoration: none;
+
+	transition:color 0.05s ease,background-color 0.1s ease;
+
+	&.dropdown-active {
+		background-color: oklch(from var(--color-fg) calc(l - 0.12) c h);
+    	color: #fff;
+	}
+}
+
+#phone-navbar-dropdown-btn:hover {
+	background-color: var(--color-fg);
+    color: #fff;
+	
+	cursor:pointer;
+	
+	&.dropdown-active {
+		background-color: oklch(from var(--color-fg) calc(l - 0.1) c h);
+	}
 }
 
 #phone-navbar-dropdown {
 	position: absolute;
 	position-anchor: --phone-navbar-dropdown-btn;
 	position-area: bottom left;
-	top:2rem;
-	left:calc(100% - 6rem);
+	top:0;
+	left:calc(100% - 0.20rem);
 	display:flex;
 	flex-direction: column;
-	border:2px solid red;
 }

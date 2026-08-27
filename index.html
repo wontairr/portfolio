@@ -12,6 +12,7 @@
     <script src="assets/scripts/index.preload.js"></script>
     <link rel="stylesheet" href="assets/styles/base_style.css">
     <link rel="stylesheet" href="assets/styles/index.css">
+    <link rel="stylesheet" href="assets/styles/index.phone_layout.css">
     <link rel="stylesheet" href="assets/styles/index.section.portfolio.css">
     <link rel="stylesheet" href="assets/styles/index.section.social.css">
     <link rel="stylesheet" href="assets/styles/index.portfolio.popups.css">
@@ -19,8 +20,9 @@
     <link rel="stylesheet" href="assets/styles/index.portfolio.popups.programming.css">
     <link rel="stylesheet" href="assets/styles/index.portfolio.popups.otherwork.css">
     
-    <span class="fa-solid fa-arrow-right hidden"></span>
-    <span class="fa-solid fa-arrow-right fa-flip-horizontal hidden"></span>
+    <span class="fa-solid fa-arrow-right hidden" hidden></span>
+    <span class="fa-solid fa-arrow-right fa-flip-horizontal hidden" hidden></span>
+    <span class="fa-solid fa-chevron-down hidden" hidden></span>
     
     <title>wontairr's site</title>
 </head>
@@ -29,7 +31,7 @@
         <nav id="left-navbar">
             <div id="left-navbar-contents">
                 <h2 id="navbar-header">
-                    <span class="my-name">Wontairr</span>'s site
+                    <span><span class="my-name">Wontairr</span>'s site</span>
                     <!-- Toggle Lightmode/Darkmode -->
                     <button role="checkbox" aria-checked="false" id="light-mode-btn" class="nav-anchor" aria-label="Click to Switch to Dark Mode" title="Click to Switch to Dark Mode">
                         <div aria-hidden="true" id="light-mode-btn-selected-shade"></div>
@@ -51,7 +53,15 @@
                 <a class="nav-anchor" href="#portfolio-section"><span class="nav-anchor-text">Portfolio</span></a>
                 <a class="nav-anchor" href="#social-section"><span class="nav-anchor-text">Social</span></a>
                 <a class="nav-anchor" href="#contact-section"><span class="nav-anchor-text">Contact</span></a>
-
+                <button id="phone-navbar-dropdown-btn">
+                    Navigate <span class="fa-solid fa-chevron-down"></span>
+                </button>
+                <div id="phone-navbar-dropdown" class="hidden" hidden aria-expanded="false">
+                    <a class="nav-anchor" href="#about-section"><span class="nav-anchor-text">About</span></a>
+                    <a class="nav-anchor" href="#portfolio-section"><span class="nav-anchor-text">Portfolio</span></a>
+                    <a class="nav-anchor" href="#social-section"><span class="nav-anchor-text">Social</span></a>
+                    <a class="nav-anchor" href="#contact-section"><span class="nav-anchor-text">Contact</span></a>
+                </div>
 
             </div>
             <div id="left-navbar-dither-overlay"></div>
@@ -65,7 +75,7 @@
         
 <!--    I have spent most of my life learning the solo game development pipeline through game engines like Unity, Godot, and Source. Overtime I've realized that while I'm quite capable by myself, <strong>my work is most enjoyable when I am part of a team.</strong> Being able to give and receive feedback on each others work is how projects get refined and become great.-->
                     <strong id="first-paragraph-end-statement">Feel free to use the buttons on the left side to navigate the site! 
-Right below this is my portfolio.</strong>
+Right below this section is my portfolio.</strong>
         
         
                     </pre>
