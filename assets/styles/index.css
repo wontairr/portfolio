@@ -206,7 +206,7 @@ main {
     background-color: var(--color-dark);
 
     box-sizing: border-box;
-        }
+}
 
 .main-section:not(:first-of-type) {
     margin-bottom: 5rem;
