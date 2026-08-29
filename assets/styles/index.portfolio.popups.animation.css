@@ -45,9 +45,7 @@
     height: 100%;
     
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-
+        
     display:flex;
     
     flex-direction: column;
@@ -58,9 +56,7 @@
     height: 100%;
 
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-
+        
     display:flex;
     flex-direction:row;
     
@@ -86,9 +82,7 @@
 
 
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-
+        
     margin-left:auto;
 
     display:flex;
@@ -178,14 +172,10 @@
     height:100%;
 
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-}
+        }
 #animation-video-dropdown-vid-info-txt-container {
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-
+        
 
     position:absolute;
     overflow-y:scroll;

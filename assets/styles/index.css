@@ -8,9 +8,7 @@ body {
     height:fit-content;
 
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-
+        
     display:grid;
 
     grid-template-columns: 0fr 1fr 0fr;
@@ -168,9 +166,7 @@ main {
     height: 100%;
     
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    
+            
     pointer-events: none;
 }
 .light-mode-btn-icon {
@@ -210,9 +206,7 @@ main {
     background-color: var(--color-dark);
 
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-}
+        }
 
 .main-section:not(:first-of-type) {
     margin-bottom: 5rem;
@@ -221,7 +215,7 @@ main {
 /* Headers for each section. */
 .main-section h1 {
     font-family: "Cormorant Garamond", serif;
-    font-size:min(15vw,16rem);
+    font-size:clamp(7rem,16vw,16rem);
     font-weight: bold;
     
     color: var(--color-text-dark);

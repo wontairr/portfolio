@@ -7,9 +7,7 @@
 	padding:2rem;
 	
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    
+            
 	display:flex;
 	flex-direction: column;
     
@@ -70,9 +68,7 @@
     font-family: var(--font-space-grotesk);
 	
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-	
+        	
 	
     padding:0 0.75rem 0 0.75rem;
 }
@@ -152,9 +148,7 @@
 	cursor:pointer;
 
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-
+        
 	display: flex;
 	align-items: center;
 	justify-content: center;

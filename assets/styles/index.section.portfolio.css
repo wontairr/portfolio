@@ -45,9 +45,7 @@
     height:100%;
 
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-
+        
     position: absolute;
     top:0;
     left:0;
@@ -64,9 +62,7 @@
     align-items: center;
 
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-
+        
     backdrop-filter: blur(6px) brightness(100%) contrast(120%);
     -webkit-backdrop-filter: blur(6px) brightness(100%) contrast(120%);
 
