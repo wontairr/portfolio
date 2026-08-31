@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
@@ -12,7 +12,6 @@
     <script src="assets/scripts/index.preload.js"></script>
     <link rel="stylesheet" href="assets/styles/base_style.css">
     <link rel="stylesheet" href="assets/styles/index.css">
-    <link rel="stylesheet" href="assets/styles/index.phone_layout.css">
     <link rel="stylesheet" href="assets/styles/index.section.portfolio.css">
     <link rel="stylesheet" href="assets/styles/index.section.social.css">
     <link rel="stylesheet" href="assets/styles/index.portfolio.popups.css">
@@ -20,9 +19,12 @@
     <link rel="stylesheet" href="assets/styles/index.portfolio.popups.programming.css">
     <link rel="stylesheet" href="assets/styles/index.portfolio.popups.otherwork.css">
     
+    <link rel="stylesheet" href="assets/styles/index.phone_layout.css">
+
     <span class="fa-solid fa-arrow-right hidden" hidden></span>
     <span class="fa-solid fa-arrow-right fa-flip-horizontal hidden" hidden></span>
     <span class="fa-solid fa-chevron-down hidden" hidden></span>
+    <span class="fa-solid fa-bars hidden"></span>
     
     <title>wontairr's site</title>
 </head>
@@ -54,7 +56,7 @@
                 <a class="nav-anchor left-navbar-anchor" href="#social-section"><span class="nav-anchor-text">Social</span></a>
                 <a class="nav-anchor left-navbar-anchor" href="#contact-section"><span class="nav-anchor-text">Contact</span></a>
                 <button aria-label="Navigate Site Sections" type="button" id="phone-navbar-dropdown-btn" aria-haspopup="true" aria-controls="phone-navbar-dropdown">
-                    Navigate <span style="margin-left:auto;" class="fa-solid fa-chevron-down"></span>
+                    <span class="fa-solid fa-bars"></span>
                 </button>
                 <nav role="menu" id="phone-navbar-dropdown" class="hidden" hidden aria-expanded="false">
                     <a class="nav-anchor" href="#about-section"><span class="nav-anchor-text">About</span></a>
@@ -78,7 +80,7 @@
 Right below this section is my portfolio.</strong>
                     <strong class="first-paragraph-end-statement" id="first-paragraph-end-statement-2">Feel free to use the buttons at the top to navigate the site! 
 Right below this section is my portfolio.</strong>
-                    <strong class="first-paragraph-end-statement" id="first-paragraph-end-statement-3">Feel free to use the Navigate button at the top to navigate the site! 
+                    <strong class="first-paragraph-end-statement" id="first-paragraph-end-statement-3">Feel free to use the button at the top to navigate the site! 
 Right below this section is my portfolio.</strong>
                     </pre>
                 </div>

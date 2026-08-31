@@ -17,11 +17,11 @@
 	flex-direction: row;
 	align-items: center;
 
-	width: 10rem;
+	width: fit-content;
 	height: 3rem;
 
 	margin-left: auto;
-	margin-right: 2rem;
+	margin-right: 1rem;
 	margin-top: 0.25rem;
 	margin-bottom: 0.25rem;
 	
@@ -75,7 +75,10 @@
 	
 	position: absolute;
 	position-anchor: --phone-navbar-dropdown-btn;
-	position-area: bottom center;
+	position-area: bottom left;
+
+	transform: translateX(3rem);
+
 	top:0.25rem;
 
 	clip-path: rect(0% 100% 0% 0%);
@@ -119,7 +122,7 @@
 	}
 }
 
-@media screen {
+@media screen and (max-width: 1500px) {
 
     #layout-container {
         display: flex;
@@ -131,6 +134,16 @@
 	.main-section h1 {
 		text-align: center;
 	}
+
+	main {
+		width:86vw;
+	}
+
+	main p,pre {
+		font-size: 1.4rem;
+	}
+
+
 
 	#first-paragraph-end-statement-1 {
 		display:none;
@@ -144,8 +157,10 @@
 		
 		position:sticky;
 		display:block;
-		height:5rem;
+		height:4rem;
 		z-index: 98;
+
+		margin-bottom: 2rem;
 	}
 	#left-navbar-dither-overlay {
 		display:none;
@@ -153,7 +168,7 @@
 	#left-navbar-contents {
 		background-color: var(--color-bg-shade);
 		width:100%;
-		height:5rem;
+		height:4rem;
 	
 		border-bottom:0.15rem solid black;
 		margin:0;
@@ -174,6 +189,9 @@
 		margin-bottom:0;
 		gap:2rem;
 		height:3rem;
+
+		font-size: normal;
+		font-size: clamp(1.5rem, 1.70vw,1.70rem);
 	}
 
 
@@ -213,7 +231,7 @@
 	}
 
 	#light-mode-btn {
-		width:clamp(4rem,15vw,15rem);
+		width:clamp(6rem,15vw,15rem);
 		height: 3rem;
 		padding: 0;
 
@@ -292,6 +310,29 @@
 		width:20rem;
 	}
 
+	#portfolio-choice-programming {
+		grid-area: b;
+	}
+	#portfolio-choice-container {
+		width: min(80rem,100%);
+
+		max-height: 5rem;
+
+	}
+
+	.portfolio-choice {
+
+		height: 1rem;
+	
+
+		position: relative;
+		border: 6px solid var(--color-border-dark);
+		transition:border 0.25s ease;
+
+		&:focus {
+			border:10px solid var(--color-fg);
+		}
+	}
 
 	.portfolio-popup {
 
@@ -338,7 +379,7 @@
 		padding:1.5rem;
 
 		margin:0 !important;
-		left:calc(100% - calc(6rem - 3px)) !important;
+		left:calc(100% - calc(4rem - 3px)) !important;
 		top:0 !important;
 		z-index: 100;
 		
