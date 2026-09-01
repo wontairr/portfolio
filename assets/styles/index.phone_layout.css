@@ -409,6 +409,6 @@
 		text-wrap-mode: wrap;
 		
 		margin-top:4rem;
-		transform:translateY( clamp(-3rem,-4vw,-2rem) );
+		transform:translateY( clamp(-3rem,-4vw,-3rem) );
 	}
 }

@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="assets/styles/index.portfolio.popups.otherwork.css">
     
     <link rel="stylesheet" href="assets/styles/index.phone_layout.css">
+    <link rel="stylesheet" href="assets/styles/index.phone_layout.popups.animation.css">
 
     <span class="fa-solid fa-arrow-right hidden" hidden></span>
     <span class="fa-solid fa-arrow-right fa-flip-horizontal hidden" hidden></span>
@@ -213,9 +214,17 @@ Right below this section is my portfolio.</strong>
                         <div id="animation-video-dropdown">
 
                             <div role="tablist" id="animation-video-dropdown-tab-buttons">
-                                <button aria-selected="false" id="animation-tab-btn-about" type="button" aria-controls="animation-video-dropdown-about" role="tab" onclick="videoDropDownSelectTab(0)">About</button>
-                                <button class="selected-tab" aria-selected="true" id="animation-tab-btn-video" type="button" aria-controls="animation-video-wrapper" role="tab" onclick="videoDropDownSelectTab(1)">Video Player</button>
-                                <button aria-selected="false" id="animation-tab-btn-vidinfo" type="button" aria-controls="animation-video-dropdown-vid-info" role="tab" onclick="videoDropDownSelectTab(2)">Video Info</button>
+                                <button aria-selected="false" type="button" aria-controls="animation-video-dropdown-about" role="tab" onclick="videoDropDownSelectTab(0)">
+                                    <span id="animation-tab-btn-about">About</span>
+                                </button>
+                                <button class="selected-tab" aria-selected="true" type="button" aria-controls="animation-video-wrapper" role="tab" onclick="videoDropDownSelectTab(1)">
+                                    <span id="animation-tab-btn-video">Video Player</span>
+                                    <span id="animation-tab-btn-video-small">Video</span>
+                                </button>
+                                <button aria-selected="false"  type="button" aria-controls="animation-video-dropdown-vid-info" role="tab" onclick="videoDropDownSelectTab(2)">
+                                    <span id="animation-tab-btn-vidinfo">Video Info</span>
+                                    <span id="animation-tab-btn-vidinfo-small">Info</span>
+                                </button>
                             </div>
 
                             <div id="animation-video-dropdown-contents">
@@ -254,7 +263,6 @@ I use the following programs:
                         </button>
                     </section>
                     <!-- Filled by index.animationgallery.js -->
-                    <!-- FIXME: The gallery items don't change size, they should shrink/grow with screen size. -->
                     <section id="portfolio-popup-3d-animation-gallery">
                     </section>
                     <div id="portfolio-popup-3d-animation-bottom-bar">

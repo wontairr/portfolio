@@ -25,7 +25,7 @@ const galleryItems = [
         description:    `
 Rig: hyper
 
-Assets: Valve, https://skfb.ly/o9RNR (entity model), textures.com, Youtube
+Assets: Valve, <a href="https://skfb.ly/o9RNR">https://skfb.ly/o9RNR</a> (entity model), textures.com, Youtube
 
 Sounds: Infinity Ward, Various Source Engine Games, Kane Pixels Backrooms Video
 
@@ -110,22 +110,11 @@ function getGalleryItemHTML(galleryItem)
     const itemHTML = `
 <figure role="button" tabindex="0" class="popup-3d-animation-gallery-item" id="galleryItem-${indexInArray}">
     <img class="gallery-item-thumb" src="${galleryItem.thumbnail}" alt="Thumbnail for '${galleryItem.title}'">
-    <figcaption class="gallery-item-caption">${galleryItem.title}</figcaption>
+    <figcaption class="gallery-item-caption"><span>${galleryItem.title}</span></figcaption>
 </figure>
 `;
     return itemHTML;
 }
-
-
-// Set text containers's dimensions to it's parents. (keep text in box)
-function resizeVideoInfoTextContainer()
-{
-    // FIXME: Doesn't work when the video dropdown is not dropped down.
-    videoInfoTextContainer.style.width = `${videoInfoTextContainer.parentElement.clientWidth}px`;
-    videoInfoTextContainer.style.height = `${videoInfoTextContainer.parentElement.clientHeight}px`;
-}
-window.addEventListener("resize",resizeVideoInfoTextContainer);
-
 
 // Insert HTML into the video info box.
 const videoDescriptionRegex = /(rig|assets|sounds|music)/ig;
@@ -158,7 +147,6 @@ function setVideoInfo(galleryItem)
 
     videoInfoTextContainer.innerHTML = infoHTML;
 
-    resizeVideoInfoTextContainer();
     videoInfoTextContainer.scrollTop = 0;
 }
 
@@ -263,10 +251,12 @@ videoDropDownButton.addEventListener("click",(e) => {
 
 function videoDropDownSelectTab(tab,isReFocusingVideoPlayer = false)
 {
-    // Hide everything...
-    const wasVideoPlayerVisible = !tabElementVideoPlayer.classList.contains("hidden");
-    const wasVideoInfoVisible = !tabElementVideoInfo.classList.contains("hidden");
 
+    const isPhone = window.matchMedia("all and (max-width: 1500px)").matches;
+
+    const wasVideoInfoVisible = !tabElementVideoInfo.classList.contains("hidden");
+    
+    // Hide everything...
     tabElementAbout.classList.add("hidden");
     tabElementVideoPlayer.classList.add("hidden");
     tabElementVideoInfo.classList.add("hidden");
@@ -283,18 +273,19 @@ function videoDropDownSelectTab(tab,isReFocusingVideoPlayer = false)
             tabElementVideoPlayer.classList.remove("hidden");
             // If we want to refocus to the video player tab, -
             // - make sure we don't close the already opened video info.
-            if (isReFocusingVideoPlayer && wasVideoInfoVisible) {
+            if (isReFocusingVideoPlayer && wasVideoInfoVisible && !isPhone) {
                 tabElementVideoInfo.classList.remove("hidden")
             }
             break;
 
         case TAB_VIDEO_INFO:
             // Show both video info and player.
-            tabElementVideoPlayer.classList.remove("hidden");
+            if (!isPhone) {
+                tabElementVideoPlayer.classList.remove("hidden");
+            }
             tabElementVideoInfo.classList.remove("hidden")
 
             videoInfoTextContainer.scrollTop = 0;
-            resizeVideoInfoTextContainer();
             break;
     }
 
@@ -306,7 +297,7 @@ function videoDropDownSelectTab(tab,isReFocusingVideoPlayer = false)
         if (i === tab) {
             button.classList.add("selected-tab");
             button.setAttribute("aria-selected","true");
-            if (tab === TAB_VIDEO_INFO) {
+            if (tab === TAB_VIDEO_INFO && !isPhone) {
                 // Since we open the video player too, makes sense to keep it's button selected.
                 tabButtons[TAB_VIDEO_PLAYER].classList.add("selected-tab");                
             }
@@ -315,7 +306,7 @@ function videoDropDownSelectTab(tab,isReFocusingVideoPlayer = false)
 
         // If we are refocusing to the video player tab, and video info was visible, -
         // - don't "unselect" the video info tab.
-        if (i === TAB_VIDEO_INFO && isReFocusingVideoPlayer && wasVideoInfoVisible) {
+        if (!isPhone && i === TAB_VIDEO_INFO && isReFocusingVideoPlayer && wasVideoInfoVisible) {
             continue;
         }
         button.classList.remove("selected-tab");

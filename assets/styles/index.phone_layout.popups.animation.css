@@ -1,0 +1,68 @@
+@media all and (max-width: 1500px) {
+	#animation-video-dropdown-arrow img {
+		width: clamp(1.9rem,2.5vw,2rem);
+		
+		filter:invert(100%);
+		-webkit-filter: invert(100%);
+
+		transition:transform 0.1s ease;
+	}
+	#animation-tab-btn-video {
+		display:none;
+	}
+
+	#animation-tab-btn-video-small {
+		display:inline;
+	}
+
+	#animation-video-dropdown-vid-info {
+    	width:100%;
+	}
+
+	#animation-video-dropdown-about {
+		width:100%;
+		height:97%;
+		
+		background-color: var(--color-fg-graylight);
+		border-bottom:0.5rem solid var(--color-fg-graydark);
+
+		overflow-y:scroll;
+		overflow-x:hidden;
+	}
+
+
+	ul.animation-video-dropdown-about-txt {
+		padding: 0.5rem;
+	}
+
+	#portfolio-popup-3d-animation-gallery {
+		width:90%;
+		height:100%;
+
+		display:flex;
+		flex-wrap: wrap;
+
+		padding: 1rem;
+
+		margin-left:auto;
+		margin-right:auto;
+
+		overflow:scroll;
+		overflow-x: hidden;
+
+		background-image: url("/assets/images/portfolio/otherwork/grid.svg");
+		background-repeat: repeat;
+		background-size: 1rem;
+
+	}
+	
+}
+
+@media all and (max-width: 700px) {
+	#portfolio-popup-3d-animation-gallery {
+		flex-direction: row;
+		justify-content: center;
+	}
+}
+
+
