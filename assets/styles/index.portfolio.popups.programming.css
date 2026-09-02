@@ -31,8 +31,9 @@
     color: #FFF;
     font-family: var(--font-space-grotesk);
     font-size: 3rem;
-
+    
     text-shadow: 5px 5px var(--color-fg);
+	text-align: center;
 
 }
 #programming-item-group-header-projects {        
@@ -43,11 +44,12 @@
 .programming-item {
     background-color: var(--color-fg-dark);
 
-    width:40rem;
-    height:15rem;
+    --programming-item-width: clamp(20rem,40vw,40rem);
+
+    width:var(--programming-item-width);
+    height: fit-content;
     text-align: center;
 
-    height:fit-content;
 
     border: 0.5rem solid var(--color-fg);
 
@@ -57,7 +59,7 @@
 
 }
 .programming-item img,video {
-   max-width: 40rem;
+   max-width: var(--programming-item-width);
 }
 
 
@@ -119,6 +121,7 @@
     min-width: 2.2rem;
     max-width: 2.2rem;
     max-height: 2.2rem;
+
 
     filter:
         drop-shadow(0 0 0 #FFF)

@@ -1,0 +1,23 @@
+@media all and (max-width: 1500px) {
+
+	.programming-item-group-header {
+		font-size: clamp(2rem,3vw,3rem);
+	}
+
+	.programming-item-caption-header {
+    	font-size: clamp(1.5rem,2vw,2rem);
+	}
+	.programming-item-caption-info {
+		font-size: clamp(1rem, 1.25vw,1.25rem);
+		line-height: 1.75rem;
+	}
+	.programming-item-caption-used-tools img {
+		min-width: 1.8rem;
+		max-width: 1.8rem;
+		max-height: 1.8rem;
+	}
+	.programming-item-caption-site-link {
+		font-size: clamp(0.8rem,1.25vw,1.25rem);
+		font-weight: bold;
+	}
+}

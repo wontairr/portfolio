@@ -388,17 +388,19 @@
 	.portfolio-popup-close-btn {
 		width:3rem !important;
 		height:3rem !important;
-		padding:1.5rem;
+		padding:1rem !important;
 
 		margin:0 !important;
 		left:0;
-		margin-left: calc(100vw - 3.4rem)  !important;
+		margin-left: calc(100vw - 3rem)  !important;
 		box-shadow:none;
 		top:0 !important;
 		z-index: 100;
+
+		border-bottom-left-radius: 25px;
 		
 		& img {
-			width:2rem;
+			width:1.25rem;
 		}
 	}
 
