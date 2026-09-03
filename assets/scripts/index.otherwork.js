@@ -10,10 +10,10 @@ let viewerIndex = 0;
 
 let revealedViewer = false;
 
-let viewerOpen = false
+let otherWorkViewerOpen = false
 
 
-function viewerToggle()
+function otherWorkViewerToggle()
 {
 	viewer.classList.toggle("otherwork-viewer-hidden");
 	viewer.classList.toggle("otherwork-viewer-shown");
@@ -21,7 +21,7 @@ function viewerToggle()
 		revealedViewer = true;
 		viewer.removeAttribute("hidden");
 	}
-	viewerOpen = viewer.classList.contains("otherwork-viewer-shown");
+	otherWorkViewerOpen = viewer.classList.contains("otherwork-viewer-shown");
 }
 
 
@@ -88,15 +88,19 @@ function viewerFlip(direction)
 
 // Hide viewer if we click it.
 viewer.addEventListener("click",(e) => {
+	const isPhone = window.matchMedia("all and (max-width: 1500px)").matches;
+	// Only hide viewer if we click the X.
+	if (isPhone)
+		return;
 	if (e.target != viewerButtonLeft && e.target != viewerButtonRight) {
-		viewerToggle();
+		otherWorkViewerToggle();
 	}
 });
 
 viewer.addEventListener("animationend",(e)=> {
 	// Whenever the close animation finishes, hide all the viewer stuff so it doesn't -
 	// - show up for a split second upon opening the popup.
-	if (!viewerOpen) {
+	if (!otherWorkViewerOpen) {
 		// Put the images inside a hidden div to avoid reloading the images just incase.
 		viewerImageContainer.innerHTML = `
 <div hidden class="hidden" style="transform:translateX(-999999px);">${viewerImageContainer.innerHTML}</div>
@@ -109,7 +113,7 @@ viewer.addEventListener("animationend",(e)=> {
 // Flip through the images with arrow keys.
 let canFlipWithArrowKeys = true;
 document.body.addEventListener("keydown",(e)=>{
-	if (!viewerOpen || !canFlipWithArrowKeys) { return; }
+	if (!otherWorkViewerOpen || !canFlipWithArrowKeys) { return; }
 	if (e.key === "ArrowRight") {
 		viewerFlip(1);
 		canFlipWithArrowKeys = false;
@@ -120,22 +124,23 @@ document.body.addEventListener("keydown",(e)=>{
 	}
 });
 document.body.addEventListener("keyup",(e)=> {
-	if (!viewerOpen) { return; }
+	if (!otherWorkViewerOpen) { return; }
 	if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
 		canFlipWithArrowKeys = true;
 	}
 });
+
 // Flip through the images with the arrow buttons.
-viewerButtonRight.addEventListener("click",(e)=>viewerFlip(1));
-viewerButtonLeft.addEventListener("click",(e)=>viewerFlip(-1));
+viewerButtonRight.addEventListener("click",()=>viewerFlip(1));
+viewerButtonLeft.addEventListener("click",()=>viewerFlip(-1));
 
 // Make every img toggle the viewer when clicked.
 otherWorkImageButtons.forEach((imgBtn)=> {
 	const img = imgBtn.querySelector(".otherwork-item-img");
 
 	imgBtn.title = "Click To View";
-	imgBtn.addEventListener("click",(e)=>{
+	imgBtn.addEventListener("click",()=>{
 		viewerLoadImages(img.dataset.sources);
-		viewerToggle();
+		otherWorkViewerToggle();
 	});
 });

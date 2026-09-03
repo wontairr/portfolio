@@ -20,13 +20,25 @@ portfolioPopups.forEach( (popup) => {
 });
 
 portfolioPopupCloseButtons.forEach( (btn) => {
-    btn.addEventListener("click",popupClose);
+    btn.addEventListener("click",popupCloseBtnTest);
 });
 
 portfolioChoices.forEach( (btn) => {
     btn.addEventListener("click",popupOpen);
 });
 
+function popupCloseBtnTest(e)
+{
+    const btn = e.currentTarget;
+
+    // (FOR MOBILE USERS ONLY) If the Other Work image viewer is open, then instead of closing the current popup -
+    // - we should close the image viewer.
+    if (otherWorkViewerOpen) {
+        otherWorkViewerToggle();
+        return;
+    }
+    popupClose(e);
+}
 
 function popupClose(e)
 {

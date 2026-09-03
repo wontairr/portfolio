@@ -251,7 +251,6 @@ videoDropDownButton.addEventListener("click",(e) => {
 
 function videoDropDownSelectTab(tab,isReFocusingVideoPlayer = false)
 {
-
     const isPhone = window.matchMedia("all and (max-width: 1500px)").matches;
 
     const wasVideoInfoVisible = !tabElementVideoInfo.classList.contains("hidden");

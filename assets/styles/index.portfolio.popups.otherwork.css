@@ -17,6 +17,10 @@
 
 }
 
+#otherwork-header-phone {
+	position: absolute;
+	display:none;
+}
 
 .otherwork-item {
 
@@ -140,7 +144,7 @@
 #otherwork-item-viewer.otherwork-viewer-shown {
 	animation: otherwork-viewer-show 0.25s ease forwards;
 }
-.otherwork-viewer-hidden {
+#otherwork-item-viewer.otherwork-viewer-hidden {
 	animation: otherwork-viewer-hide 0.12s ease forwards;
 }
 

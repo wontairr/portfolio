@@ -225,7 +225,9 @@ main {
     margin-top:0;
     margin-bottom:0;
     
-    text-shadow: -5px 5px var(--color-bg-darkshade);
+    --header-shadow-drop: clamp(0.2rem,0.30vw,0.30rem);
+
+    text-shadow: calc( var(--header-shadow-drop) * -1 ) var(--header-shadow-drop) var(--color-bg-darkshade);
 }
 
 

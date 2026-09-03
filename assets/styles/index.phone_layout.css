@@ -395,7 +395,7 @@
 		margin-left: calc(100vw - 3rem)  !important;
 		box-shadow:none;
 		top:0 !important;
-		z-index: 100;
+		z-index: 2;
 
 		border-bottom-left-radius: 25px;
 		
