@@ -139,6 +139,8 @@ otherWorkImageButtons.forEach((imgBtn)=> {
 	const img = imgBtn.querySelector(".otherwork-item-img");
 
 	imgBtn.title = "Click To View";
+	imgBtn.setAttribute("aria-haspopup","menu");
+	imgBtn.setAttribute("aria-controls","otherwork-item-viewer");
 	imgBtn.addEventListener("click",()=>{
 		viewerLoadImages(img.dataset.sources);
 		otherWorkViewerToggle();
