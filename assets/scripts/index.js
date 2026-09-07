@@ -8,9 +8,12 @@ const root = document.documentElement;
 
 let lightMode = "light";
 
-// FIXME: Doesn't always work at low res.
 function resizeAboutSection()
 {
+    // Don't resize if we're on a mobile device.
+    if (window.matchMedia("all and (max-width: 1500px)").matches)
+        return;
+
     const newHeight = Math.max(aboutSection.clientHeight,window.innerHeight).toString() + "px";
     aboutSection.style.minHeight = newHeight;
 }

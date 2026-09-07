@@ -145,12 +145,12 @@
 */
 #animation-video-dropdown-about {
     width:100%;
-    height:97%;
+    height:100%;
     
     background-color: var(--color-fg-graylight);
     border-bottom:0.5rem solid var(--color-fg-graydark);
 
-    overflow-y:scroll;
+    overflow-y:hidden;
     overflow-x:hidden;
 }
 
@@ -161,15 +161,27 @@
     line-height: 1.85rem;
     width:100%;
     height:100%;
+
+    font-size: 1.5rem;
     
     word-spacing: normal;
-    font-family: var(--font-roboto);
+    font-family: var(--font-space-grotesk);
     
     color: var(--color-text-dark);
 }
 #animation-video-dropdown-about-txt-container li {
     font-family: var(--font-space-grotesk);
     margin-top:1rem;
+}
+#animation-video-dropdown-about-img-wrapper {
+    width:100%;
+    border:2px solid red;
+}
+#animation-video-dropdown-about-img {
+    width:clamp(20rem,40vw,40rem);
+    float:right;
+    
+ margin-right: clamp(3rem,5vw,5rem);   transform: rotate(8deg);
 }
 
 /*

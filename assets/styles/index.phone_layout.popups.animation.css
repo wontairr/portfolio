@@ -35,6 +35,10 @@
 		padding: 0.5rem;
 	}
 
+	#animation-video-dropdown-about-img {
+		margin-right: 0;
+	}
+
 	#portfolio-popup-3d-animation-gallery {
 		width:90%;
 		height:100%;
@@ -65,4 +69,9 @@
 	}
 }
 
+@media all and (prefers-reduced-motion: reduce) {
+	#portfolio-popup-3d-animation-video-dropdown {
+		transition: none;
+	}
+}
 

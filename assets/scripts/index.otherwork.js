@@ -142,7 +142,7 @@ otherWorkImageButtons.forEach((imgBtn)=> {
 	imgBtn.setAttribute("aria-haspopup","menu");
 	imgBtn.setAttribute("aria-controls","otherwork-item-viewer");
 	imgBtn.addEventListener("click",()=>{
-		viewerLoadImages(img.dataset.sources);
+	viewerLoadImages(img.dataset.sources);
 		otherWorkViewerToggle();
 	});
 });

@@ -25,6 +25,7 @@
 .social-section-anchor-contents {
     display:flex;
     align-items: center;
+
     gap:0.5rem;
 }
 .social-section-redirect-icon {
