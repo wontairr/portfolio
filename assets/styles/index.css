@@ -208,6 +208,38 @@ main {
     box-sizing: border-box;
 }
 
+@media (min-width:3000px) {
+    #navbar-header {
+        font-size: clamp(1rem,2.5vw,2.5rem);
+    }
+    .light-mode-btn-icon {
+        font-size: 3rem;
+    }
+    #light-mode-btn {
+        width: 10rem;
+        height: 5rem;
+        
+    }
+    #light-mode-btn-divider {
+        width: 1rem;
+        height:4.9rem;
+    }
+    #left-navbar {
+        --left-navbar-width:clamp(18.5rem,23vw,30rem);
+    }
+    #left-navbar-contents {
+        width:clamp(16rem,20vw,27rem);
+        gap:1.5rem;
+    }
+    .nav-anchor-text {
+        font-family: var(--font-space-mono);
+        font-size: clamp(1.5rem,2.5vw,2.5rem);
+        font-weight: 400;
+        font-style: normal;
+        margin-left:2rem;
+    }
+}
+
 .main-section:not(:first-of-type) {
     margin-bottom: 5rem;
 }
@@ -230,8 +262,6 @@ main {
     text-shadow: calc( var(--header-shadow-drop) * -1 ) var(--header-shadow-drop) var(--color-bg-darkshade);
 }
 
-
-/* NOTE: Try to get text-wrap:balance working. */
 p,pre {
     font-family: var(--font-space-grotesk);
     font-weight: 400;
@@ -246,7 +276,9 @@ p,pre {
 }
 
 main p,pre {
-    font-size: 1.5rem;
+    font-size: clamp(1.25rem,1vw,10rem);
+    
+    line-height:clamp(2.60rem,2.60vw,5rem);
 }
 
 
@@ -257,6 +289,13 @@ ABOUT SECTION
 #about-section-header {
     margin-top:-3vh;
     margin-bottom: 3rem;
+}
+
+@media (min-width:3000px) {
+    #about-section-header {
+        margin-top:0;
+
+    }
 }
 
 @media (max-width:900px) {
@@ -277,7 +316,7 @@ ABOUT SECTION
 .first-paragraph-end-statement {
     width:100%;
     
-    font-size: 2rem;
+    font-size: clamp(2rem,2vw,4rem);
     
     display:inline-block;
     text-align: center;
@@ -344,10 +383,10 @@ CONTACT SECTION
 #contact-section-options {
     font-family: var(--font-space-grotesk);
     
-    font-size: clamp(1.5rem,1.5vw,1.5rem);
+    font-size: clamp(1.5rem,1.5vw,3rem);
     text-wrap-mode: nowrap;
     
-    line-height: 3rem;
+    line-height: clamp(3rem,3vw,5rem);
     
     color: var(--color-text-dark);
     
@@ -385,5 +424,9 @@ FOOTER
     
     align-items: center;
 
-    height:1rem;
+    height:clamp(1rem,3vw,3rem);
+
+    & p {
+        font-size: clamp(1.25rem,1vw,10rem);
+    }
 }

@@ -180,8 +180,12 @@
 #animation-video-dropdown-about-img {
     width:clamp(20rem,40vw,40rem);
     float:right;
-    
- margin-right: clamp(3rem,5vw,5rem);   transform: rotate(8deg);
+    margin-right: clamp(3rem,5vw,5rem);
+    transform: rotate(8deg);
+}
+:root.dark #animation-video-dropdown-about-img {
+    filter:invert(100%);
+    -webkit-filter: invert(100%);
 }
 
 /*

@@ -7,7 +7,7 @@
 }
 
 #portfolio-choice-container {
-    width: min(80rem,100%);
+    width: 100%;
     height:fit-content;
 
     display:grid;
@@ -36,6 +36,9 @@
     &:focus {
         border:10px solid var(--color-fg);
     }
+
+    overflow:hidden;
+    background-color: black;
 }
 
 
@@ -52,8 +55,8 @@
 }
 
 .portfolio-choice-overlay {
-    width:100.1%;
-    height:100%;
+    width:100.5%;
+    height:100.5%;
 
     background-color: #00439b4a;
 
@@ -63,8 +66,8 @@
 
     box-sizing: border-box;
         
-    backdrop-filter: blur(6px) brightness(100%) contrast(120%);
-    -webkit-backdrop-filter: blur(6px) brightness(100%) contrast(120%);
+    backdrop-filter: blur(4px) brightness(100%) contrast(120%);
+    -webkit-backdrop-filter: blur(4px) brightness(100%) contrast(120%);
 
     position:absolute;
     top:0;
@@ -112,8 +115,10 @@
     grid-area: a;
 }
 #portfolio-choice-3d-animation .portfolio-choice-bg {
-    background-image:url(/assets/images/portfolio_3danimation_bg.png);
+    background-image:url(/assets/images/portfolio/thumbnails/animation_thumbnail.jpg);
     background-size: cover;
+    
+    transform: rotate(-10deg) scale(120%); 
 }
 
 
@@ -123,11 +128,20 @@
 #portfolio-choice-programming .portfolio-choice-bg {
     background-image:url(/assets/images/portfolio_programming_bg.png);
     background-size: cover;
+    transform: rotate(-10deg) scale(120%); 
 }
 #portfolio-choice-programming .portfolio-choice-overlay {
-    backdrop-filter: blur(4px) brightness(70%) contrast(120%);
-    -webkit-backdrop-filter: blur(4px) brightness(70%) contrast(120%);
+    backdrop-filter: blur(3px) brightness(70%) contrast(120%);
+    -webkit-backdrop-filter: blur(3px) brightness(70%) contrast(120%);
+
+    &:hover {
+        backdrop-filter: blur(1px) brightness(70%) contrast(120%);
+        -webkit-backdrop-filter: blur(1px) brightness(70%) contrast(120%);
+        
+    }
 }
+
+
 
 #portfolio-choice-other-projects .portfolio-choice-bg {
     background-image:url(/assets/images/portfolio/thumbnails/otherwork_thumbnail.jpg);
