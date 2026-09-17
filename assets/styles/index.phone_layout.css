@@ -148,6 +148,9 @@
     	margin-bottom: 3rem;
     	padding-top: 3rem;
 	}
+	.main-section:nth-child(2) {
+		margin-bottom: -3rem;
+	}
 
 	main {
 		width:86vw;
