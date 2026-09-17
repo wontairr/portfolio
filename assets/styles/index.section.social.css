@@ -53,3 +53,20 @@
     background-color: #1b2838;
     color: #c7d5e0;
 }
+
+
+@media (min-width:3000px) {
+    .social-section-nav-anchor {
+        display:block;
+
+        font-family: var(--font-space-mono);
+        font-size: 3rem;
+        font-weight: bold;
+
+        text-decoration: none;
+
+        max-width:30rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}

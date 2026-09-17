@@ -76,7 +76,7 @@
 }
 .portfolio-choice-overlay:hover {
     background-color: #1857a96b;
-    
+
     transform: translate3d(0, 0, 0);
     cursor:pointer;
 }
@@ -114,8 +114,8 @@
     background-image:url(/assets/images/portfolio/thumbnails/animation_thumbnail.jpg);
     background-size: cover;
     background-position: center;
-    
-    transform: rotate(-10deg) scale(120%); 
+     
+    transform: rotate(-10deg) scale(120%);
 }
 
 
@@ -128,6 +128,16 @@
     background-position: center;
     transform: rotate(-10deg) scale(120%); 
 }
+
+@media (min-width:3000px) {
+    #portfolio-choice-3d-animation .portfolio-choice-bg {
+        transform:none;
+    }
+    #portfolio-choice-programming .portfolio-choice-bg {
+        transform:none;
+    }
+}
+
 /*
 #portfolio-choice-programming .portfolio-choice-overlay {
     &:hover {

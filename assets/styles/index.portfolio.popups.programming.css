@@ -58,6 +58,7 @@
     box-shadow: 10px 10px 1px black;
 
 }
+
 .programming-item img,video {
    max-width: var(--programming-item-width);
 }
@@ -155,3 +156,62 @@
 }
 
 
+
+@media (min-width:3000px) {
+    #portfolio-popup-programming .portfolio-popup-contents {
+        background-size: 2rem;
+    }
+
+    .programming-item {
+        --programming-item-width: clamp(20rem,70vw,80rem);
+    }
+    .programming-item-caption-header {
+        font-size: clamp(2rem,2vw,4rem);
+
+        margin-bottom:0;
+        margin-top:0.5rem;
+        
+        background-color: var(--color-fg-verydark);
+        border-radius: 25px;
+    }
+    .programming-item-caption-info {
+        font-size: clamp(1.25rem,1.25vw,2.5rem);
+        line-height: clamp(2rem,2vw,10rem);
+    }
+    .programming-item-caption-footer {
+        width:100%;
+        height:6rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .programming-item-caption-used-tools img {
+        min-width: 4.5rem;
+        max-width: 4.5rem;
+        max-height: 4.5rem;
+    }
+    
+    .programming-item-caption-site-link {
+        font-size: clamp(2rem,2vw,3rem);
+
+        padding: 1rem;
+        border-radius: 50px;
+
+        border: 2px solid var(--color-fg-light);
+
+    }
+
+    .programming-item-group-header {
+        color: #FFF;
+        font-family: var(--font-space-grotesk);
+        font-size: clamp(3rem,3vw,6rem);
+        
+        text-shadow: 5px 5px var(--color-fg);
+        text-align: center;
+
+    }
+
+    #programming-item-group-header-projects {        
+        margin-top: -2rem;
+        margin-bottom: 0.5rem;
+    }
+}
