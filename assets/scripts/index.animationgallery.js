@@ -169,6 +169,10 @@ function onGalleryItemClick(e)
     
     // Set the video player's HTML to something like youtube or whatever.
     videoPlayer.innerHTML = galleryItem.html;
+    const innerIframe = videoPlayer.querySelector("iframe");
+    if (innerIframe) {
+        innerIframe.setAttribute("referrerpolicy","strict-origin-when-cross-origin");
+    }
 
     // Drop down the video player if it isn't already dropped down.
     if (!videoDropDownWrapper.classList.contains("gallery-dropdown")) {   
