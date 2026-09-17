@@ -36,7 +36,7 @@
 	}
 
 	#animation-video-dropdown-about-img {
-		margin-right: 0;
+		width:clamp(10rem,80%,80rem);
 	}
 
 	#portfolio-popup-3d-animation-gallery {

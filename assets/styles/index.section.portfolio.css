@@ -66,22 +66,18 @@
 
     box-sizing: border-box;
         
-    backdrop-filter: blur(4px) brightness(100%) contrast(120%);
-    -webkit-backdrop-filter: blur(4px) brightness(100%) contrast(120%);
 
     position:absolute;
     top:0;
     left:0;
     transition:
         background-color 0.1s ease,
-        backdrop-filter 0.1s ease,
-        -webkit-backdrop-filter 0.1s ease;
         
 }
 .portfolio-choice-overlay:hover {
     background-color: #1857a96b;
-    backdrop-filter: blur(1px) brightness(100%) contrast(120%);
-    -webkit-backdrop-filter: blur(1px) brightness(100%) contrast(120%);
+    
+    transform: translate3d(0, 0, 0);
     cursor:pointer;
 }
 .portfolio-choice-overlay:hover .portfolio-choice-text {
@@ -117,6 +113,7 @@
 #portfolio-choice-3d-animation .portfolio-choice-bg {
     background-image:url(/assets/images/portfolio/thumbnails/animation_thumbnail.jpg);
     background-size: cover;
+    background-position: center;
     
     transform: rotate(-10deg) scale(120%); 
 }
@@ -126,20 +123,18 @@
     grid-area: b;
 }
 #portfolio-choice-programming .portfolio-choice-bg {
-    background-image:url(/assets/images/portfolio_programming_bg.png);
+    background-image:url(/assets/images/portfolio/thumbnails/programming_thumbnail.jpg);
     background-size: cover;
+    background-position: center;
     transform: rotate(-10deg) scale(120%); 
 }
+/*
 #portfolio-choice-programming .portfolio-choice-overlay {
-    backdrop-filter: blur(3px) brightness(70%) contrast(120%);
-    -webkit-backdrop-filter: blur(3px) brightness(70%) contrast(120%);
-
     &:hover {
-        backdrop-filter: blur(1px) brightness(70%) contrast(120%);
-        -webkit-backdrop-filter: blur(1px) brightness(70%) contrast(120%);
-        
+
     }
 }
+*/
 
 
 

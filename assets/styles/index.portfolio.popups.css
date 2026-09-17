@@ -36,6 +36,27 @@
     transform:scale(1.0);
     transition: background-color 0.065s ease, border-color 0.065s ease,transform 0.065s ease;
 }
+
+@media (min-width:3000px) {
+    .portfolio-popup-close-btn {
+        width:3rem;
+        height:3rem;
+        padding:3rem;
+
+        ;
+
+        /*
+            Margin leads us to the top right of popup-contents.
+            8rem is the popup padding
+        */
+        margin-left:calc(100vh + 20rem);
+        margin-top:calc(-70vh - 8rem);
+    }
+    .portfolio-popup-close-btn img {
+        width:2.5rem;
+    }
+}
+
 .portfolio-popup-close-btn img {
     pointer-events: none;
 }
@@ -64,10 +85,8 @@
     width:100%;
     height:100%;
    
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px) brightness(0.5);
-    -webkit-backdrop-filter: blur(10px) brightness(0.5);
-    
+    background-color: rgba(0, 0, 0, 0.85);
+
     z-index: 99;
     
     display:flex;
@@ -118,6 +137,17 @@
     
     margin-top:4rem;
     transform:translateY(-4rem);
+}
+
+@media (min-width:3000px) {
+    .portfolio-popup-header {
+        height: clamp(6rem,6vw,10rem);
+    }
+    .portfolio-popup-header h1 {
+        font-size: clamp(4rem,4vw, 7rem);
+        margin-top: clamp(4rem,4vw, 7rem);
+        transform:translateY( calc( clamp(6rem,6vw,8rem) * -1 ) );
+    }
 }
 
 .portfolio-popup-contents {
