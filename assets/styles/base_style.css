@@ -1,9 +1,10 @@
 :root {
+    /* VARIABLES IN USE BY THE SITE */
+    
     --font-space-grotesk: "Space Grotesk","Roboto",sans-serif;
     --font-space-mono: "Space Mono", monospace;
     --font-roboto: "Roboto", sans-serif;
 
-    /* VARIABLES IN USE BY THE SITE */
 
     --color-my-name: #00439B;
 

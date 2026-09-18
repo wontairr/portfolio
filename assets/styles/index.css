@@ -246,7 +246,7 @@ main {
 
 /* Headers for each section. */
 .main-section h1 {
-    font-family: "Cormorant Garamond", serif;
+    font-family: "Cormorant Garamond", "Arial", serif;
     font-size:clamp(6.4rem,16vw,16rem);
     font-weight: bold;
     
@@ -276,7 +276,7 @@ p,pre {
 }
 
 main p,pre {
-    font-size: clamp(1.25rem,1vw,10rem);
+    font-size: clamp(1.25rem,1vw,3rem);
     
     line-height:clamp(2.60rem,2.60vw,5rem);
 }

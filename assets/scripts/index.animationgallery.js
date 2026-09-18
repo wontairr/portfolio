@@ -109,7 +109,6 @@ function toggleVideoDropDown()
 }
 
 // Generate HTML snippet for a gallery item.
-// FIXME: Wrap figure element in a button.
 function getGalleryItemHTML(galleryItem)
 {
     const indexInArray = galleryItems.indexOf(galleryItem);

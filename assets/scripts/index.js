@@ -13,6 +13,9 @@ function resizeAboutSection()
     // Don't resize if we're on a mobile device.
     if (window.matchMedia("all and (max-width: 1500px)").matches)
         return;
+    // Don't resize if we have a huge screen and it'll make a bunch of white space.
+    if (window.matchMedia("all and (min-height: 3000px)").matches)
+        return;
 
     const newHeight = Math.max(aboutSection.clientHeight,window.innerHeight).toString() + "px";
     aboutSection.style.minHeight = newHeight;
