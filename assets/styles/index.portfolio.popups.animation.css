@@ -253,12 +253,13 @@
     
     padding: 0 0.5rem 0 0.5rem;
 
-    column-height: 3rem;
+    
 
     & a {
         color:white;
     }
 }
+
 .animation-video-dropdown-vid-info-txt::selection {
     background-color: #020d1c;
     color:white;
@@ -309,6 +310,10 @@
         border-radius: clamp(1.5rem,1.5vw,2.5rem);
         padding: clamp(0.5rem,0.5vw,0.7rem);
 
+    }
+
+    .animation-video-dropdown-vid-info-txt {
+        column-height: 3rem;
     }
 }
 
