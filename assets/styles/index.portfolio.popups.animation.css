@@ -190,6 +190,7 @@
     height:100%;
     top:0;
     box-sizing: border-box;
+    pointer-events: none;
 }
 #animation-video-dropdown-about-img {
     width:clamp(10rem,30vw,45rem);
