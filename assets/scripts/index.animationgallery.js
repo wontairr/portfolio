@@ -100,7 +100,13 @@ let hasClickedAtleastOneVideo = false;
 ///
 /////
 
-
+function toggleVideoDropDown()
+{
+    isDroppedDown = !isDroppedDown;
+    videoDropDownWrapper.classList.toggle("gallery-dropdown");
+    videoDropDownWrapper.setAttribute("aria-expanded",isDroppedDown ? "true" : "false");
+    videoDropDownButton.setAttribute("aria-label",isDroppedDown ? "Open Video Player Dropdown" : "Close Video Player Dropdown");
+}
 
 // Generate HTML snippet for a gallery item.
 // FIXME: Wrap figure element in a button.
@@ -175,8 +181,8 @@ function onGalleryItemClick(e)
     }
 
     // Drop down the video player if it isn't already dropped down.
-    if (!videoDropDownWrapper.classList.contains("gallery-dropdown")) {   
-        videoDropDownWrapper.classList.toggle("gallery-dropdown");
+    if (!isDroppedDown) {   
+        toggleVideoDropDown();
     }
     videoDropDownSelectTab(TAB_VIDEO_PLAYER,true);
 
@@ -226,21 +232,22 @@ function onClose3DAnimationPopup()
         videoPlayer.innerHTML = `
 <h2 id="animation-video-player-placeholder-txt">Choose an Animation From the Gallery Below!</h2>
 `;
+        videoInfoTextContainer.innerHTML = `
+<p class="animation-video-dropdown-vid-info-txt">
+    Video info will appear here when a video is selected from the gallery below.
+</p>
+        `;
     }
+
     // Close dropdown.
     if (isDroppedDown) {
-        isDroppedDown = false;
-        videoDropDownWrapper.classList.toggle("gallery-dropdown");
-        videoDropDownWrapper.setAttribute("aria-expanded","false");
-        videoDropDownButton.setAttribute("aria-label","Open Video Player Dropdown");
+        toggleVideoDropDown();
     }
+    videoDropDownSelectTab(TAB_VIDEO_PLAYER);
 }
 
 videoDropDownButton.addEventListener("click",(e) => {
-    isDroppedDown = !isDroppedDown;
-    videoDropDownWrapper.classList.toggle("gallery-dropdown");
-    videoDropDownWrapper.setAttribute("aria-expanded",isDroppedDown ? "true" : "false");
-    videoDropDownButton.setAttribute("aria-label",isDroppedDown ? "Open Video Player Dropdown" : "Close Video Player Dropdown");
+    toggleVideoDropDown();
 });
 
 
