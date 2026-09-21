@@ -14,8 +14,23 @@ const TAB_VIDEO_PLAYER = 1;
 const TAB_VIDEO_INFO = 2;
 
 const videoSearchBar = document.getElementById("animation-gallery-search-bar");
+const videoToggleOldWork = document.getElementById("animation-gallery-show-old-work-checkbox");
 
 const galleryItems = [
+    {
+        title:          "ZGRAD Viewmodel Animation Reel 2026",
+        html:           `<iframe width="560" height="315" src="https://www.youtube.com/embed/MDFidDWE4as?si=Lr8uNUQt8iqLioFK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+        thumbnail:      "https://img.youtube.com/vi/MDFidDWE4as/mqdefault.jpg",
+        date:           new Date("September 21 2026"),
+        tags:           ["reel","showreel","rifle","sniper","pistol","lmg","smg"],
+        description:    `
+Rig: Pavlendia, Facepunch Studios
+
+Music: Boards of Canada - Skyliner
+
+A short compilation of the work I did for the new ZGRAD GunZ Base update.
+`
+    },
     {
         title:          "AK47 In The Backrooms",
         html:           `<iframe width="560" height="315" src="https://www.youtube.com/embed/H961LwU39EE?si=UT31EYc0cU7KjuYA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
@@ -65,15 +80,15 @@ Music: Jack Black - Peaches
 
 An animation based of the Peach meme.
 `
-    },
+    }
 ];
 
 // Sort by date.
 galleryItems.sort( (a,b) => {
     if (a.date < b.date) {
-        return -1;
-    } else if (a.date > b.date) {
         return 1;
+    } else if (a.date > b.date) {
+        return -1;
     }
     return 0;
 });
@@ -211,6 +226,10 @@ function loadGalleryItems()
 
         // Cache the element reference for later use. (in search mainly)
         const galleryItem = getGalleryItemFromItemElement(itemElement);
+        // By default old content is hidden.
+        if (galleryItem.date.getFullYear() < 2026) {
+            itemElement.classList.add("hidden");
+        }
         const galleryItemTitle = galleryItem.title.toLowerCase();
         loadedGalleryItemElements[galleryItemTitle] = itemElement;
 
@@ -344,13 +363,20 @@ function searchGallery(query)
             continue;
         }
 
+        
         const itemEl = loadedGalleryItemElements[itemTitle];
+        const isOldWork = !videoToggleOldWork.checked && getGalleryItemFromItemElement(itemEl).date.getFullYear() < 2026;
         // No query? Just reveal all the items again.
         if (isQueryEmpty) {
+            // If we aren't showing old work and it's old work, skip this one.
+            if (isOldWork){
+                itemEl.classList.add("hidden");
+                continue;
+            }
             itemEl.classList.remove("hidden");
             continue;
         }
-        if (!itemTitle.includes(query)){
+        if (!itemTitle.includes(query) || isOldWork){
             itemEl.classList.add("hidden");
         } else {
             itemEl.classList.remove("hidden");
@@ -366,7 +392,24 @@ function searchGallery(query)
         return;
     }
     for (const itemEl of tags.get(query)) {
+        // If we aren't showing old work and it's old work, skip this one.
+        if (!videoToggleOldWork.checked && getGalleryItemFromItemElement(itemEl).date.getFullYear() < 2026){
+            continue;
+        }
         itemEl.classList.remove("hidden");
     }
 }
 videoSearchBar.addEventListener("input",(e) => searchGallery(videoSearchBar.value));
+
+/////
+///
+/// VIDEO TOGGLE OLD WORK
+///
+/////
+
+
+videoToggleOldWork.addEventListener("change",(e) => {
+    // Refresh the gallery.
+    console.log("Refresh");
+    searchGallery(videoSearchBar.value);
+})

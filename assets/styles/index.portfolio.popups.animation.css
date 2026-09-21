@@ -405,7 +405,7 @@
     display:block;
    
     text-wrap: wrap;
-    width:clamp(8rem,16vw,16rem);
+    width:fit-content;
     height:3rem;
     text-align: center;
 
@@ -469,13 +469,15 @@
     display:flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+
+	gap:2rem;
 
     background-color: var(--color-fg);
 }
 
 #animation-gallery-search-bar {
-    width:clamp(20rem,20vw,50rem);;
+    width:clamp(20rem,20vw,50rem);
     height:clamp(2rem,2vw,4rem);
 
     background-color: var(--color-fg-dark);
@@ -493,4 +495,67 @@
 
 #animation-gallery-search-bar:focus {
     outline:2px solid white;
+}
+
+#animation-gallery-show-old-work-checkbox-label {
+    font-family: var(--font-roboto);
+	font-size: clamp(1rem,1vw,2rem);
+
+    color: white;
+	
+	display:flex;
+	align-items: center;
+	justify-content: center;
+
+	&::selection {
+		background-color: var(--color-fg-verydark);
+	}
+}
+
+#animation-gallery-show-old-work-checkbox {
+    width:1px;
+	height:1px;
+	padding:0;
+	margin:-1px;
+	overflow: hidden;
+	clip:rect(0,0,0,0);
+	white-space: nowrap;
+
+	border:0;
+
+
+	&:checked+#animation-gallery-show-old-work-checkbox-icon {
+		background-color: var(--color-fg-light);
+		border-color: var(--color-fg-dark);
+
+		& svg {
+			display:inline;
+		}
+	}
+}
+
+#animation-gallery-show-old-work-checkbox-icon {
+	width: clamp(1.25rem,1.25vw,3rem);
+	height: clamp(1.25rem,1.25vw,3rem);
+
+    background-color: var(--color-fg-dark);
+
+	border: 3px solid var(--color-fg-verydark);
+	border-radius: 5px;
+
+	margin-right: 1rem;
+	
+	&:hover {
+		cursor: pointer;
+		background-color: var(--color-fg-light);
+	}
+
+	display:flex;
+	justify-content: center;
+	align-items: center;
+
+	& svg {
+		display:none;
+	}
+
 }

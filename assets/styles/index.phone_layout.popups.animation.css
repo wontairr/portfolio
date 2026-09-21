@@ -59,6 +59,48 @@
 		background-size: 1rem;
 
 	}
+
+	#portfolio-popup-3d-animation-bottom-bar {
+		height:clamp(4rem,4vw,6rem);
+		min-height: clamp(4rem,4vw,6rem);
+
+		display:flex;
+		flex-direction: row;
+		align-items: center;
+		
+		justify-content: space-evenly;
+		
+		gap:0rem;
+
+		background-color: var(--color-fg);
+	}
+
+	#animation-gallery-search-bar {
+		width: calc(100% - 2rem);
+		height:clamp(2rem,2vw,4rem);
+	}
+
+	#animation-gallery-search-bar:focus {
+		outline:2px solid white;
+	}
+
+	#animation-gallery-show-old-work-checkbox-label {
+		margin-left:-1rem;
+	}
+
+	@media (max-width: 400px) {
+		#animation-gallery-show-old-work-checkbox-label {
+			width:6rem;
+		}
+	}
+
+	#animation-gallery-show-old-work-checkbox-icon {
+		width: clamp(1.25rem,1.25vw,3rem);
+		height: clamp(1.25rem,1.25vw,3rem);
+		margin-right: 0.5rem;
+		margin-left: -1rem;
+		
+	}
 	
 }
 
