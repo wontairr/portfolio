@@ -1,7 +1,7 @@
 @media all and (max-width: 1500px) {
 	#portfolio-popup-other-projects .portfolio-popup-contents {
 		background-color: var(--color-dark);
-		background-image: url("/assets/images/portfolio/otherwork/grid.svg");
+		background-image: url("./assets/images/portfolio/otherwork/grid.svg");
 		background-repeat: repeat;
 		background-size: 3rem;
 		

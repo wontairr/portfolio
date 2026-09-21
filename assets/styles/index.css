@@ -27,7 +27,7 @@ body {
 #comfort-margin {
     width:min(25vw,25rem);
 
-    background-image: url("/assets/images/comfort_margin.png");
+    background-image: url("./assets/images/comfort_margin.png");
     background-size:contain;
     
     animation: comfort-margin-scroll 70s linear infinite;
@@ -64,7 +64,7 @@ main {
     width:var(--left-navbar-width);
     height:50rem;
 
-    background-image: url("/assets/images/dither_effect.png");
+    background-image: url("./assets/images/dither_effect.png");
     background-size:contain;
     background-repeat: repeat-x;
     
