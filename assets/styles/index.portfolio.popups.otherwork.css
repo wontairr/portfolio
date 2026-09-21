@@ -1,6 +1,6 @@
 #portfolio-popup-other-projects .portfolio-popup-contents {
 	background-color: var(--color-dark);
-	background-image: url("./assets/images/portfolio/otherwork/grid.svg");
+	background-image: url("../images/portfolio/otherwork/grid.svg");
 	background-repeat: repeat;
 	background-size: 3rem;
 	
@@ -227,7 +227,7 @@
 	max-height: 90%;
 	min-width: 800px;
 	min-height: 450px;
-	background-image: url(/assets/images/loading_image.png);
+	background-image: url(../images/loading_image.png);
     background-size:cover;
     background-position:center;
 }

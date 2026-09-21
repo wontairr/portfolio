@@ -349,7 +349,7 @@
     width:100%;
     height:100%;
 
-    background-image: url(/assets/images/loading_video.png);
+    background-image: url(../images/loading_video.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position-y: center;
@@ -372,7 +372,7 @@
     overflow:scroll;
     overflow-x: hidden;
 
-    background-image: url("./assets/images/portfolio/otherwork/grid.svg");
+    background-image: url("../images/portfolio/otherwork/grid.svg");
 	background-repeat: repeat;
 	background-size: 1rem;
 
@@ -431,7 +431,7 @@
     border:0.25rem solid var(--color-fg);
     border-radius: 0.25rem;
 
-    background-image: url(/assets/images/loading_image.png);
+    background-image: url(../images/loading_image.png);
     background-size:cover;
 
     display:inline-block;
