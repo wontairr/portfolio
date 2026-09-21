@@ -111,7 +111,7 @@
     grid-area: a;
 }
 #portfolio-choice-3d-animation .portfolio-choice-bg {
-    background-image:url(/assets/images/portfolio/thumbnails/animation_thumbnail.jpg);
+    background-image:url("../images/portfolio/thumbnails/animation_thumbnail.jpg");
     background-size: cover;
     background-position: center;
      
@@ -123,7 +123,7 @@
     grid-area: b;
 }
 #portfolio-choice-programming .portfolio-choice-bg {
-    background-image:url(/assets/images/portfolio/thumbnails/programming_thumbnail.jpg);
+    background-image:url("../images/portfolio/thumbnails/programming_thumbnail.jpg");
     background-size: cover;
     background-position: center;
     transform: rotate(-10deg) scale(120%); 
@@ -149,7 +149,7 @@
 
 
 #portfolio-choice-other-projects .portfolio-choice-bg {
-    background-image:url(/assets/images/portfolio/thumbnails/otherwork_thumbnail.jpg);
+    background-image:url("../images/portfolio/thumbnails/otherwork_thumbnail.jpg");
     background-size: cover;
 }
 
